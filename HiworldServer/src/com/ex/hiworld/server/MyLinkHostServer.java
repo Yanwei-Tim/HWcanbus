@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.os.SystemClock;
 
 import com.ex.hiworld.aidl.car.HandlerTaskCanbus;
 import com.ex.hiworld.aidl.car.TaskCarRemote;
@@ -21,6 +22,8 @@ import com.ex.hiworld.server.syu.FinalMain;
 import com.ex.hiworld.server.syu.FinalRadio;
 import com.ex.hiworld.server.syu.FinalSyuModule;
 import com.ex.hiworld.server.syu.SendFunc;
+import com.ex.hiworld.server.tools.FormatSerialData;
+import com.ex.hiworld.server.tools.FormatSerialData.OnHandlerListener;
 import com.ex.hiworld.server.tools.HandlerUI;
 import com.ex.hiworld.server.tools.LogsUtils;
 import com.ex.hiworld.server.tools.PrintScreenView;
@@ -69,7 +72,17 @@ public class MyLinkHostServer extends Service {
 
 
 //        debugMode();
-
+        FormatSerialData.getObj().setOnHandlerListener(new OnHandlerListener() {
+			
+			@Override
+			public void onHandler(int[] data, int start, int length) {
+				if(data != null) {
+					int[] newdata = new int[length];
+					System.arraycopy(data, start, newdata, 0, length);
+					parseData(newdata);
+				}
+			}
+		});
     }
 
     @Override
@@ -123,10 +136,6 @@ public class MyLinkHostServer extends Service {
         }
     }
 
-    boolean isFullData = false;
-    int[] tempData = new int[1024];
-    int offset = 0;
-
     /**
      * 处理通知
      *
@@ -165,8 +174,9 @@ public class MyLinkHostServer extends Service {
         } else if (msg.module == FinalSyuModule.MODULE_CODE_CANBUS) {
             switch (msg.code) {
                 case U_CANBUS_DATA:
-                    if (msg.ints == null) break;
-                    checkAndGetFullData(msg.ints);
+                    if (msg.ints == null) break; 
+                    
+                    FormatSerialData.getObj().onReceiver(msg.ints);
                     break;
                 case U_GPS_ANGLE: {
                     if (DataHost.sGpsAngle != msg.ints[0]) {
@@ -223,38 +233,42 @@ public class MyLinkHostServer extends Service {
 //        LogsUtils.i("@test CaridNum :" + sb.toString());
 //    }
 
-    private void checkAndGetFullData(int[] ints) {
-        LogsUtils.d("origin data: " + LogsUtils.toHexString(ints));
-        if (ints.length > 4 && ints[0] == 0x5A && ints[1] == 0xA5) {
-            if (ints[2] != ints.length - 5) {  // tou 2, len 1, cmd 1, checksum 1;
-                isFullData = false;
-                System.arraycopy(ints, 0, tempData, offset, ints.length);
-                offset = ints.length;
-                return;
-            }
-            System.arraycopy(ints, 0, tempData, offset, ints.length);
-        } else {
-            // not standard data , may be a remaining data of last data.
-        	if(offset > tempData.length) offset = 0;
-            if (!isFullData) {
-                System.arraycopy(ints, 0, tempData, offset, ints.length);
-                offset += ints.length;
-            }
-            boolean fullData = isFullData(tempData, offset);
-            isFullData = fullData;
-            if (!isFullData) {
-                return;
-            }
-        }
 
-        offset = 0;
-        isFullData = true;
-        int reallen = tempData[2] + 5;
-        int data[] = new int[reallen];
-        System.arraycopy(tempData, 0, data, 0, reallen);
-        Arrays.fill(tempData, 0);
-        parseData(data);
-    }
+    boolean isFullData = false;
+    int[] tempData = new int[1024];
+    int offset = 0;
+//    private void checkAndGetFullData(int[] ints) {
+//        LogsUtils.d("origin data: " + LogsUtils.toHexString(ints));
+//        if (ints.length > 4 && ints[0] == 0x5A && ints[1] == 0xA5) {
+//            if (ints[2] != ints.length - 5) {  // tou 2, len 1, cmd 1, checksum 1;
+//                isFullData = false;
+//                System.arraycopy(ints, 0, tempData, offset, ints.length);
+//                offset = ints.length;
+//                return;
+//            }
+//            System.arraycopy(ints, 0, tempData, offset, ints.length);
+//        } else {
+//            // not standard data , may be a remaining data of last data.
+//        	if(offset > tempData.length) offset = 0;
+//            if (!isFullData) {
+//                System.arraycopy(ints, 0, tempData, offset, ints.length);
+//                offset += ints.length;
+//            }
+//            boolean fullData = isFullData(tempData, offset);
+//            isFullData = fullData;
+//            if (!isFullData) {
+//                return;
+//            }
+//        }
+//
+//        offset = 0;
+//        isFullData = true;
+//        int reallen = tempData[2] + 5;
+//        int data[] = new int[reallen];
+//        System.arraycopy(tempData, 0, data, 0, reallen);
+//        Arrays.fill(tempData, 0);
+//        parseData(data);
+//    }
 
     private void parseData(int[] data) {
         if (data.length > 2 && (data[0] == 0x5A && data[1] == 0xA5)) {

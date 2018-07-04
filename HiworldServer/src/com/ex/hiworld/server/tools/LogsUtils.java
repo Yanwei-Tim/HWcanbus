@@ -18,7 +18,7 @@ public class LogsUtils {
     }
 
     public static void w(String str) {
-        Log.d(TAG, str);
+        Log.w(TAG, str);
     }
 
     public static void e(String str) {

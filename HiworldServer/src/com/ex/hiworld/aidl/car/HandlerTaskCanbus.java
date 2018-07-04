@@ -14,113 +14,117 @@ import com.ex.hiworld.server.tools.PrintScreenView;
  */
 
 public class HandlerTaskCanbus {
-    private static BaseCar mBaseCar = null;
+	private static BaseCar mBaseCar = null;
 
-    public static int getCarTypeByVersion(String version) {
-        int cartype = 0;
-        int carLevel = 0;
-        cartype = 1;
+	public static int getCarTypeByVersion(String version) {
+		int cartype = 0;
+		int carLevel = 0;
+		cartype = 1;
 
-        if (mBaseCar != null) mBaseCar.out();
+		if (mBaseCar != null)
+			mBaseCar.out();
 
-        DataCanbus.canbusType = cartype;
-        DataCanbus.canbusLevel = carLevel;
-        BaseCar base = null;
-        switch (cartype) {
-            case FinalCanbus.CAR_GOLF:
-                base = new TaskCar_Golf();
-                break;
-            default:
-                break;
-        }
+		DataCanbus.canbusType = cartype;
+		DataCanbus.canbusLevel = carLevel;
+		BaseCar base = null;
+		switch (cartype) {
+		case FinalCanbus.CAR_GOLF:
+			base = new TaskCar_Golf();
+			break;
+		default:
+			break;
+		}
 
-        mBaseCar = base;
-        TaskCarRemote.getOBJ().setCanbus(mBaseCar);
+		mBaseCar = base;
+		TaskCarRemote.getOBJ().setCanbus(mBaseCar);
 
+		mBaseCar.in();
+		return carLevel << 16 | cartype;
+	}
 
-        mBaseCar.in();
-        return carLevel << 16 | cartype;
-    }
+	public static void parseCanbusData(int[] ints) {
+		LogsUtils.d("canbus_data_full :" + LogsUtils.toHexString(ints));
+		PrintScreenView.getMsgView().msg(LogsUtils.toHexString(ints));
+		if (mBaseCar != null)
+			mBaseCar.onHandler(ints);
+	}
 
-    private static int cnt = 0;
+	public static final RemoteCallbackList<ITaskCallback> TASK_CALLBACK_REMOTE_CALLBACK_LIST = new RemoteCallbackList<ITaskCallback>();
 
-    public static void parseCanbusData(int[] ints) {
-        LogsUtils.d("canbus_data_full :" + LogsUtils.toHexString(ints));
-        PrintScreenView.getMsgView().msg(LogsUtils.toHexString(ints));
-        if (mBaseCar != null)
-            mBaseCar.onHandler(ints);
-    }
+	public static synchronized void update(int update, int[] ints, float[] flts, String[] strs) {
+		synchronized (TASK_CALLBACK_REMOTE_CALLBACK_LIST) {
+			int M = TASK_CALLBACK_REMOTE_CALLBACK_LIST.beginBroadcast();
+			for (int i = 0; i < M; i++) {
+				try {
+					ITaskCallback broadcastItem = TASK_CALLBACK_REMOTE_CALLBACK_LIST.getBroadcastItem(i);
+					synchronized (broadcastItem) {
+						broadcastItem.update(update, ints, flts, strs);
+					}
+				} catch (RemoteException e) {
+					e.printStackTrace();
+				}
+			}
+			TASK_CALLBACK_REMOTE_CALLBACK_LIST.finishBroadcast();
+		}
+	}
 
-    public static final RemoteCallbackList<ITaskCallback> TASK_CALLBACK_REMOTE_CALLBACK_LIST = new RemoteCallbackList<ITaskCallback>();
-    public static void update(int update, int[] ints, float[] flts, String[] strs) {
-        int M = TASK_CALLBACK_REMOTE_CALLBACK_LIST.beginBroadcast();
-        for (int i = 0; i < M; i++) {
-            try {
-                ITaskCallback broadcastItem = TASK_CALLBACK_REMOTE_CALLBACK_LIST.getBroadcastItem(i);
-                broadcastItem.update(update, ints, flts, strs);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-        TASK_CALLBACK_REMOTE_CALLBACK_LIST.finishBroadcast();
-    }
+	public static void canbusVer(String s) {
 
-    public static void canbusVer(String s) {
+	}
 
-    }
+	public static void update(int updateCode) {
+		update(updateCode, new int[] { DataCanbus.DATA[updateCode] }, null,
+				new String[] { DataCanbus.DATA_String[updateCode] });
+	}
 
-    public static void update(int updateCode) {
-        update(updateCode, new int[]{DataCanbus.DATA[updateCode]}, null, new String[]{DataCanbus.DATA_String[updateCode]});
-    }
+	public static void update(int updateCode, int i) {
+		if (DataCanbus.DATA[updateCode] != i) {
+			LogsUtils.d("update: " + updateCode + " " + i);
+			DataCanbus.DATA[updateCode] = i;
+			update(updateCode, new int[] { i }, null, null);
+		}
+	}
 
-    public static void update(int updateCode, int i) {
-        if (DataCanbus.DATA[updateCode] != i) {
-            LogsUtils.d("update: "+ updateCode + " " + i);
-            DataCanbus.DATA[updateCode] = i;
-            update(updateCode, new int[]{i}, null, null);
-        }
-    }
+	public static void update(int updateCode, String str, String strTemp) {
+		if (str == null)
+			return;
+		if (!str.equalsIgnoreCase(strTemp)) {
+			LogsUtils.i("update String: " + updateCode + " " + str);
+			DataCanbus.DATA_String[updateCode] = str;
+			update(updateCode, new int[] { 0 }, null, new String[] { str });
+		}
 
-    public static void update(int updateCode, String str, String strTemp) {
-        if(str == null) return;
-        if(!str.equalsIgnoreCase(strTemp)) {
-            LogsUtils.i("update String: " +updateCode +" "+ str );
-            DataCanbus.DATA_String[updateCode] = str;
-            update(updateCode, new int[]{0}, null, new String[]{str});
-        }
+	}
 
-    }
+	public static boolean update(int updateCode, int[] value, int[] ints) {
+		if (ints[0] == value[0]) {
+			if (ints[1] != value[1]) {
+				update(updateCode, new int[] { value[0], value[1] }, null, null);
+				return true;
+			}
+		}
 
-    public static boolean update(int updateCode, int[] value, int[] ints) {
-        if(ints[0] == value[0]){
-            if(ints[1] != value[1]){
-                update(updateCode, new int[]{value[0], value[1]}, null, null);
-                return true;
-            }
-        }
+		return false;
+	}
 
-        return false;
-    }
+	public static void callUpdate(int[] data) {
+		int M = TASK_CALLBACK_REMOTE_CALLBACK_LIST.beginBroadcast();
+		for (int i = 0; i < M; i++) {
+			try {
+				ITaskCallback broadcastItem = TASK_CALLBACK_REMOTE_CALLBACK_LIST.getBroadcastItem(i);
+				broadcastItem.getCmd(1, data, 0, null);
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+		}
+		TASK_CALLBACK_REMOTE_CALLBACK_LIST.finishBroadcast();
+	}
 
-    public static void callUpdate(int[] data) {
-        int M = TASK_CALLBACK_REMOTE_CALLBACK_LIST.beginBroadcast();
-        for (int i = 0; i < M; i++) {
-            try {
-                ITaskCallback broadcastItem = TASK_CALLBACK_REMOTE_CALLBACK_LIST.getBroadcastItem(i);
-                broadcastItem.getCmd(1, data, 0, null);
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            }
-        }
-        TASK_CALLBACK_REMOTE_CALLBACK_LIST.finishBroadcast();
-    }
+	public static void reg(ITaskCallback callback) {
+		TASK_CALLBACK_REMOTE_CALLBACK_LIST.register(callback);
+	}
 
-
-    public static void reg(ITaskCallback callback) {
-        TASK_CALLBACK_REMOTE_CALLBACK_LIST.register(callback);
-    }
-
-    public static void unreg(ITaskCallback callback) {
-        TASK_CALLBACK_REMOTE_CALLBACK_LIST.unregister(callback);
-    }
+	public static void unreg(ITaskCallback callback) {
+		TASK_CALLBACK_REMOTE_CALLBACK_LIST.unregister(callback);
+	}
 }
