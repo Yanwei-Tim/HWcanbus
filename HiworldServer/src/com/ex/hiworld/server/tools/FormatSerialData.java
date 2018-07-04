@@ -74,7 +74,7 @@ public class FormatSerialData {
 					onHandler(DATA, mFrameStartIndex + 0, DATA[mFrameStartIndex + 2] + 5);
 					mFrameStartIndex = mCheckSumIndex;
 				} else {
-					mFrameStartIndex++;
+//					mFrameStartIndex++;
 				}
 				mCheckSumIndex = 0;
 			}
