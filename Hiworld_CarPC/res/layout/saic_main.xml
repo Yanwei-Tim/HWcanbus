@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:background="@drawable/bg_carcomputer"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/head_main_title"/>
+
+    <RelativeLayout
+        android:id="@+id/fragment_content_toyota"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6" >
+    </RelativeLayout>
+
+    
+    <RadioGroup
+        android:id="@+id/radio_toyota_fuel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom" >
+
+        <RadioButton
+            android:id="@+id/btn_perminute_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textSize="@dimen/radio_textsize"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title_perminutefuel"
+            android:button="@null"
+            android:background="@drawable/toyota_main_selector" />
+
+        <RadioButton
+            android:id="@+id/btn_histroy_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/radio_textsize"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title_histroyfuel"
+            android:button="@null"
+            android:background="@drawable/toyota_main_selector" />
+
+    </RadioGroup>
+
+
+
+</LinearLayout>

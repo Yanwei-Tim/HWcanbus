@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/background_golf7">
+
+    <RelativeLayout
+        android:id="@+id/rl_head_golf7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toptitle_hight" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name" 
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/toptitle_hight"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/tv_time_golf7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:30" 
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"/>
+        
+        
+        <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="@dimen/toptitle_hight"
+	        android:layout_centerVertical="true"
+	        android:src="@drawable/ico_hiworld" 
+	        android:contentDescription="@string/app_name" />
+        
+        <View 
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#A40000"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_golf7"
+        android:layout_width="match_parent"
+        android:layout_height="90px" 
+        android:orientation="vertical"
+        android:background="#000"
+        android:layout_alignParentBottom="true">
+        
+        
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#A40000"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:orientation="horizontal">
+
+             <TextView
+                android:id="@+id/tv_carbody_golf7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:drawableBottom="@drawable/ico_carbody_golf7"
+                android:clickable="true"
+                android:background="@drawable/red_press_golf7"
+                android:text="@string/rg_carBody" />
+       
+            <View 
+	            android:layout_width="1px"
+	            android:layout_height="50px"
+	            android:layout_gravity="center_vertical"
+	            android:background="#FFF"/>
+            
+            <TextView
+                android:id="@+id/tv_title1_golf7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:drawableBottom="@drawable/ico_title1_golf7"
+                android:clickable="true"
+                android:background="@drawable/red_normal_golf7"
+                android:text="@string/golf7_title1" />
+            
+            <View 
+	            android:layout_width="1px"
+	            android:layout_height="50px"
+	            android:layout_gravity="center_vertical"
+	            android:background="#FFF"/>
+            
+            <TextView
+                android:id="@+id/tv_title2_golf7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:drawableBottom="@drawable/ico_title2_golf7"
+                android:clickable="true"
+                android:background="@drawable/red_normal_golf7"
+                android:text="@string/golf7_title2" />
+            
+            <View 
+	            android:layout_width="1px"
+	            android:layout_height="50px"
+	            android:layout_gravity="center_vertical"
+	            android:background="#FFF"/>
+            
+            <TextView
+                android:id="@+id/tv_title3_golf7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:drawableBottom="@drawable/ico_title3_golf7"
+                android:clickable="true"
+                android:background="@drawable/red_normal_golf7"
+                android:text="@string/golf7_title3" />
+            
+        </LinearLayout>
+
+    </LinearLayout>
+    
+    
+    <RelativeLayout
+        android:id="@+id/fragment_content_golf7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_below="@id/rl_head_golf7"
+        android:layout_above="@id/ll_bottom_golf7">
+    </RelativeLayout> 
+
+</RelativeLayout>

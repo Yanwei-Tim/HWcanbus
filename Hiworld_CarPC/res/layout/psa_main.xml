@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/psa_main_bac" >
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/psa_bg_top_title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name" 
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="30sp"/>
+        
+        <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="10px"
+	        android:layout_centerVertical="true"
+	        android:src="@drawable/ico_hiworld" 
+	        android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    
+    <RadioGroup
+        android:id="@+id/radio_computer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn_computer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textSize="@dimen/radio_textsize"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title_Instantmessage"
+            android:button="@null"
+            android:background="@drawable/psa_radio_selector" />
+
+        <RadioButton
+            android:id="@+id/btn_computer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/radio_textsize"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title_trip1"
+            android:button="@null"
+            android:background="@drawable/psa_radio_selector" />
+
+        <RadioButton
+            android:id="@+id/btn_computer3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/radio_textsize"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/title_trip2"
+            android:button="@null"
+            android:background="@drawable/psa_radio_selector" />
+    </RadioGroup>
+    
+    <RelativeLayout
+        android:id="@+id/fragment_content_psa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </RelativeLayout>
+
+</LinearLayout>

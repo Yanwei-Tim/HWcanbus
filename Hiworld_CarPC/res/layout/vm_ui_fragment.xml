@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/fl_vm_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/framelayout_left" >
+
+        <ImageView
+            android:id="@+id/iv_basecar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_cardetailinfo2"
+            android:src="@drawable/basecar" />
+
+        <ImageView
+            android:id="@+id/iv_nearlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_nearlylight"
+            android:src="@drawable/nearlight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_farlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_farlight"
+            android:src="@drawable/farlight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_showwidthlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_showwidthlight"
+            android:src="@drawable/showwidthlight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_backlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_backlight"
+            android:src="@drawable/backlight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_stoplight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_stoplight"
+            android:src="@drawable/stoplight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_daytimelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_daytimelight"
+            android:src="@drawable/daytimelight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_doublelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_doublelight"
+            android:src="@drawable/doublelight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_leftlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_leftlight"
+            android:src="@drawable/leftlight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_rightlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_rightlight"
+            android:src="@drawable/rightlight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_frontfloglight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_rightlight"
+            android:src="@drawable/frontfloglight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_rearfloglight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_rightlight"
+            android:src="@drawable/rearfloglight"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_leftfrontdoor_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/leftfrontdoor_close" />
+
+        <ImageView
+            android:id="@+id/iv_leftfrontdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/leftfrontdoor_open"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_leftrealdoor_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/leftrealdoor_close" />
+
+        <ImageView
+            android:id="@+id/iv_leftrealdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/leftrealdoor_open"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_rightfrontdoor_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/rightfrontdoor_close" />
+
+        <ImageView
+            android:id="@+id/iv_rightfrontdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/rightfrontdoor_open"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_rightrealdoor_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/rightrealdoor_close" />
+
+        <ImageView
+            android:id="@+id/iv_rightrealdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/rightrealdoor_open"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_hood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/hood"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_taixbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/title_door"
+            android:src="@drawable/taixbox"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/block_left"
+        android:layout_marginTop="@dimen/block_top"
+        android:contentDescription="@string/block"
+        android:src="@drawable/block" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/restoil_left"
+        android:layout_marginTop="@dimen/restoil_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_restoil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_restOil"
+            android:src="@drawable/restoil" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_restOil"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_restoil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/enginespeed_left"
+        android:layout_marginTop="@dimen/enginespeed_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_enginespeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_engineSpeed"
+            android:src="@drawable/enginespeed" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_engineSpeed"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_enginespeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_enginespeed"
+	    android:layout_marginLeft="567px"
+	    android:layout_marginTop="113px"
+	    android:src="@drawable/enginespeed"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/safeband_left"
+        android:layout_marginTop="@dimen/safeband_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_safeband"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_safeBand"
+            android:src="@drawable/safeband_warn" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_fuelpa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_safeBand"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_safeband"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/tv_safeBandOff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_safeband"
+	    android:src="@drawable/safeband"
+	    android:layout_marginLeft="781px"
+	    android:layout_marginTop="112px"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/outtemp_left"
+        android:layout_marginTop="@dimen/outtemp_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_outtemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_outtemp"
+            android:src="@drawable/outtemp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_outtemp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_outtemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_outtemp"
+	    android:layout_marginLeft="362px"
+	    android:layout_marginTop="217px"
+	    android:src="@drawable/outtemp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/currentspeed_left"
+        android:layout_marginTop="@dimen/currentspeed_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_currentspeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_currentSpeed"
+            android:src="@drawable/currentspeed" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_currentSpeed"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_currentspeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_currentspeed"
+	    android:layout_marginLeft="544px"
+	    android:layout_marginTop="220px"
+	    android:src="@drawable/currentspeed"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/handstop_left"
+        android:layout_marginTop="@dimen/handstop_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_handstop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_handStop"
+            android:src="@drawable/handstop_warn" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_cooltemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_handStop"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_handstop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_handstop"
+	    android:layout_marginLeft="781px"
+	    android:layout_marginTop="219px"
+	    android:src="@drawable/handstop"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/battery_left"
+        android:layout_marginTop="@dimen/battery_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_battery"
+            android:src="@drawable/battery" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_battery"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_battery"
+	    android:layout_marginLeft="362px"
+	    android:layout_marginTop="319px"
+	    android:src="@drawable/battery"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/distance_left"
+        android:layout_marginTop="@dimen/distance_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_distance"
+            android:src="@drawable/distance" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_instantfuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_distance"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_distance"
+	    android:layout_marginLeft="544px"
+	    android:layout_marginTop="319px"
+	    android:src="@drawable/distance"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/cleanwater_left"
+        android:layout_marginTop="@dimen/cleanwater_top"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_cleanwater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/tv_cleanWater"
+            android:src="@drawable/cleanwater" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_doorlock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_cleanWater"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_cleanwater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/tv_cleanWaterOff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--
+         <ImageView 
+	    android:id="@+id/iv_cleanwater"
+	    android:layout_marginLeft="781px"
+	    android:layout_marginTop="317px"
+	    android:src="@drawable/cleanwater"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"/>
+    -->
+
+</RelativeLayout>

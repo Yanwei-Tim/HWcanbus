@@ -1,0 +1,45 @@
+# view res/layout/toyota_histroy_layout.xml #generated:102
+# view res/layout/toyota_histroy_layout.xml #generated:60
+# view res/layout/toyota_histroy_layout.xml #generated:70
+# view res/layout/toyota_histroy_layout.xml #generated:78
+# view res/layout/toyota_histroy_layout.xml #generated:86
+# view res/layout/toyota_histroy_layout.xml #generated:94
+# view res/layout/toyota_perminute_layout.xml #generated:129
+# view res/layout/toyota_perminute_layout.xml #generated:201
+# view res/layout/toyota_perminute_layout.xml #generated:212
+# view res/layout/toyota_perminute_layout.xml #generated:222
+# view res/layout/toyota_perminute_layout.xml #generated:232
+# view res/layout/toyota_perminute_layout.xml #generated:242
+# view res/layout/toyota_perminute_layout.xml #generated:252
+# view res/layout/toyota_perminute_layout.xml #generated:263
+# view res/layout/toyota_perminute_layout.xml #generated:273
+# view res/layout/toyota_perminute_layout.xml #generated:283
+# view res/layout/toyota_perminute_layout.xml #generated:293
+# view res/layout/toyota_perminute_layout.xml #generated:303
+# view res/layout/toyota_perminute_layout.xml #generated:314
+# view res/layout/toyota_perminute_layout.xml #generated:324
+# view res/layout/toyota_perminute_layout.xml #generated:334
+# view res/layout/toyota_perminute_layout.xml #generated:344
+# view res/layout/toyota_perminute_layout.xml #generated:354
+# view res/layout/toyota_perminute_layout.xml #generated:365
+# view res/layout/toyota_perminute_layout.xml #generated:375
+# view res/layout/toyota_perminute_layout.xml #generated:385
+# view res/layout/toyota_perminute_layout.xml #generated:395
+# view res/layout/toyota_perminute_layout.xml #generated:405
+# view res/layout/toyota_perminute_layout.xml #generated:416
+# view res/layout/toyota_perminute_layout.xml #generated:426
+# view res/layout/toyota_perminute_layout.xml #generated:436
+# view res/layout/toyota_perminute_layout.xml #generated:446
+# view res/layout/toyota_perminute_layout.xml #generated:457
+# view res/layout/toyota_perminute_layout.xml #generated:468
+# view res/layout/toyota_perminute_layout.xml #generated:478
+# view res/layout/toyota_perminute_layout.xml #generated:488
+# view res/layout/toyota_perminute_layout.xml #generated:498
+-keep class com.hiworld.adapter.MySeekBar { <init>(...); }
+
+# view AndroidManifest.xml #generated:22
+-keep class com.hiworld.canbus.carpc.ActivityCarPC { <init>(...); }
+
+# view AndroidManifest.xml #generated:15
+-keep class com.hiworld.canbus.carpc.TheApp { <init>(...); }
+

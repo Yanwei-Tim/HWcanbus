@@ -1,0 +1,512 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/btn_perminute_faragment_toyota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="40px"
+        android:layout_marginBottom="30px"
+        android:text="@string/title_histroyfuel"
+        android:textColor="#FFF" 
+        android:gravity="center"
+        android:textSize="24sp"
+        android:background="@drawable/toyota_clear_selector"/>
+    
+    
+    <Button
+        android:id="@+id/btn_perminute_clear_toyoyta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40px"
+        android:layout_alignTop="@id/btn_perminute_faragment_toyota"
+        android:text="@string/delete_history"
+        android:textColor="#FFF" 
+        android:gravity="center"
+        android:textSize="24sp"
+        android:background="@drawable/toyota_clear_selector"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:layout_alignLeft="@id/btn_perminute_faragment_toyota"
+        android:layout_above="@id/btn_perminute_faragment_toyota">
+
+        <LinearLayout
+            android:id="@+id/ll_perminutevalues_toyota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/average_speed" 
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFF"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/text_perminute_speed_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                android:background="@drawable/toyota_text_bac"
+                android:gravity="center"/>
+            
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30px"
+                android:text="@string/perminute_drivingtime" 
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFF"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/text_perminute_drvingtime_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                android:background="@drawable/toyota_text_bac"
+                android:gravity="center"/>
+            
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30px"
+                android:text="@string/perminute_drivingrange" 
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFF"
+                android:textSize="24sp"/>
+
+            <TextView
+                android:id="@+id/text_perminute_curisingrange_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                android:background="@drawable/toyota_text_bac"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/ll_perminutevalues_toyota" >
+
+            <ImageView
+                android:id="@+id/iv_perminute_toyota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40px"
+                android:src="@drawable/toyota_bg_perminute1" />
+            
+            <TextView
+		        android:id="@+id/text_fuelunit"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@id/iv_perminute_toyota"
+		        android:layout_marginBottom="30px"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_marginRight="@dimen/perminute_fuelunit_right"
+		        android:textSize="@dimen/values_textsize"
+		        android:textColor="@color/chat_title_name"
+		        android:text="@string/perminute_fuelunit" />
+            
+            <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_current"
+		        style="@style/my_mProgress_horizontal"
+		        android:layout_width="@dimen/perminute_progress_current_width"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_marginRight="@dimen/perminute_current_right"
+		        android:layout_marginTop="@dimen/perminute_current_top"
+		        android:orientation="vertical"
+		        android:progress="0"
+		        android:thumbOffset="0dip" />
+            
+            <TextView
+		        android:id="@+id/text_current"
+		        android:layout_width="@dimen/perminute_Instantaneous"
+		        android:layout_height="wrap_content"
+		        android:layout_alignBottom="@id/iv_perminute_toyota"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:text="@string/title_perminute_current"
+		        android:textColor="@color/chat_title_name"
+		        android:gravity="center"
+		        android:textSize="@dimen/values_textsize" />
+            
+            <TextView
+		        android:id="@+id/text_perminute_value1"
+		        android:layout_width="@dimen/perminute_fueldate"
+		        android:layout_height="@dimen/perminute_fueldate_hight"
+		        android:layout_alignBottom="@id/iv_perminute_toyota"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_marginBottom="@dimen/perminute_fueldate_bottom"
+		        android:layout_marginRight="@dimen/perminute_fueldate_right"
+		        android:textColor="@color/chat_title_name"
+		        android:gravity="center"
+		        android:textSize="@dimen/histroy_size"/>
+            
+            <TextView
+		        android:id="@+id/text_perminute_value2"
+		        android:layout_width="@dimen/perminute_fueldate"
+		        android:layout_height="@dimen/perminute_fueldate_hight"
+		        android:layout_above="@id/text_perminute_value1"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_marginBottom="@dimen/perminute_fueldate_bottom"
+		        android:layout_marginRight="@dimen/perminute_fueldate_right"
+		        android:textColor="@color/chat_title_name"
+		        android:gravity="center"
+		        android:textSize="@dimen/histroy_size"/>
+            
+            <TextView
+		        android:id="@+id/text_perminute_value3"
+		        android:layout_width="@dimen/perminute_fueldate"
+		        android:layout_height="@dimen/perminute_fueldate_hight"
+		        android:layout_above="@id/text_perminute_value2"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_marginBottom="@dimen/perminute_fueldate_bottom"
+		        android:layout_marginRight="@dimen/perminute_fueldate_right"
+		        android:textColor="@color/chat_title_name"
+		        android:gravity="center"
+		        android:textSize="@dimen/histroy_size"/>
+            
+            <TextView
+		        android:id="@+id/text_perminute_value4"
+		        android:layout_width="@dimen/perminute_fueldate"
+		        android:layout_height="@dimen/perminute_fueldate_hight"
+		        android:layout_above="@id/text_perminute_value3"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_marginBottom="@dimen/perminute_fueldate_bottom"
+		        android:layout_marginRight="@dimen/perminute_fueldate_right"
+		        android:textColor="@color/chat_title_name"
+		        android:gravity="center"
+		        android:textSize="@dimen/histroy_size" />
+            
+            <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute1"
+		        style="@style/my_mProgress_minute"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:progress="10"
+		        android:layout_alignRight="@id/iv_perminute_toyota"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_marginRight="@dimen/perminute_minute1_rightbk"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+            
+            <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute2"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute1"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+            
+            <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute3"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute2"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+            
+            <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute4"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute3"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute5"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute4"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute6"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute5"
+		        android:layout_marginTop="@dimen/perminute_current_top"
+		        android:layout_marginRight="@dimen/perminute_5minute_defalut" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute7"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute6"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute8"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute7"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute9"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute8"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute10"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute9"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute11"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute10"
+		        android:layout_marginTop="@dimen/perminute_current_top"
+		        android:layout_marginRight="@dimen/perminute_5minute_defalut"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute12"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute11"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute13"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute12"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute14"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute13"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute15"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute14"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute16"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute15"
+		        android:layout_marginTop="@dimen/perminute_current_top"
+		        android:layout_marginRight="@dimen/perminute_5minute_defalut" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute17"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute16"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute18"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute17"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute19"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute18"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute20"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute19"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute21"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute20"
+		        android:layout_marginTop="@dimen/perminute_current_top"
+		        android:layout_marginRight="@dimen/perminute_5minute_defalut"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute22"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute21"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute23"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute22"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute24"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute23"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute25"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute24"
+		        android:layout_marginTop="@dimen/perminute_current_top" />
+		    
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute26"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute25"
+		        android:layout_marginTop="@dimen/perminute_current_top"
+		        android:layout_marginRight="@dimen/perminute_5minute_defalut"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute27"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute26"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute28"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute27"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute29"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute28"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+		    
+		    <com.hiworld.adapter.MySeekBar
+		        android:id="@+id/progress_minute30"
+		        style="@style/my_mProgress_minute"
+		        android:progress="10"
+		        android:layout_width="@dimen/perminute_minute1_progresswidth"
+		        android:layout_height="@dimen/perminute_progress_current_hight"
+		        android:layout_alignTop="@id/iv_perminute_toyota"
+		        android:layout_toLeftOf="@id/progress_minute29"
+		        android:layout_marginTop="@dimen/perminute_current_top"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

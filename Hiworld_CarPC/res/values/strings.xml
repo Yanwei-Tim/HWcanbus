@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Car Computer</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_Instantmessage">Instant message</string>
+    <string name="title_trip1">Trip1</string>
+    <string name="title_trip2">Trip2</string>
+    <string name="title_trip3">Trip3</string>
+    <string name="instant_fuel">Instantaneous fuel：</string>
+    <string name="instant_mileage">Mileage：</string>
+    <string name="average_fuel">Average fuel</string>
+    <string name="average_speed">Average speed：</string>
+    <string name="accum_mileage">Accumulated mileage：</string>
+    <string name="reset_mileage1">Reset mileage1</string>
+    <string name="reset_mileage2">Reset mileage2</string>
+    <string name="title_perminutefuel">Per minute fuel</string>
+    <string name="title_histroyfuel">Histroy fuel</string>
+    <string name="title_perminute_current">Instantaneous</string>
+    <string name="perminute_drivingrange">Cruising range：</string>
+    <string name="perminute_drivingtime">driving time：</string>
+    <string name="perminute_fuelunit">L/100km</string>
+    <string name="perminute_clear">Clear</string>
+    <string name="histroy_current">Current</string>
+    <string name="histroy_update">Update</string>
+    <string name="histroy_trip1">Trip1</string>
+    <string name="histroy_trip2">Trip2</string>
+    <string name="histroy_trip3">Trip3</string>
+    <string name="histroy_trip4">Trip4</string>
+    <string name="histroy_trip5">Trip5</string>
+    <string name="histroy_bestfuel">Best：</string>
+
+        <!-- 高7 -->
+    <string name="golf7_title1">Car Detail/From Start</string>
+    <string name="golf7_title2">Car Detail/Long Term</string>
+    <string name="golf7_title3">Car Detail/From Add Oil</string>
+    <string name="golf7_averagefuel">Average Fuel:</string>
+    <string name="golf7_cruisingdistance">Endurance Mileage:</string>
+    <string name="golf7_traveldistance">Traveled Distance:</string>
+    <string name="golf7_averagespeed">Average Speed:</string>
+    <string name="golf7_traveltime">Traveled Time:</string>
+    <string name="golf7_little_mileage">Little mileage</string>
+    <!-- 高7 -->
+    
+    <!--大众全兼容  -->
+    <string name="rg_carBody">CarBody Info</string>
+    <string name="rg_driverAssis">Driver Assistance Systems</string>
+    <string name="title_Roadsideparking">Roadside Park</string>
+    <string name="key_Roadsideparking">Roadsideparking</string>
+    <string name="title_Parkingparking">Storage Park</string>
+    <string name="key_Parkingparking">Parking parking</string>
+    <string name="title_Radarsilence">Radar Mute</string>
+    <string name="key_Radarsilence">Radarsilence</string>
+    <string name="title_driverassiset">Auxiliary System Set</string>
+    <string name="title_cardetailinfo2">CarBody Info2</string>
+    <string name="title_lowoilalarm">LowOil Alarm</string>
+    <string name="key_lowoilalarm">lowoilalarm</string>
+    <string name="title_lowbatteryalarm">Low BatVoltage Alarm</string>
+    <string name="key_lowbatteryalarm">lowbatteryalarm</string>
+    <string name="title_lifebeltalarm">Seatbelt Rinder</string>
+    <string name="key_lifebeltalarm">lifebeltalarm</string>
+    <string name="title_leaneralarm">Fluid Alarm</string>
+    <string name="key_leaneralarm">leaneralarm</string>
+    <string name="title_engineoilalarm">Oil Alarm</string>
+    <string name="key_engineoilalarm">engineoilalarm</string>
+    <string name="title_nearlylight">Low Beam</string>
+    <string name="key_nearlylight">nearlylight</string>
+    <string name="title_farlight">High Beam</string>
+    <string name="key_farlight">farlight</string>
+    <string name="title_showwidthlight">Width Lamp</string>
+    <string name="key_showwidthlight">showwidthlight</string>
+    <string name="title_frontfoglight">Front Fog Lamp</string>
+    <string name="key_frontfoglight">frontfoglight</string>
+    <string name="title_realfoglight">Rear Fog Lamp</string>
+    <string name="key_realfoglight">realfoglight</string>
+    <string name="title_stoplight">Brake Light</string>
+    <string name="key_stoplight">stoplight</string>
+    <string name="title_backlight">Backup Lamp</string>
+    <string name="key_backlight">backlight</string>
+    <string name="title_daytimelight">LED DRL</string>
+    <string name="key_daytimelight">daytimelight</string>
+    <string name="title_leftlight">Signal Left</string>
+    <string name="key_leftlight">leftlight</string>
+    <string name="title_rightlight">Signal Right</string>
+    <string name="key_rightlight">rightlight</string>
+    <string name="title_leftfilllight">Signal Left FillLight</string>
+    <string name="key_leftfilllight">leftfilllight</string>
+    <string name="title_rightfilllight">Signal Right FillLight</string>
+    <string name="key_rightfilllight">rightfilllight</string>
+    <string name="title_doublelight">Double Flash</string>
+    <string name="key_doublelight">doublelight</string>
+    
+    <string name="title_watertemp">Water Temp</string>
+    <string name="key_watertemp">watertemp</string>
+    <string name="title_currentoil">Dynamical Fuel</string>
+    <string name="key_currentoil">currentoil</string>
+    <string name="title_cargear">Gear To Remind</string>
+    <string name="key_cargear">cargear</string>
+    <string name="title_restoil">Remained Oil</string>
+    <string name="key_restoil">restoil</string>
+    <string name="title_batteryvol">Battery Voltage</string>
+    <string name="key_batteryvol">batteryvol</string>
+    <string name="title_totaldistance">Traveled Distance</string>
+    <string name="key_totaldistance">totaldistance</string>
+    <string name="title_exactlyspeed">Precise Speed</string>
+    <string name="key_exactlyspeed">exactlyspeed</string>
+    <string name="title_enginespeed">Engine Speed</string>
+    <string name="key_enginespeed">enginespeed</string>
+    <string name="title_detailcarinfo">CarBody Info1</string>
+    
+    <string name="tv_restOil">Remained Oil</string>
+    <string name="tv_outtemp">Outside Temp</string>
+    <string name="tv_battery">Battery Voltage</string>
+    <string name="tv_engineSpeed">Engine Speed</string>
+    <string name="tv_currentSpeed">Dynamical Speed</string>
+    <string name="tv_distance">Traveled Distance</string>
+    <string name="tv_safeBand">Seatbelt Rinder</string>
+    <string name="tv_handStop">Handbrake State</string>
+    <string name="tv_cleanWater">Leaner Alarm</string>
+    <string name="tv_safeBandOn">ON</string>
+    <string name="tv_safeBandOff">OFF</string>
+    <string name="tv_handStopOff">Release</string>
+    <string name="tv_handStopOn">Hike</string>
+    <string name="tv_cleanWaterOn">ON</string>
+    <string name="tv_cleanWaterOff">OFF</string>
+    <string name="title_door">door</string>
+    <string name="block">block</string>
+    <!--  -->
+   <!-- 本田全兼容 -->
+   	<string name="thisdrive">This Driving</string>
+   	<string name="traveleddistance">Traveled Distance</string>
+   	<string name="tripa">MileageA</string>
+   	<string name="fuelconsume">Average fuelConsumption</string>
+   	<string name="history1">History 1</string>
+   	<string name="history2">History 2</string>
+   	<string name="history3">History 3</string>
+   	<string name="delete_history">Delete History</string>
+   	<string name="drivingmileage">Driving Mileage：</string>
+   	<!-- 本田全兼容 -->
+   	
+   	<string name="door_state">Door lock</string>
+   	<string name="door_onlock">lock</string>
+   	<string name="door_offlock">unlock</string>
+   	<string name="saic_averagefuel1">Avg fuelConsumption1：</string>
+   	<string name="saic_averagefuel2">Avg fuelConsumption2：</string>
+   	<string name="saic_averagefuel3">Avg fuelConsumption3：</string>
+   	<string name="cooltempwarn">Coolant temp</string>
+   	<string name="fuelpa">Fuel Pa</string>
+   	<string name="little_mileage1">Little mileage1：</string>
+   	<string name="little_mileage2">Little mileage2：</string>
+   	<string name="little_mileage3">Little mileage3：</string>
+   	<string name="title_fuelmileage">Fule mileage Info</string>
+</resources>

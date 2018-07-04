@@ -1,0 +1,126 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/golf7_little_mileage"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4" >
+
+        <View
+            android:id="@+id/vv_center_golf7"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:id="@+id/rl_startlittle_golf7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="200px"
+            android:layout_toLeftOf="@id/vv_center_golf7" >
+
+            <TextView
+                android:id="@+id/tv_trip1_averageFuel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/golf7_averagefuel"
+                android:textSize="@dimen/values_textsize" />
+
+            <TextView
+                android:id="@+id/tv_trip1_cruisingDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_trip1_averageFuel"
+                android:layout_marginTop="30px"
+                android:text="@string/golf7_cruisingdistance"
+                android:textSize="@dimen/values_textsize" />
+
+            <TextView
+                android:id="@+id/tv_trip1_travelDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_trip1_cruisingDistance"
+                android:layout_marginTop="30px"
+                android:text="@string/golf7_traveldistance"
+                android:textSize="@dimen/values_textsize" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/rl_startlittle_golf7"
+            android:layout_marginLeft="100px"
+            android:layout_toRightOf="@id/vv_center_golf7" >
+
+            <TextView
+                android:id="@+id/tv_trip1_averagespeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/average_speed"
+                android:textSize="@dimen/values_textsize" />
+
+            <TextView
+                android:id="@+id/tv_trip1_travelTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_trip1_averagespeed"
+                android:layout_marginTop="30px"
+                android:text="@string/golf7_traveltime"
+                android:textSize="@dimen/values_textsize" />
+
+            <ImageButton
+                android:id="@+id/ib_clearstart_golf7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_trip1_travelTime"
+                android:layout_marginTop="30px"
+                android:background="@drawable/selector_clear_golf7" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100px" >
+
+        <ImageView
+            android:id="@+id/iv_startmileage_golf7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/golf7_mileage" />
+
+        <ImageView
+            android:id="@+id/iv_startcar_golf7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50px"
+            android:src="@drawable/golf7_car_mileage" />
+
+        <ImageView
+            android:id="@+id/iv_startoil_golf7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/iv_startcar_golf7"
+            android:layout_marginRight="50px"
+            android:src="@drawable/icon_oil_golf7" />
+    </RelativeLayout>
+
+</LinearLayout>

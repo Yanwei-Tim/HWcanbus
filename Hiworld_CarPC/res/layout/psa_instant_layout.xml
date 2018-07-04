@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+        <TextView
+        android:id="@+id/value_instantfuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/img_instant_fuel"
+        android:drawablePadding="30px"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="@dimen/values_textsize"
+        android:text="@string/instant_fuel" />
+
+    <TextView
+        android:id="@+id/value_mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/value_instantfuel"
+        android:layout_marginTop="80px"
+        android:layout_alignLeft="@id/value_instantfuel"
+        android:drawableLeft="@drawable/img_instant_mileage"
+        android:drawablePadding="30px"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="@dimen/values_textsize"
+        android:text="@string/instant_mileage" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hiworld.carcomputer"
+    android:versionCode="7"
+    android:versionName="CANode-CarPc-V7.2-170909" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" />
+
+    <application
+        android:name="com.hiworld.canbus.carpc.TheApp"
+        android:allowBackup="true"
+        android:configChanges="keyboardHidden|orientation"
+        android:icon="@drawable/icon_carpc"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        <activity
+            android:name="com.hiworld.canbus.carpc.ActivityCarPC"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> 
+        <service android:name="com.ex.hiworld.aidl.task.ServerKeepAlive">
+            <intent-filter>
+                <action android:name="com.ex.hw.ServerKeepAlive" /> 
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

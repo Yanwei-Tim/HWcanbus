@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/value_average_fuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/img_instant_fuel"
+        android:drawablePadding="30px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="@dimen/values_textsize"
+        android:text="@string/average_fuel" />
+
+    <TextView
+        android:id="@+id/value_average_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/img_average_speed"
+        android:drawablePadding="30px"
+        android:layout_below="@id/value_average_fuel"
+        android:layout_marginTop="30px"
+        android:layout_alignLeft="@id/value_average_fuel"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="@dimen/values_textsize"
+        android:text="@string/average_speed"/>
+
+
+    <TextView
+        android:id="@+id/value_accum_mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/img_accum_mileage"
+        android:drawablePadding="30px"
+        android:layout_below="@id/value_average_speed"
+        android:layout_marginTop="30px"
+        android:layout_alignLeft="@id/value_average_speed"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:textSize="@dimen/values_textsize"
+        android:text="@string/accum_mileage" />
+
+    <Button
+        android:id="@+id/btn_clearzero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/value_accum_mileage"
+        android:layout_marginTop="20px"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50px"
+        android:text="@string/reset_mileage1"
+        android:textColor="#FFF"
+        android:textSize="@dimen/values_textsize"
+        android:background="@drawable/btn_clearzero_selector" />
+
+</RelativeLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">行车电脑</string> 
+    <string name="action_settings">Settings</string>
+    <string name="title_Instantmessage">即时信息</string>
+    <string name="title_trip1">行程1</string>
+    <string name="title_trip2">行程2</string>
+    <string name="title_trip3">行程3</string>
+    <string name="instant_fuel">瞬时油耗：</string>
+    <string name="instant_mileage">续航里程：</string>
+    <string name="average_fuel">平均油耗：</string>
+    <string name="average_speed">平均车速：</string>
+    <string name="accum_mileage">累计里程：</string>
+    <string name="reset_mileage1">重设行程1</string>
+    <string name="reset_mileage2">重设行程2</string>
+    <string name="title_perminutefuel">每分钟耗油量</string>
+    <string name="title_histroyfuel">历史耗油量</string>
+    <string name="title_perminute_current">瞬间</string>
+    <string name="perminute_drivingrange">可连续行驶里程：</string>
+    <string name="perminute_drivingtime">行驶时间：</string>
+    <string name="perminute_fuelunit">L/100km</string>
+    <string name="perminute_clear">清除</string>
+    <string name="histroy_current">当前</string>
+    <string name="histroy_update">更新</string>
+    <string name="histroy_trip1">行程1</string>
+    <string name="histroy_trip2">行程2</string>
+    <string name="histroy_trip3">行程3</string>
+    <string name="histroy_trip4">行程4</string>
+    <string name="histroy_trip5">行程5</string>
+    <string name="histroy_bestfuel">最佳油耗：</string>
+    
+    <!-- 高7 -->
+    <string name="golf7_title1">车辆信息/自启动以后</string>
+    <string name="golf7_title2">车辆信息/长时间</string>
+    <string name="golf7_title3">车辆信息/自加油起</string>
+    <string name="golf7_averagefuel">平均油耗:</string>
+    <string name="golf7_cruisingdistance">续航里程:</string>
+    <string name="golf7_traveldistance">行驶里程:</string>
+    <string name="golf7_averagespeed">平均车速:</string>
+    <string name="golf7_traveltime">行驶时间:</string>
+    <string name="golf7_little_mileage">小计里程</string>
+    <!-- 高7 -->
+    
+    <!--大众全兼容  -->
+    <string name="rg_carBody">车身信息</string>
+    <string name="rg_driverAssis">驾驶员辅助系统</string>
+    <string name="title_Roadsideparking">路边驻车</string>
+    <string name="key_Roadsideparking">Roadsideparking</string>
+    <string name="title_Parkingparking">入库驻车</string>
+    <string name="key_Parkingparking">Parking parking</string>
+    <string name="title_Radarsilence">雷达静音</string>
+    <string name="key_Radarsilence">Radarsilence</string>
+    <string name="title_driverassiset">辅助系统设定</string>
+    <string name="title_cardetailinfo2">车身信息2</string>
+    <string name="title_lowoilalarm">油量过低报警</string>
+    <string name="key_lowoilalarm">lowoilalarm</string>
+    <string name="title_lowbatteryalarm">电池电压过低报警</string>
+    <string name="key_lowbatteryalarm">lowbatteryalarm</string>
+    <string name="title_lifebeltalarm">安全带报警</string>
+    <string name="key_lifebeltalarm">lifebeltalarm</string>
+    <string name="title_leaneralarm">清洗液报警</string>
+    <string name="key_leaneralarm">leaneralarm</string>
+    <string name="title_engineoilalarm">机油报警</string>
+    <string name="key_engineoilalarm">engineoilalarm</string>
+    <string name="title_nearlylight">近光灯</string>
+    <string name="key_nearlylight">nearlylight</string>
+    <string name="title_farlight">远光灯</string>
+    <string name="key_farlight">farlight</string>
+    <string name="title_showwidthlight">示宽灯</string>
+    <string name="key_showwidthlight">showwidthlight</string>
+    <string name="title_frontfoglight">前雾灯</string>
+    <string name="key_frontfoglight">frontfoglight</string>
+    <string name="title_realfoglight">后雾灯</string>
+    <string name="key_realfoglight">realfoglight</string>
+    <string name="title_stoplight">刹车灯</string>
+    <string name="key_stoplight">stoplight</string>
+    <string name="title_backlight">倒车灯</string>
+    <string name="key_backlight">backlight</string>
+    <string name="title_daytimelight">日间行车灯</string>
+    <string name="key_daytimelight">daytimelight</string>
+    <string name="title_leftlight">左转向灯</string>
+    <string name="key_leftlight">leftlight</string>
+    <string name="title_rightlight">右转向灯</string>
+    <string name="key_rightlight">rightlight</string>
+    <string name="title_leftfilllight">左转向补光灯</string>
+    <string name="key_leftfilllight">leftfilllight</string>
+    <string name="title_rightfilllight">右转向补光灯</string>
+    <string name="key_rightfilllight">rightfilllight</string>
+    <string name="title_doublelight">双闪灯</string>
+    <string name="key_doublelight">doublelight</string>
+    
+    <string name="title_watertemp">水温值</string>
+    <string name="key_watertemp">watertemp</string>
+    <string name="title_currentoil">瞬时油耗</string>
+    <string name="key_currentoil">currentoil</string>
+    <string name="title_cargear">档位提醒</string>
+    <string name="key_cargear">cargear</string>
+    <string name="title_restoil">剩余油量</string>
+    <string name="key_restoil">restoil</string>
+    <string name="title_batteryvol">电池电压</string>
+    <string name="key_batteryvol">batteryvol</string>
+    <string name="title_totaldistance">行驶里程</string>
+    <string name="key_totaldistance">totaldistance</string>
+    <string name="title_exactlyspeed">精准车速</string>
+    <string name="key_exactlyspeed">exactlyspeed</string>
+    <string name="title_enginespeed">发动机转速</string>
+    <string name="key_enginespeed">enginespeed</string>
+    <string name="title_detailcarinfo">车身信息1</string>
+    
+    <string name="tv_restOil">剩余油量</string>
+    <string name="tv_outtemp">车外温度</string>
+    <string name="tv_battery">电池电压</string>
+    <string name="tv_engineSpeed">发动机转速</string>
+    <string name="tv_currentSpeed">瞬时车速</string>
+    <string name="tv_distance">行驶里程</string>
+    <string name="tv_safeBand">安全带报警</string>
+    <string name="tv_handStop">手刹状态</string>
+    <string name="tv_cleanWater">清洗液报警</string>
+    <string name="tv_safeBandOn">已开启</string>
+    <string name="tv_safeBandOff">已关闭</string>
+    <string name="tv_handStopOff">释放</string>
+    <string name="tv_handStopOn">拉起</string>
+    <string name="tv_cleanWaterOn">已开启</string>
+    <string name="tv_cleanWaterOff">已关闭</string>
+    <string name="title_door">door</string>
+    <string name="block">block</string>
+    <!-- 大众全兼容 -->
+    
+   	<!-- 本田全兼容 -->
+   	<string name="thisdrive">本次驾驶</string>
+   	<string name="traveleddistance">已驶里程</string>
+   	<string name="tripa">里程A</string>
+   	<string name="fuelconsume">平均油耗</string>
+   	<string name="history1">历史记录1</string>
+   	<string name="history2">历史记录2</string>
+   	<string name="history3">历史记录3</string>
+   	<string name="delete_history">删除记录</string>
+   	<string name="drivingmileage">可行驶里程：</string>
+   	<string name="fuel_unit">单位</string>
+   	<!-- 本田全兼容 -->
+   	
+   	<string name="door_state">门锁状态</string>
+   	<string name="door_onlock">已上锁</string>
+   	<string name="door_offlock">未上锁</string>
+   	<string name="saic_averagefuel1">平均油耗1：</string>
+   	<string name="saic_averagefuel2">平均油耗2：</string>
+   	<string name="saic_averagefuel3">平均油耗3：</string>
+   	<string name="cooltempwarn">冷却液警告</string>
+   	<string name="fuelpa">机油压力</string>
+   	<string name="little_mileage1">小计里程1：</string>
+   	<string name="little_mileage2">小计里程2：</string>
+   	<string name="little_mileage3">小计里程3：</string>
+   	<string name="title_fuelmileage">油耗里程信息</string>
+</resources>
