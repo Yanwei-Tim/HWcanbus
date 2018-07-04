@@ -2,7 +2,6 @@ package com.ex.hiworld.server.tools;
 
 import java.util.Arrays;
 
-import android.R.integer;
 import android.os.SystemClock;
 
 public class FormatSerialData {
@@ -36,6 +35,7 @@ public class FormatSerialData {
 		if (mSize + data.length > 1024) {
 			mSize = mFrameStartIndex = mCheckSumIndex = 0;
 		}
+		if(mSize < 0 ) mSize = 0;
 		System.arraycopy(data, 0, DATA, mSize, data.length);
 		mSize += data.length;
 
