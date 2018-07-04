@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.ex.hiworld.server.tools.PrintScreenView;
 import com.ex.hiworld.server.tools.Ticks;
 
 /**
@@ -14,8 +15,6 @@ import com.ex.hiworld.server.tools.Ticks;
 public class MyApp extends Application {
 
     private static MyApp ins;
-    private Handler mH = new Handler(Looper.getMainLooper());
-
     public static MyApp getInstance() {
         return ins;
     }
@@ -23,15 +22,18 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        ins = this;
-
+        init();
         new Ticks().run();
-        connectServer();
+        connectServer(); 
     }
 
-    private void connectServer() {
+    private void init() {
+        ins = this;
+        PrintScreenView.init(this);           
+        PrintScreenView.getMsgView().msg(" DEBUGMODE.. " + BuildConfig.DEBUG);  
+	}
 
-
+	private void connectServer() { 
         // 对下
         Intent intent = new Intent();
         intent.setClass(this, MyLinkHostServer.class);

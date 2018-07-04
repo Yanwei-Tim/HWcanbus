@@ -7,6 +7,7 @@ import com.ex.hiworld.aidl.ITaskCallback;
 import com.ex.hiworld.server.canbus.DataCanbus;
 import com.ex.hiworld.server.canbus.FinalCanbus;
 import com.ex.hiworld.server.tools.LogsUtils;
+import com.ex.hiworld.server.tools.PrintScreenView;
 
 /**
  * Created by APP03 on 2018/6/9.
@@ -33,8 +34,8 @@ public class HandlerTaskCanbus {
                 break;
         }
 
-        TaskCarRemote.getOBJ().setCanbus(mBaseCar);
         mBaseCar = base;
+        TaskCarRemote.getOBJ().setCanbus(mBaseCar);
 
 
         mBaseCar.in();
@@ -45,11 +46,7 @@ public class HandlerTaskCanbus {
 
     public static void parseCanbusData(int[] ints) {
         LogsUtils.d("canbus_data_full :" + LogsUtils.toHexString(ints));
-
-        if (mBaseCar == null) { // for test
-            getCarTypeByVersion("");
-        }
-
+        PrintScreenView.getMsgView().msg(LogsUtils.toHexString(ints));
         if (mBaseCar != null)
             mBaseCar.onHandler(ints);
     }
@@ -87,9 +84,9 @@ public class HandlerTaskCanbus {
     public static void update(int updateCode, String str, String strTemp) {
         if(str == null) return;
         if(!str.equalsIgnoreCase(strTemp)) {
-            LogsUtils.i("update idnum: " + str );
+            LogsUtils.i("update String: " +updateCode +" "+ str );
             DataCanbus.DATA_String[updateCode] = str;
-            update(updateCode, null, null, new String[]{str});
+            update(updateCode, new int[]{0}, null, new String[]{str});
         }
 
     }

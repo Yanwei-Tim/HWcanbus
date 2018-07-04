@@ -54,6 +54,7 @@ public class SendFunc {
         sum = (byte) ((sum - 1)&0xFF);
         data[data.length - 1] = sum;
 
+        SystemClock.sleep(100);
         send(C_CANBUS_CMD_CANBUSDATA, data);
     }
 
@@ -101,17 +102,16 @@ public class SendFunc {
     }
 
     private static void send(int cmdid, int... params) {
-        if (autoTools != null) {
-//            SystemClock.sleep(100);
+        if (autoTools != null) { 
             autoTools.commad(FinalSyuModule.MODULE_CODE_CANBUS, cmdid, params);
-            LogsUtils.i("send: " + cmdid + " " + LogsUtils.toHexString(params));
+            LogsUtils.d("send: " + cmdid + " " + LogsUtils.toHexString(params));
         }
     }
 
     private static void sendMain(int cmd, int... params) {
         if (autoTools != null) {
             autoTools.commad(FinalSyuModule.MODULE_CODE_MAIN, cmd, params);
-            LogsUtils.i("sendMain: " + cmd + " " + LogsUtils.toHexString(params));
+            LogsUtils.d("sendMain: " + cmd + " " + LogsUtils.toHexString(params));
         }
     }
 

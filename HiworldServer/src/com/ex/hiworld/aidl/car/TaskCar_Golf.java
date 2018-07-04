@@ -470,14 +470,14 @@ public class TaskCar_Golf extends BaseCar {
 //    }
 
     private static final int CONV_CONSUMER_MAX = 7;
-    private int[][] mConvConsumer = new int[CONV_CONSUMER_MAX][];
+    private int[][] mConvConsumer = new int[CONV_CONSUMER_MAX][2];
 
 
     private static final int START_STOP_MAX = 7;
-    private int[][] mSartStop = new int[START_STOP_MAX][];
+    private int[][] mSartStop = new int[START_STOP_MAX][2];
 
     private static final int VEHICLE_WARNING_MAX = 16;
-    private int[][] mVehicleWarning = new int[VEHICLE_WARNING_MAX][];
+    private int[][] mVehicleWarning = new int[VEHICLE_WARNING_MAX][2];
 
 
 //    private SharedPreferencesHelper mSph = new SharedPreferencesHelper(getClass().getSimpleName(), 32);
@@ -731,7 +731,7 @@ public class TaskCar_Golf extends BaseCar {
                 HandlerTaskCanbus.update(U_AIR_STEER_SEAT_SYNC, B3 >> 3 & 0x01);
 
                 int auto = 0, body = 0, foot = 0, front = 0, win = 0;
-//                if (carId == 1 || carId == 3 || carId == 4 || carId == ID_TuAng || carId == 6)
+//                if (carId == 1 || carId == 3 || carId == 4 || carId == ID_TuAng || carId == 6) 
                 {
                     switch (data[start + 6]) {
                         case 0x01:
@@ -774,8 +774,7 @@ public class TaskCar_Golf extends BaseCar {
                     HandlerTaskCanbus.update(U_AIR_BLOW_BODY, body);
                     HandlerTaskCanbus.update(U_AIR_BLOW_FOOT, foot);
                 }
-                
-//                else {
+                    //else {
 //                    switch (data[start + 6]) {
 //                        case 0x01:
 //                        case 0x02:
@@ -810,27 +809,27 @@ public class TaskCar_Golf extends BaseCar {
 //                    HandlerTaskCanbus.update(U_AIR_BLOW_BODY, body);
 //                    HandlerTaskCanbus.update(U_AIR_BLOW_FOOT, foot);
 //                }
-//
-//                HandlerTaskCanbus.update(U_AIR_WIND_LEVEL, data[start + 7] & 0xFF);
-//                HandlerTaskCanbus.update(U_AIR_TEMP_LEFT, data[start + 8] & 0xFF);    // 0xFE:LOW 0xFF:HIGH OTHER:value*5/10.0f
-//
-//                HandlerTaskCanbus.update(U_AIR_TEMP_RIGHT, data[start + 9] & 0xFF);
-//                HandlerTaskCanbus.update(U_AIR_CLEAR_AIR_PROGRESS, data[start + 10] & 0x0F);//add tuang
-//
-//                HandlerTaskCanbus.update(U_AIR_REAR_WIND_LEVEL, data[start + 11] >> 4 & 0x0F);//add tuang
-//                HandlerTaskCanbus.update(U_AIR_REAR_BLOW_MODE, data[start + 11] & 0x0F);//add tuang
-//                foot = body = 0;
-//                switch (data[start + 11] & 0x0F) {
-//                    case 0x03:
-//                        foot = 1;
-//                        break;
-//                    case 0x05:
-//                        foot = body = 1;
-//                        break;
-//                    case 0x06:
-//                        body = 1;
-//                        break;
-//                }
+
+                HandlerTaskCanbus.update(U_AIR_WIND_LEVEL, data[start + 7] & 0xFF);
+                HandlerTaskCanbus.update(U_AIR_TEMP_LEFT, data[start + 8] & 0xFF);    // 0xFE:LOW 0xFF:HIGH OTHER:value*5/10.0f
+
+                HandlerTaskCanbus.update(U_AIR_TEMP_RIGHT, data[start + 9] & 0xFF);
+                HandlerTaskCanbus.update(U_AIR_CLEAR_AIR_PROGRESS, data[start + 10] & 0x0F);//add tuang
+
+                HandlerTaskCanbus.update(U_AIR_REAR_WIND_LEVEL, data[start + 11] >> 4 & 0x0F);//add tuang
+                HandlerTaskCanbus.update(U_AIR_REAR_BLOW_MODE, data[start + 11] & 0x0F);//add tuang
+                foot = body = 0;
+                switch (data[start + 11] & 0x0F) {
+                    case 0x03:
+                        foot = 1;
+                        break;
+                    case 0x05:
+                        foot = body = 1;
+                        break;
+                    case 0x06:
+                        body = 1;
+                        break;
+                }
 
                 HandlerTaskCanbus.update(U_AIR_REAR_BLOW_FOOT, foot);
                 HandlerTaskCanbus.update(U_AIR_REAR_BLOW_BODY, body);

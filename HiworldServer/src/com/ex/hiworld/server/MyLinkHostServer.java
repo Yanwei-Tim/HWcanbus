@@ -21,7 +21,9 @@ import com.ex.hiworld.server.syu.FinalMain;
 import com.ex.hiworld.server.syu.FinalRadio;
 import com.ex.hiworld.server.syu.FinalSyuModule;
 import com.ex.hiworld.server.syu.SendFunc;
+import com.ex.hiworld.server.tools.HandlerUI;
 import com.ex.hiworld.server.tools.LogsUtils;
+import com.ex.hiworld.server.tools.PrintScreenView;
 import com.ex.hiworld.server.tools.Utils;
 import com.syu.remote.ConnEvent;
 import com.syu.remote.Message;
@@ -66,7 +68,7 @@ public class MyLinkHostServer extends Service {
         registerLocaleReceiver();
 
 
-        debugMode();
+//        debugMode();
 
     }
 
@@ -82,7 +84,7 @@ public class MyLinkHostServer extends Service {
     };
 
     int[] idCanbusMsgs = new int[]{
-            U_CANBUS_DATA, U_GPS_ANGLE,
+            U_CANBUS_DATA, U_GPS_ANGLE,FinalCanbus.U_CANBUS_VER
     };
     int[] idBtsMsgs = new int[]{
             FinalBt.U_PHONE_NUMBER, FinalBt.U_PHONE_STATE, FinalBt.U_BTAV_ID3_TITLE,
@@ -173,6 +175,14 @@ public class MyLinkHostServer extends Service {
                     }
                     break;
                 }
+                case FinalCanbus.U_CANBUS_VER:{ 
+                	if(msg.strs != null && msg.strs.length > 0) {
+	                	DataCanbus.sVersionCanbox = msg.strs[0] == null ? "" : msg.strs[0];
+	                	PrintScreenView.getMsgView().msg("get canbus ver from hostserver " + DataCanbus.sVersionCanbox);
+	                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
+                	}
+                	break;
+                }
             }
         }
     }
@@ -190,7 +200,7 @@ public class MyLinkHostServer extends Service {
             LogsUtils.i("Srv for test canbus ... null version");
             LogsUtils.i("#####################################");
             HandlerTaskCanbus.getCarTypeByVersion("............");
-            HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId = 9);
+            HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId = 9); 
 
 //            CaridNum();
         }
@@ -214,7 +224,7 @@ public class MyLinkHostServer extends Service {
 //    }
 
     private void checkAndGetFullData(int[] ints) {
-        LogsUtils.i("origin data: " + LogsUtils.toHexString(ints));
+        LogsUtils.d("origin data: " + LogsUtils.toHexString(ints));
         if (ints.length > 4 && ints[0] == 0x5A && ints[1] == 0xA5) {
             if (ints[2] != ints.length - 5) {  // tou 2, len 1, cmd 1, checksum 1;
                 isFullData = false;
@@ -225,6 +235,7 @@ public class MyLinkHostServer extends Service {
             System.arraycopy(ints, 0, tempData, offset, ints.length);
         } else {
             // not standard data , may be a remaining data of last data.
+        	if(offset > tempData.length) offset = 0;
             if (!isFullData) {
                 System.arraycopy(ints, 0, tempData, offset, ints.length);
                 offset += ints.length;
@@ -249,11 +260,12 @@ public class MyLinkHostServer extends Service {
         if (data.length > 2 && (data[0] == 0x5A && data[1] == 0xA5)) {
             if (data[3] == 0xF0) {
                 String str = Utils.getStringFromInts(data, 4, data[2]);
-                if (!DataCanbus.sVersionCanbox.equals(str)) {
+                if (str != null && !DataCanbus.sVersionCanbox.equals(str)) {
                     LogsUtils.i("canbus ver:" + str);
-                    DataCanbus.sVersionCanbox = str;
-                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
+                    PrintScreenView.getMsgView().msg(" canbus ver:  " + str);  
+                    DataCanbus.sVersionCanbox = str; 
                     DataCanbus.canbusId = HandlerTaskCanbus.getCarTypeByVersion(str);
+                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
                     HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId);
                     EventNotify.NE_CANBUS_ID.onNotify();
                 }
@@ -263,8 +275,9 @@ public class MyLinkHostServer extends Service {
                     System.arraycopy(data, 2, datas, 0, datas.length);
                     HandlerTaskCanbus.parseCanbusData(datas);
                 } catch (Exception e) {
-                    LogsUtils.e("error At : " + e.getLocalizedMessage());
-                    LogsUtils.e("error At : " + LogsUtils.toHexString(data));
+//                    LogsUtils.e("error At : " + e.getLocalizedMessage());
+                	e.printStackTrace();
+                    LogsUtils.e("error ?At : " + LogsUtils.toHexString(data));
                 }
             }
         }
@@ -273,7 +286,7 @@ public class MyLinkHostServer extends Service {
     private boolean isFullData(int[] dd, int offset) {
         if (dd.length > 4 && dd[0] == 0x5A && dd[1] == 0xA5) {
             boolean r = dd[2] == dd.length - 5;
-            System.out.println(" isfull ? " + dd[2] + " / " + (offset - 5));
+            LogsUtils.d(" isfull ? " + dd[2] + " / " + (offset - 5));
             return checkOk(dd, dd[2]);
         }
         return false;
