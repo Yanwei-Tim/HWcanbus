@@ -1411,6 +1411,7 @@ public class TaskCar_Golf extends BaseCar {
 
             sendHostInfo0x91(0x91, freq); 
             sendHostInfo0x92(0x92, band);
+            sendHostInfo0x92(0x93, " ");
             LogsUtils.i(" band: " + band + ", freq :" + freq);
         }
     };
@@ -1418,27 +1419,54 @@ public class TaskCar_Golf extends BaseCar {
     private IUiNotify N_APPID = new IUiNotify() {
         @Override
         public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) {
-            LogsUtils.i("N_APPID: " + DataHost.sAppid); 
+            LogsUtils.i("N_APPID: " + DataHost.sAppid);
+            switch (DataHost.sAppid) {
+			case FinalMain.APP_ID_RADIO:
+				EventNotify.NE_RADIO_BAND.onNotify();
+				EventNotify.NE_RADIO_FREQS.onNotify();
+				break;
+			case FinalMain.APP_ID_AUDIO_PLAYER:
+			case FinalMain.APP_ID_BTAV:
+				EventNotify.NE_ID3_ALBUM.onNotify();
+				EventNotify.NE_ID3_ARTIST.onNotify();
+				EventNotify.NE_ID3_TITLE.onNotify();
+				break;
+			case FinalMain.APP_ID_BTPHONE:
+				EventNotify.NE_BT_PHONENUM.onNotify();
+				EventNotify.NE_BT_STATE.onNotify();
+				break; 
+			default:
+				break;
+			}
         }
     };
 
     private IUiNotify N_ID3_TITLE = new IUiNotify() {
         @Override
         public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) {
-            sendHostInfo0x91(0x91, DataHost.sId3Title);
+            sendHostInfo0x92(0x92, DataHost.sId3Title);
+            if(FinalMain.APP_ID_BTAV == DataHost.sAppid) {
+                sendHostInfo0x92(0x92, DataHost.sId3Title);
+            }
         }
     };
     private IUiNotify N_ID3_ARTIST = new IUiNotify() {
         @Override
         public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) {
-            sendHostInfo0x92(0x92, DataHost.sId3Artist);
+            sendHostInfo0x92(0x93, DataHost.sId3Artist);
+            if(FinalMain.APP_ID_BTAV == DataHost.sAppid) {
+                sendHostInfo0x92(0x93, " ");
+            }
         }
     };
 
     private IUiNotify N_ID3_ALBUM = new IUiNotify() {
         @Override
-        public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) {
-            sendHostInfo0x92(0x93, DataHost.sId3Album);
+        public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) { 
+            sendHostInfo0x91(0x91, DataHost.sId3Album);
+            if(FinalMain.APP_ID_BTAV == DataHost.sAppid) {
+                sendHostInfo0x91(0x91, " ");
+            }
         }
     };
 

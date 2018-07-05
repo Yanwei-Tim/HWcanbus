@@ -9,8 +9,6 @@ import android.content.res.Configuration;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.os.SystemClock;
-
 import com.ex.hiworld.aidl.car.HandlerTaskCanbus;
 import com.ex.hiworld.aidl.car.TaskCarRemote;
 import com.ex.hiworld.server.canbus.DataCanbus;
@@ -24,7 +22,6 @@ import com.ex.hiworld.server.syu.FinalSyuModule;
 import com.ex.hiworld.server.syu.SendFunc;
 import com.ex.hiworld.server.tools.FormatSerialData;
 import com.ex.hiworld.server.tools.FormatSerialData.OnHandlerListener;
-import com.ex.hiworld.server.tools.HandlerUI;
 import com.ex.hiworld.server.tools.LogsUtils;
 import com.ex.hiworld.server.tools.PrintScreenView;
 import com.ex.hiworld.server.tools.Utils;
@@ -32,7 +29,6 @@ import com.syu.remote.ConnEvent;
 import com.syu.remote.Message;
 import com.syu.remote.Remote;
 
-import java.util.Arrays;
 import java.util.Locale;
 
 import org.greenrobot.eventbus.EventBus;
@@ -73,7 +69,6 @@ public class MyLinkHostServer extends Service {
 
 //        debugMode();
         FormatSerialData.getObj().setOnHandlerListener(new OnHandlerListener() {
-			
 			@Override
 			public void onHandler(int[] data, int start, int length) {
 				if(data != null) {
@@ -136,6 +131,7 @@ public class MyLinkHostServer extends Service {
         }
     }
 
+
     /**
      * 处理通知
      *
@@ -174,7 +170,7 @@ public class MyLinkHostServer extends Service {
         } else if (msg.module == FinalSyuModule.MODULE_CODE_CANBUS) {
             switch (msg.code) {
                 case U_CANBUS_DATA:
-                    if (msg.ints == null) break; 
+                    if (msg.ints == null) break;
                     
                     FormatSerialData.getObj().onReceiver(msg.ints);
                     break;
@@ -211,65 +207,13 @@ public class MyLinkHostServer extends Service {
             LogsUtils.i("#####################################");
             HandlerTaskCanbus.getCarTypeByVersion("............");
             HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId = 9); 
-
-//            CaridNum();
+ 
         }
-    }
-
-//    private void CaridNum() {
-//        int[] data = new int[]{0x14, 0x1F, 0x41, 0x42, 0x43, 0x44, 0x2D, 0x61, 0x62, 0x63, 0x64, 0x2B, 0x31, 0x32, 0x33, 0x34, 0x21, 0x3F, 0x5A, 0x59, 0x58, 0x00};
-//
-////        int length = data.length;
-//        int dataL = data[0];
-//        StringBuffer sb = new StringBuffer();
-//        for (int i = 0; i < dataL; i++) {
-//            char c = (char) data[2 + i];
-//            if(c == 0) break;
-//            sb.append(c);
-//        }
-////        String f = new String(data, 0 + 2, dataL, Charset.forName("utf-8"));
-////        LogsUtils.i("@test CaridNum " + f);
-//        LogsUtils.i("@test CaridNum len:" + dataL + "/" + sb.length());
-//        LogsUtils.i("@test CaridNum :" + sb.toString());
-//    }
-
+    } 
 
     boolean isFullData = false;
     int[] tempData = new int[1024];
-    int offset = 0;
-//    private void checkAndGetFullData(int[] ints) {
-//        LogsUtils.d("origin data: " + LogsUtils.toHexString(ints));
-//        if (ints.length > 4 && ints[0] == 0x5A && ints[1] == 0xA5) {
-//            if (ints[2] != ints.length - 5) {  // tou 2, len 1, cmd 1, checksum 1;
-//                isFullData = false;
-//                System.arraycopy(ints, 0, tempData, offset, ints.length);
-//                offset = ints.length;
-//                return;
-//            }
-//            System.arraycopy(ints, 0, tempData, offset, ints.length);
-//        } else {
-//            // not standard data , may be a remaining data of last data.
-//        	if(offset > tempData.length) offset = 0;
-//            if (!isFullData) {
-//                System.arraycopy(ints, 0, tempData, offset, ints.length);
-//                offset += ints.length;
-//            }
-//            boolean fullData = isFullData(tempData, offset);
-//            isFullData = fullData;
-//            if (!isFullData) {
-//                return;
-//            }
-//        }
-//
-//        offset = 0;
-//        isFullData = true;
-//        int reallen = tempData[2] + 5;
-//        int data[] = new int[reallen];
-//        System.arraycopy(tempData, 0, data, 0, reallen);
-//        Arrays.fill(tempData, 0);
-//        parseData(data);
-//    }
-
+    int offset = 0; 
     private void parseData(int[] data) {
         if (data.length > 2 && (data[0] == 0x5A && data[1] == 0xA5)) {
             if (data[3] == 0xF0) {

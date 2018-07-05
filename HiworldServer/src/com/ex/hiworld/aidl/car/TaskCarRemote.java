@@ -34,10 +34,10 @@ public class TaskCarRemote extends ITaskBinder.Stub {
 
     @Override
     public void cmd(int cmdCode, int[] ints, float[] flts, String[] strs) throws RemoteException {
-        LogsUtils.i("cmd ... " + cmdCode + " >> " + LogsUtils.toHexString(ints));
+        LogsUtils.i("cmd ... " + cmdCode + " >> " + LogsUtils.toHexString(ints) + " @ "+mCanbus );
         if (mCanbus != null) {
             mCanbus.cmd(cmdCode, ints, flts, strs);
-        }
+        } 
     }
 
     @Override
@@ -67,6 +67,10 @@ public class TaskCarRemote extends ITaskBinder.Stub {
             switch (updateCode) {
                 case FinalCanbus.U_CANBUS_ID:
                     LogsUtils.i("reg U_CANBUS_ID");
+                    HandlerTaskCanbus.update(updateCode);
+                    break;
+                case FinalCanbus.U_CANBUS_VER:
+                    LogsUtils.i("reg U_CANBUS_VER");
                     HandlerTaskCanbus.update(updateCode);
                     break;
             }
