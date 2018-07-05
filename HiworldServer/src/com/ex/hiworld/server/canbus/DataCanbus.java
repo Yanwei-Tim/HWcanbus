@@ -1,7 +1,5 @@
 package com.ex.hiworld.server.canbus;
 
-import com.ex.hiworld.aidl.car.ModuleTaskCallBackList;
-
 /**
  * Created by APP03 on 2018/6/9.
  */
