@@ -1,9 +1,12 @@
-package com.ex.hiworld.server.canbus;
+package com.ex.hiworld.aidl.car;
 
 import com.ex.hiworld.server.tools.UiNotifyEvent;
 
 public class EventNotify {
     public static UiNotifyEvent NE_LANG = new UiNotifyEvent();
+    public static UiNotifyEvent NE_MUTE_SRC = new UiNotifyEvent();
+    public static UiNotifyEvent NE_VOL_SRC = new UiNotifyEvent();
+    
     public static UiNotifyEvent NE_CANBUS_ID = new UiNotifyEvent();
     public static UiNotifyEvent NE_BT_STATE = new UiNotifyEvent();
     public static UiNotifyEvent NE_BT_PHONENUM = new UiNotifyEvent();

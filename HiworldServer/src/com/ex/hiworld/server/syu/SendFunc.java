@@ -1,7 +1,9 @@
 package com.ex.hiworld.server.syu;
 
+import android.R.integer;
 import android.os.SystemClock;
 
+import com.ex.hiworld.server.canbus.DataCanbus;
 import com.ex.hiworld.server.tools.LogsUtils;
 import com.syu.remote.Remote;
 
@@ -33,30 +35,46 @@ public class SendFunc {
     public static final int FL_RARA_RMR = 7;
     public static final int FL_RARA_RR = 8;
 
+	public static final int FL_RARA_RRF = 9; // 右前
+ 	public static final int FL_RARA_RRMF = 10; // 右中前
+	public static final int FL_RARA_RRMR = 11; // 右中后
+	public static final int FL_RARA_RRR = 12; // 右后
+	public static final int FL_RARA_LF = 13;
+	public static final int FL_RARA_LMF = 14;
+	public static final int FL_RARA_LMR = 15;
+	public static final int FL_RARA_LR = 16; 
+	
+	
     public static final int CMD_TYPE_GUIJI = 0;
     public static final int CMD_TYPE_RADAR = 1;
     public static final int CMD_TYPE_OUTTEMP = 2;
     public static final int CMD_TYPE_FULLVIEW = 5;
 
-    // canbus data
-    public static void send2Canbus(int cmd, int... params) {
-        int len = params.length;
-        byte sum = (byte) (len + cmd);
-        int[] data = new int[len + 5];
-        data[0] = 0x5A;
-        data[1] = 0xA5;
-        data[2] = len;
-        data[3] = cmd;
-        for (int i = 0; i < len; i++) {
-            sum += params[i];
-            data[4 + i] = params[i];
-        }
-        sum = (byte) ((sum - 1)&0xFF);
-        data[data.length - 1] = sum;
 
-        SystemClock.sleep(100);
-        send(C_CANBUS_CMD_CANBUSDATA, data);
-    }
+    // canbus data
+	public static void send2Canbus(int cmd, int... params) {
+		int len = params.length;
+		byte sum = (byte) (len + cmd);
+		int[] data = new int[len + 5];
+		if (DataCanbus.isHead5A) {
+			data[0] = 0x5A;
+			data[1] = 0xA5;
+		} else {
+			data[0] = 0xAA;
+			data[1] = 0x55;
+		}
+		data[2] = len;
+		data[3] = cmd;
+		for (int i = 0; i < len; i++) {
+			sum += params[i];
+			data[4 + i] = params[i];
+		}
+		sum = (byte) ((sum - 1) & 0xFF);
+		data[data.length - 1] = sum;
+
+		SystemClock.sleep(100);
+		send(C_CANBUS_CMD_CANBUSDATA, data);
+	}
 
     // key code
     public static void sendKeyCode2Host(int keycode, int action) {
@@ -83,13 +101,12 @@ public class SendFunc {
                 break;
         }
     }
-
-//    public static void sendRadarOnOff(int on) {
-//        if(DataHost.sBackCar != on) {
-//            DataHost.sBackCar = on;
-////            sendMain(FinalMain.C_OUT_BACKCAR, on);
-//        }
-//    }
+    
+	public static void setRadarOnOff(int i) {
+		if (i != 0)
+			i = 1;
+		send(C_CANBUS_HOST_SET, CMD_TYPE_RADAR, 1, FL_RARA_ONOFF, i);
+	} 
 
     public static void sendOutTemp(int type, int value) {
         switch (type) {
@@ -118,10 +135,15 @@ public class SendFunc {
     public static void setAutoTools(Remote tool) {
         autoTools = tool;
     }
-
+// GOLF
     public static void sendTime(int year, int month, int day, int hour, int min, int sec, int format) {
         send2Canbus(0xCB, 0x80, hour, min, 0, 0x08, format, year-2000, month+1, day, 0x02);
     }
+    
+// PSA
+	public static void sendTime2(int year, int month, int day, int hour, int min, int sec, int format) {
+		send2Canbus(0xCB, year, month + 1, day, hour, min, format, 0, 0, 0, 0);
+	}
 
     public static void sendEngineSpeed(int i) {
 

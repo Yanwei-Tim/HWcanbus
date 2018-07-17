@@ -9,10 +9,11 @@ import android.content.res.Configuration;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+
+import com.ex.hiworld.aidl.car.EventNotify;
 import com.ex.hiworld.aidl.car.HandlerTaskCanbus;
 import com.ex.hiworld.aidl.car.TaskCarRemote;
 import com.ex.hiworld.server.canbus.DataCanbus;
-import com.ex.hiworld.server.canbus.EventNotify;
 import com.ex.hiworld.server.canbus.FinalCanbus;
 import com.ex.hiworld.server.syu.DataHost;
 import com.ex.hiworld.server.syu.FinalBt;
@@ -50,6 +51,11 @@ public class MyLinkHostServer extends Service {
 
     public static final int U_CANBUS_DATA = 1000 + 19; // get data from remote server (ps: from fyt server
     public static final int U_GPS_ANGLE = 1000 + 33;// GPS角度
+  
+    public static final int U_HOST_VOL = 2;// 音量值
+    public static final int U_HOST_MUTE = 3;// 静音开关
+    
+    
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -66,8 +72,6 @@ public class MyLinkHostServer extends Service {
         refrehLocalLanguage();
         registerLocaleReceiver();
 
-
-//        debugMode();
         FormatSerialData.getObj().setOnHandlerListener(new OnHandlerListener() {
 			@Override
 			public void onHandler(int[] data, int start, int length) {
@@ -89,6 +93,10 @@ public class MyLinkHostServer extends Service {
 
     int[] idMainMsgs = new int[]{
             FinalMain.U_ACC_ON, FinalMain.U_APP_ID, FinalMain.U_PLAY_STATUS, FinalMain.U_BACKCAR
+    };
+    
+    int[] idSoundMsgs = new int[]{
+    		U_HOST_MUTE, U_HOST_VOL
     };
 
     int[] idCanbusMsgs = new int[]{
@@ -128,6 +136,7 @@ public class MyLinkHostServer extends Service {
             autoTools.observe(FinalSyuModule.MODULE_CODE_CANBUS, idCanbusMsgs);
             autoTools.observe(FinalSyuModule.MODULE_CODE_RADIO, idRadioMsgs);
             autoTools.observe(FinalSyuModule.MODULE_CODE_BT, idBtsMsgs);
+            autoTools.observe(FinalSyuModule.MODULE_CODE_SOUND, idSoundMsgs);
         }
     }
 
@@ -167,6 +176,8 @@ public class MyLinkHostServer extends Service {
             parseRadioData(msg.code, msg.ints);
         } else if (msg.module == FinalSyuModule.MODULE_CODE_BT) {
             parseBtData(msg.code, msg.ints, msg.strs);
+        } else if (msg.module == FinalSyuModule.MODULE_CODE_SOUND) {
+        	parseSoundData(msg.code, msg.ints, msg.strs);
         } else if (msg.module == FinalSyuModule.MODULE_CODE_CANBUS) {
             switch (msg.code) {
                 case U_CANBUS_DATA:
@@ -192,30 +203,13 @@ public class MyLinkHostServer extends Service {
             }
         }
     }
-
-    private void debugMode() {
-        if (BuildConfig.DEBUG) {
-            if (TaskCarRemote.getOBJ().getCanbus() != null) return;
-            LogsUtils.i("#####################################");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("Srv for test canbus ... null version");
-            LogsUtils.i("#####################################");
-            HandlerTaskCanbus.getCarTypeByVersion("............");
-            HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId = 9); 
- 
-        }
-    } 
+    
 
     boolean isFullData = false;
     int[] tempData = new int[1024];
     int offset = 0; 
     private void parseData(int[] data) {
-        if (data.length > 2 && (data[0] == 0x5A && data[1] == 0xA5)) {
+//        if (data.length > 2 && (data[0] == 0x5A && data[1] == 0xA5)) {
             if (data[3] == 0xF0) {
                 String str = Utils.getStringFromInts(data, 4, data[2]);
                 if (str != null && !DataCanbus.sVersionCanbox.equals(str)) {
@@ -238,25 +232,7 @@ public class MyLinkHostServer extends Service {
                     LogsUtils.e("error ?At : " + LogsUtils.toHexString(data));
                 }
             }
-        }
-    }
-
-    private boolean isFullData(int[] dd, int offset) {
-        if (dd.length > 4 && dd[0] == 0x5A && dd[1] == 0xA5) {
-            boolean r = dd[2] == dd.length - 5;
-            LogsUtils.d(" isfull ? " + dd[2] + " / " + (offset - 5));
-            return checkOk(dd, dd[2]);
-        }
-        return false;
-    }
-
-    private boolean checkOk(int[] dd, int len) {
-        byte chck = 0;
-        for (int i = 0; i < len + 2; i++) {
-            chck += (byte) dd[2 + i];
-        }
-        chck = (byte) ((chck - 1) & 0xFF);
-        return chck == dd[len + 4];
+//        }
     }
 
     private void parseBtData(int code, int[] ints, String[] strs) {
@@ -311,9 +287,9 @@ public class MyLinkHostServer extends Service {
     private void parseRadioData(int code, int[] data) {
         switch (code) {
             case FinalRadio.U_BAND:
-                if (DataHost.iRadioBand != data[0]) {
-                    DataHost.iRadioBand = data[0];
-                    if (DataHost.iRadioBand >= FinalRadio.CHANNEL_FM_INDEX_BEGIN && DataHost.iRadioBand <= FinalRadio.BAND_FM_INDEX_END) {
+                if (DataHost.sRadioBand != data[0]) {
+                    DataHost.sRadioBand = data[0];
+                    if (DataHost.sRadioBand >= FinalRadio.CHANNEL_FM_INDEX_BEGIN && DataHost.sRadioBand <= FinalRadio.BAND_FM_INDEX_END) {
                         DataHost.isAM = false;
                     } else DataHost.isAM = true;
 //                    LogsUtils.i("radio: U_BAND "  + " > " + Integer.toHexString(data[0]) + "  isAM :" + DataHost.isAM);
@@ -321,22 +297,22 @@ public class MyLinkHostServer extends Service {
                 }
                 break;
             case FinalRadio.U_FREQ:
-                if (DataHost.iRadioFreq != data[0]) {
-                    DataHost.iRadioFreq = data[0];
+                if (DataHost.sRadioFreq != data[0]) {
+                    DataHost.sRadioFreq = data[0];
 //                    LogsUtils.i("radio: U_FREQ " + " > " + (data[0]));
                     EventNotify.NE_RADIO_FREQS.onNotify();
                 }
                 break;
             case FinalRadio.U_CHANNEL:
-                DataHost.iRadioChannel = 0xFF & data[0];
+                DataHost.sRadioChannel = 0xFF & data[0];
 //                LogsUtils.i("radio: U_CHANNEL "  + " > " + (DataHost.iRadioChannel+1));
                 break;
             case FinalRadio.U_SCAN:
-                DataHost.iRadioScan = data[0];
+                DataHost.sRadioScan = data[0];
 //                LogsUtils.i("radio: U_SCAN "  + " > " + (data[0]));
                 break;
             case FinalRadio.U_SEARCH_STATE:
-                DataHost.iRadioSearchState = data[0];
+                DataHost.sRadioSearchState = data[0];
 //                LogsUtils.i("radio: U_SEARCH_STATE "  + " > " + (data[0]));
                 break;
         }
@@ -379,32 +355,59 @@ public class MyLinkHostServer extends Service {
                 DataHost.sPlayState = ints[2];
                 break;
             case 4:
-                DataHost.iCurPlayIndex = ints[2];
-                DataHost.iPlayTotal = ints[3];
+                DataHost.sCurPlayIndex = ints[2];
+                DataHost.sPlayTotal = ints[3];
                 break;
             case 5:
-                if (DataHost.iCurPlayTime != ints[2]) {
-                    DataHost.iCurPlayTime = ints[2];
-                    DataHost.iTotalPlayTime = ints[3];
+                if (DataHost.sCurPlayTime != ints[2]) {
+                    DataHost.sCurPlayTime = ints[2];
+                    DataHost.sTotalPlayTime = ints[3];
 //                    EventNotify.NE_PLAY_TIME.onNotify();
                 }
                 break;
             case 6:
-                DataHost.iPlayCycleMode = ints[2];
+                DataHost.sPlayCycleMode = ints[2];
                 break;
             case 7:
-                DataHost.iPlayRandomMode = ints[2];
+                DataHost.sPlayRandomMode = ints[2];
                 break;
             case 8:
                 break;
             case 9:
-                DataHost.iPlayDeviceType = ints[2];
+                DataHost.sPlayDeviceType = ints[2];
                 break;
             case 10:
-                DataHost.iPlayMediaType = ints[2];
+                DataHost.sPlayMediaType = ints[2];
                 break;
         }
     }
+
+
+	private void parseSoundData(int code, int[] ints, String[] strs) {
+		switch (code) {
+		case U_HOST_VOL: {
+			if (ints != null && ints.length > 0) {
+				if (DataHost.sVolDst != ints[0]) {
+					DataHost.sVolDst = ints[0];
+					EventNotify.NE_VOL_SRC.onNotify();
+				}
+			}
+			break;
+		}
+
+		case U_HOST_MUTE: {
+			if (ints != null && ints.length > 0) {
+				if (DataHost.sMuteSrc != ints[0]) {
+					DataHost.sMuteSrc = ints[0];
+					EventNotify.NE_MUTE_SRC.onNotify();
+				}
+			}
+			break;
+		}
+		default:
+			break;
+		}
+	}
 
     public void refrehLocalLanguage() {
         Locale.setDefault(Locale.CHINA);

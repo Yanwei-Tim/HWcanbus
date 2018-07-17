@@ -16,6 +16,7 @@ public final class UiNotifyEvent implements Runnable {
 	private static final Handler HANDLER_REMOVABLE = new Handler();
 
 	private ArrayList<IUiNotify> mUiNotifies = new ArrayList<IUiNotify>();
+	private ArrayList<Runnable> mUiRuns = new ArrayList<Runnable>();
 	private int mUpdateCode;
 
 	public UiNotifyEvent() {}
@@ -72,9 +73,10 @@ public final class UiNotifyEvent implements Runnable {
 	 * 刷新
 	 */
 	public synchronized void onNotify() {
-		if (mUiNotifies.size() > 0) {
+		if (mUiNotifies.size() > 0 || mUiRuns.size() > 0) {
 			HANDLER_REMOVABLE.post(this);
 		}
+		 
 	}
 
 	/**
@@ -112,6 +114,27 @@ public final class UiNotifyEvent implements Runnable {
 	public synchronized void run() {
 		for (IUiNotify notify : mUiNotifies) {
 			notify.onNotify(mUpdateCode, null, null, null);
+		}
+
+		for (Runnable r : mUiRuns) {
+			HANDLER_REMOVABLE.post(r);
+		}
+	}
+
+	public synchronized void addNotify(Runnable r, int onNotify) {
+		if(r == null) return;
+		if(!mUiRuns.contains(r)) {
+			mUiRuns.add(r);
+		}
+		if(onNotify == 1) {
+			HANDLER_REMOVABLE.post(r);
+		}
+	}
+
+	public synchronized void removeNotify(Runnable r) {
+		if(r == null) return;
+		if(mUiRuns.contains(r)) {
+			mUiRuns.remove(r);
 		}
 	}
 }

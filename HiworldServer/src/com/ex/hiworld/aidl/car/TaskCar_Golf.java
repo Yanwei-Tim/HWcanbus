@@ -4,13 +4,11 @@ import android.os.RemoteException;
 import android.text.format.DateFormat;
 
 import com.ex.hiworld.server.MyApp;
-import com.ex.hiworld.server.canbus.EventNotify;
-import com.ex.hiworld.server.canbus.HandlerBackCarTrack;
-import com.ex.hiworld.server.canbus.HandlerBtPhone;
-import com.ex.hiworld.server.canbus.HandlerKeyCode;
+import com.ex.hiworld.server.canbus.CanInfos;
 import com.ex.hiworld.server.syu.DataHost;
 import com.ex.hiworld.server.syu.FinalKeyCode;
 import com.ex.hiworld.server.syu.FinalMain;
+import com.ex.hiworld.server.syu.FinalRadio;
 import com.ex.hiworld.server.syu.SendFunc;
 import com.ex.hiworld.server.tools.IUiNotify;
 import com.ex.hiworld.server.tools.LogsUtils;
@@ -579,9 +577,9 @@ public class TaskCar_Golf extends BaseCar {
 //                    }
 
                 if (DataHost.sBackCar == 1)
-                    HandlerBackCarTrack.CarBackTrackHandle(data[start + 8] & 0xFF, data[start + 9] & 0xFF);
+                	CanInfos.CarBackTrackHandle(data[start + 8] & 0xFF, data[start + 9] & 0xFF);
 
-                HandlerKeyCode.onKeyEvent(KeyCanKeyTable, data[start + 4] & 0xFF, data[start + 5] & 0xFF);
+                CanInfos.onKeyEvent(KeyCanKeyTable, data[start + 4] & 0xFF, data[start + 5] & 0xFF);
 
                 break;
             }
@@ -1339,7 +1337,7 @@ public class TaskCar_Golf extends BaseCar {
     IUiNotify N_BT_PHONESTATE = new IUiNotify() {
         @Override
         public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) {
-            String phoneStateDes = HandlerBtPhone.getPhoneStateDes(DataHost.sPhoneSate);
+            String phoneStateDes = CanInfos.getPhoneStateDes(DataHost.sPhoneSate);
             sendHostInfo0x92(0x96, phoneStateDes);
         }
     };
@@ -1386,15 +1384,15 @@ public class TaskCar_Golf extends BaseCar {
         public void onNotify(int updateCode, int[] ints, float[] flts, String[] strs) {
             if (DataHost.isAM) {
                 Unit = " KHz";
-                freq = DataHost.iRadioFreq + Unit;
+                freq = DataHost.sRadioFreq + Unit;
                 band = "AM";
             } else {
                 Unit = " MHz";
-                freq = DataHost.iRadioFreq / 100.0f + Unit;
+                freq = DataHost.sRadioFreq / 100.0f + Unit;
                 band = "FM";
             }
-            index = ((DataHost.iRadioBand & 0xFF) + 1) + "-";
-            int channel = (DataHost.iRadioChannel & 0xFF) % 6 + 1;
+            index = ((DataHost.sRadioBand & 0xFF) + 1) + "-";
+            int channel = (DataHost.sRadioChannel & 0xFF) % 6 + 1;
             band = band + index + channel;
 //            Arrays.fill(data, 0);
 //            Arrays.fill(data2, 0);

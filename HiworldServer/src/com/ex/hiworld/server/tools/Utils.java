@@ -34,4 +34,12 @@ public class Utils {
         }
         return sb.toString();
     }
+    
+    public static int combine(int carLevel, int cartype) {
+		return (carLevel&0xFF)<<8|cartype&0xFF;
+	}
+    
+    public static int combine(int h, int m, int l) {
+		return (h&0xFF)<<16|(m&0xFF)<<8|l&0xFF;
+	}
 }

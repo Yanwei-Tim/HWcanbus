@@ -92,8 +92,148 @@ public class FinalCanbus {
 
     //-------------------------------------------------------------------------------------------------
     // 无
-    public static final int CAR_NULL_Null					= 0;
-    public static final int CAR_GOLF = 1;
 
+	public static final int CAR_NONE_CARTYPE 					= 0;//没有车系
+  //车系 
+  //25-49丰田车
+	public static final int CAR_TOYOTA_ALL 				= 1;//丰田全兼容
+	public static final int CAR_TOYOTA_PRADO 			= 1 << 16 | 1;//霸道
+	public static final int CAR_TOYOTA_REIZ 			= 2 << 16 | 1;//锐志
+	public static final int CAR_TOYOTA_RAV4 			= 3 << 16 | 1;//RAV4
+	public static final int CAR_TOYOTA_CAMRY 			= 4 << 16 | 1;//凯美瑞
+	public static final int CAR_TOYOTA_COROLLA 			= 5 << 16 | 1;//卡罗拉
+  
+   
+	public static final int CAR_HONDA_ALL 				= 2;//本田全兼容
+	public static final int CAR_HONDA_CRIDER 			= 1 << 16 | 2;//15款凌派
+	public static final int CAR_HONDA_JADE 				= 2 << 16 | 2;//杰德
+	public static final int CAR_HONDA_FIT 				= 3 << 16 | 2;//飞度
+	public static final int CAR_HONDA_ODYSSEY 			= 4 << 16 | 2;//15款奥德赛
+	public static final int CAR_HONDA_VEZEL 			= 5 << 16 | 2;//缤智
+	public static final int CAR_HONDA_XRV 				= 6 << 16 | 2;//XR-V
+	public static final int CAR_HONDA_GREIZ 			= 7 << 16 | 2;//哥瑞
+	public static final int CAR_HONDA_CITY 				= 8 << 16 | 2;//锋范
+	public static final int CAR_HONDA_CRIDER2016 		= 9 << 16 | 2;//16款凌派
+	public static final int CAR_HONDA_CIVIC2012 		= 10 << 16 | 2;//2012款思域
+	public static final int CAR_HONDA_CIVIC2014_LZB 	= 11 << 16 | 2;//2014款思域(低配)
+	public static final int CAR_HONDA_CRV2012 			= 12 << 16 | 2;//2012款CRV
+	public static final int CAR_HONDA_CRV2015_LZB 		= 13 << 16 | 2;//2015款CRV(低配)
+	public static final int CAR_HONDA_CIVIC2014_HZB 	= 14 << 16 | 2;//2014款思域(高配)
+	public static final int CAR_HONDA_CRV2015_MZB 		= 15 << 16 | 2;//2015款CRV(中高配)
+	public static final int CAR_HONDA_ACCORD_MZB 		= 16 << 16 | 2;//九代雅阁中高配
+	public static final int CAR_HONDA_ACCORD_LZB91 		= 17 << 16 | 2;//九代雅阁低配
+	public static final int CAR_HONDA_ACCORD_LZB92 		= 18 << 16 | 2;//九代雅阁低配
+	public static final int CAR_HONDA_ACCORD_LZB93 		= 19 << 16 | 2;//九代雅阁低配
+	public static final int CAR_HONDA_ODYSSEY2008 		= 20 << 16 | 2;//08款奥德赛
+	  
+	 //75-99福特车
+	public static final int CAR_FORD_ALL				= 3;//福特全兼容
+	public static final int CAR_FORD_FOCUS				= 1 << 16 | 3;//经典福克斯
+	public static final int CAR_FORD_MONDEO_LZB			= 2 << 16 | 3;//老蒙迪欧(低配)
+	public static final int CAR_FORD_MIKES				= 3 << 16 | 3;//麦柯斯
+	public static final int CAR_FORD_MONDEO_HZB			= 5 << 16 | 3;//2013款蒙迪欧(高配)
+	public static final int CAR_FORD_FIESTA				= 6 << 16 | 3;//嘉年华
+	public static final int CAR_FORD_EXPEDITION			= 7 << 16 | 3;//远征
+	public static final int CAR_FORD_F500				= 8 << 16 | 3;//F500
+	public static final int CAR_FORD_FOCUS2012			= 9 << 16 | 3;//2012款福克斯
+	public static final int CAR_FORD_FOCUS2015			= 10 << 16 | 3;//2015款福克斯
+	public static final int CAR_FORD_EXPLOROR			= 11 << 16 | 3;//探险者
+	public static final int CAR_FORD_EDGE				= 12 << 16 | 3;//锐界
+	public static final int CAR_FORD_FIESTA2013			= 13 << 16 | 3;//2013款嘉年华
+	public static final int CAR_FORD_ECOSPORT			= 14 << 16 | 3;//翼搏
+	public static final int CAR_FORD_KUGA				= 15 << 16 | 3;//翼虎
+	public static final int CAR_FORD_ESCAPE				= 16 << 16 | 3;//Escape
+	public static final int CAR_FORD_CMAX				= 17 << 16 | 3;//C-MAX
+	public static final int CAR_FORD_EROPEFOCUS			= 18 << 16 | 3;//欧版福克斯
+	public static final int CAR_FORD_MONDEO_NEW			= 19 << 16 | 3;//新蒙迪欧
+	public static final int CAR_FORD_EDGE2015			= 20 << 16 | 3;//15款锐界
+	   
+	//100-124日产车 
+	public static final int CAR_NISSAN_ALL				= 4;//日产全兼容
+	public static final int CAR_NISSAN_TEANA			= 1 << 16 | 4;//天籁
+	public static final int CAR_NISSAN_ALTIMA			= 2 << 16 | 4;//Altima
+	public static final int CAR_NISSAN_XTRAIL			= 3 << 16 | 4;//奇骏
+	public static final int CAR_NISSAN_ROGUE			= 5 << 16 | 4;//ROGUE
+	public static final int CAR_NISSAN_QASHQAI			= 6 << 16 | 4;//逍客
+	public static final int CAR_NISSAN_MURANO			= 7 << 16 | 4;//楼兰
+	public static final int CAR_NISSAN_BLUEBIRD			= 8 << 16 | 4;//蓝鸟
+	public static final int CAR_NISSAN_PATROL			= 9 << 16 | 4;//途乐
+	public static final int CAR_NISSAN_OLDTEANA			= 10 << 16 | 4;//老款天籁
+	public static final int CAR_NISSAN_TEANA2008		= 11 << 16 | 4;//08款天籁 
+
+	//125-149 PSA全兼容
+	public static final int CAR_PSA_ALL					= 5;//PSA全兼容
+	public static final int CAR_PSA_CQUATRE				= 1 << 16 | 5;//世嘉
+	public static final int CAR_PSA_C4					= 2 << 16 | 5;//C4
+	public static final int CAR_PSA_C4L					= 3 << 16 | 5;//C4L
+	public static final int CAR_PSA_C5					= 5 << 16 | 5;//C5
+	public static final int CAR_PSA_2015C5				= 6 << 16 | 5;//2013款C5
+	public static final int CAR_PSA_307					= 7 << 16 | 5;//307
+	public static final int CAR_PSA_308					= 8 << 16 | 5;//308
+	public static final int CAR_PSA_408					= 9 << 16 | 5;//408
+	public static final int CAR_PSA_508_L				= 10 << 16 | 5;//低配508
+	public static final int CAR_PSA_508_H				= 11 << 16 | 5;//高配508
+	public static final int CAR_PSA_3008				= 12 << 16 | 5;//3008全拆
+	public static final int CAR_PSA_DS5					= 13 << 16 | 5;//DS5
+	public static final int CAR_PSA_DS5LS				= 14 << 16 | 5;//DS5LS
+	public static final int CAR_PSA_2008				= 15 << 16 | 5;//2008
+	public static final int CAR_PSA_DS4					= 16 << 16 | 5;//DS4
+	public static final int CAR_PSA_308S				= 17 << 16 | 5;//2014款408/308S
+	public static final int CAR_PSA_3008Little			= 18 << 16 | 5;//3008留小屏
+	public static final int CAR_PSA_301					= 19 << 16 | 5;//301、爱丽舍
+	public static final int CAR_PSA_C3XR				= 20 << 16 | 5;//C3-XR
+	public static final int CAR_PSA_4008				= 21 << 16 | 5;//17款4008
+	public static final int CAR_PSA_508_AMP				= 22 << 16 | 5;//508带功放
+	public static final int CAR_PSA_DS5_H				= 23 << 16 | 5;//DS5 High
+	public static final int CAR_PSA_DS5LS_H				= 24 << 16 | 5;//DS5LS High
+	public static final int CAR_PSA_DS4_H				= 25 << 16 | 5;//DS4 High
+	
+	  
+	//150-174大众全兼容 
+	public static final int CAR_VWF0 					= 6;//大众全兼容
+	public static final int CAR_VWFO_GOLF7 				= 1 << 16 | 6;//高尔夫7
+	public static final int CAR_VWFO_LAVIDA 			= 2 << 16 | 6;//大众全兼容(72、73)
+	public static final int CAR_VWFO_TOUAREG 			= 3 << 16 | 6; //大众全兼容(81、82)
+	public static final int CAR_VWFO_TIGUAN 			= 4 << 16 | 6;//途锐
+
+	public static final int CAR_GM_ALL 					= 7;//通用全兼容
+	public static final int CAR_GM_AVEO 				= 1 << 16 | 7;//爱唯欧、克鲁兹、英朗、威朗、迈锐宝、
+	public static final int CAR_GM_LACROSSE 			= 2 << 16 | 7;//君越、GL8
+	public static final int CAR_GM_ENCORE 				= 3 << 16 | 7;//昂科拉
+	public static final int CAR_GM_MALIBU 				= 4 << 16 | 7;//ATS、14君越
+	public static final int CAR_GM_GL6					= 5 << 16 | 7;//GL6
+	
+	public static final int CARTYPE_BMW = 8;//宝马
+	public static final int CARTYPE_HYUNDAI = 9;//现代
+	public static final int CARTYPE_MAZDA = 0x0A;//马自达
+	public static final int CARTYPE_BENZ = 0x0B;//奔驰
+	public static final int CARTYPE_BAIC = 0x0C;//北汽
+	public static final int CARTYPE_SAIC = 0x0D;//上汽
+	public static final int CARTYPE_GAIG = 0x0E;//广汽
+	public static final int CARTYPE_FAW = 0x0F;//一汽
+	public static final int CARTYPE_GEELY = 0x10;//吉利
+	public static final int CARTYPE_GWM = 0x11;//长城
+	public static final int CARTYPE_LIFAN = 0x12;//力帆
+	public static final int CARTYPE_CHANA = 0x13;//长安
+	public static final int CARTYPE_CHERY  = 0x14;//奇瑞
+	public static final int CARTYPE_AUDI = 0x15;//奥迪
+	public static final int CARTYPE_BRILLIANCE = 0x16;//华晨宝马
+	public static final int CARTYPE_BENZGEN = 0x17;//奔驰GEN
+	public static final int CARTYPE_VOLVO = 0x18;//沃尔沃
+	public static final int CARTYPE_BAOJUN = 0x19;//宝骏
+	public static final int CARTYPE_MITSUBISHI = 0x1A;//三菱
+	public static final int CARTYPE_FIAT = 0x1B;//菲亚特
+	public static final int CARTYPE_HAIMA = 0x1E;//海马
+	public static final int CARTYPE_JAC = 0x1F;//江淮
+	public static final int CARTYPE_ZT = 0x20;//众泰
+	public static final int CARTYPE_ZH = 0x21;//中华
+	public static final int CARTYPE_LANDROVER = 0x22;//陆虎
+	public static final int CARTYPE_PORSCHE = 0x23;//保时捷
+	public static final int CARTYPE_JEEP = 0x24;//吉普
+	public static final int CARTYPE_QCAR = 0x25;//猎豹
+	public static final int CARTYPE_DF = 0x26;//东风
+	public static final int CARTYPE_MUSTANG = 0x27;//川汽
+	public static final int CARTYPE_BYD = 0x28;//比亚迪
+	public static final int CARTYPE_BISU = 0x29;//比速
 
 }

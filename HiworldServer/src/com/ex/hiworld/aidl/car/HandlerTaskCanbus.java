@@ -8,6 +8,7 @@ import com.ex.hiworld.server.canbus.DataCanbus;
 import com.ex.hiworld.server.canbus.FinalCanbus;
 import com.ex.hiworld.server.tools.LogsUtils;
 import com.ex.hiworld.server.tools.PrintScreenView;
+import com.ex.hiworld.server.tools.Utils;
 
 /**
  * Created by APP03 on 2018/6/9.
@@ -19,7 +20,20 @@ public class HandlerTaskCanbus {
 	public static int getCarTypeByVersion(String version) {
 		int cartype = 0;
 		int carLevel = 0;
-		cartype = 1;
+
+		{ // for test
+			LogsUtils.i("/////////////////////////////////////");
+			LogsUtils.i("/////////////////////////////////////");
+			LogsUtils.i("/////////////////////////////////////");
+			LogsUtils.i("//////////////调试协议////////////////");
+			LogsUtils.i("/////////////固定ID//////////////////");
+			LogsUtils.i("/////////////////////////////////////");
+			LogsUtils.i("/////////////////////////////////////");
+			LogsUtils.i("/////////////////////////////////////");
+			int canbusID = FinalCanbus.CAR_PSA_ALL;
+			carLevel = canbusID >> 16 & 0xFFFF;
+			cartype = canbusID & 0xFFFF;
+		}
 
 		if (mBaseCar != null)
 			mBaseCar.out();
@@ -28,10 +42,25 @@ public class HandlerTaskCanbus {
 		DataCanbus.canbusLevel = carLevel;
 		BaseCar base = null;
 		switch (cartype) {
-		case FinalCanbus.CAR_GOLF:
-			base = new TaskCar_Golf();
+		case FinalCanbus.CAR_VWF0:
+			if (cartype == 1) {
+				base = new TaskCar_Golf();
+			} else {
+				base = new TaskCar_VW();
+			}
+			break;
+		case FinalCanbus.CAR_GM_ALL: {
+			base = new TaskCar_GM();
+			break;
+		}
+		case FinalCanbus.CAR_PSA_ALL:
+			base = new TaskCar_PSA();
+			break;
+		case FinalCanbus.CAR_TOYOTA_ALL:
+			base = new TaskCar_Toyota();
 			break;
 		default:
+			base = new TaskCar_Null();
 			break;
 		}
 
@@ -43,7 +72,7 @@ public class HandlerTaskCanbus {
 	}
 
 	public static void parseCanbusData(int[] ints) {
-		LogsUtils.d("canbus_data_full :" + LogsUtils.toHexString(ints));
+//		LogsUtils.d("canbus_data_full :" + LogsUtils.toHexString(ints));
 		PrintScreenView.getMsgView().msg(LogsUtils.toHexString(ints));
 		if (mBaseCar != null)
 			mBaseCar.onHandler(ints);

@@ -2,6 +2,8 @@ package com.ex.hiworld.server.tools;
 
 import java.util.Arrays;
 
+import com.ex.hiworld.server.canbus.DataCanbus;
+
 import android.os.SystemClock;
 
 public class FormatSerialData {
@@ -25,17 +27,17 @@ public class FormatSerialData {
 	private int[] DATA = new int[1024];
 
 	public void onReceiver(int[] data) {
-
 		if (data == null) {
 			SystemClock.sleep(100);
 			return;
 		}
-
-//		System.out.println("origin : " + toHexString(data));
+		LogsUtils.d("origin: " + toHexString(data));
+		// System.out.println("origin : " + toHexString(data));
 		if (mSize + data.length > 1024) {
 			mSize = mFrameStartIndex = mCheckSumIndex = 0;
 		}
-		if(mSize < 0 ) mSize = 0;
+		if (mSize < 0)
+			mSize = 0;
 		System.arraycopy(data, 0, DATA, mSize, data.length);
 		mSize += data.length;
 
@@ -53,10 +55,10 @@ public class FormatSerialData {
 		}
 
 		mCheckSumIndex = 0;
-//		LogsUtils.w(" . " + mFrameStartIndex + ", " + mCheckSumIndex + ", " + mSize);
-//		LogsUtils.w("origin data: " + toHexString(DATA, mFrameStartIndex, mSize));
-		
-		for (int end = mSize; mFrameStartIndex < end; ++mFrameStartIndex) {
+		// LogsUtils.w(" . " + mFrameStartIndex + ", " + mCheckSumIndex + ", " + mSize);
+		// LogsUtils.w("origin data: " + toHexString(DATA, mFrameStartIndex, mSize));
+
+		for (int end = mSize; mFrameStartIndex < end; ++mFrameStartIndex) { 
 			if (isHead(DATA, mFrameStartIndex)) {
 				mCheckSumIndex = DATA[mFrameStartIndex + 2];
 				if (mCheckSumIndex > 512) {
@@ -74,7 +76,7 @@ public class FormatSerialData {
 					onHandler(DATA, mFrameStartIndex + 0, DATA[mFrameStartIndex + 2] + 5);
 					mFrameStartIndex = mCheckSumIndex;
 				} else {
-//					mFrameStartIndex++;
+					// mFrameStartIndex++;
 				}
 				mCheckSumIndex = 0;
 			}
@@ -88,24 +90,33 @@ public class FormatSerialData {
 				Arrays.fill(DATA, mSize, DATA.length, 0);
 			}
 
-//			if (mSize < 0) {
-//
-//				System.out.println(".............. " + mFrameStartIndex);
-//			}
+			// if (mSize < 0) {
+			//
+			// System.out.println(".............. " + mFrameStartIndex);
+			// }
 			mFrameStartIndex = 0;
 		}
 	}
 
 	private void onHandler(int[] ints, int start, int len) {
-//		LogsUtils.w(" +++YYY+++++ onHandler " + toHexString(ints, start, len));
+		// LogsUtils.w(" +++YYY+++++ onHandler " + toHexString(ints, start, len));
 
+		LogsUtils.d("onHandler: " + toHexString(ints, start, len));
 		if (mListener != null) {
 			mListener.onHandler(ints, start, len);
 		}
 	}
 
 	private boolean isHead(int[] ints, int index) {
-		return ints[index] == 0x5A && ints[index + 1] == 0xA5;
+		if(ints[index] == 0x5A && ints[index + 1] == 0xA5) {
+			DataCanbus.isHead5A = true;
+			return true;
+		}else if(ints[index] == 0xAA && ints[index + 1] == 0x55){
+			DataCanbus.isHead5A = false;
+			return true;
+		}
+		
+		return false;
 	}
 
 	private boolean checkOk(int[] dd, int start) {
@@ -117,6 +128,7 @@ public class FormatSerialData {
 		chck = (byte) ((chck - 1) & 0xFF);
 		byte chkSum = (byte) dd[start + len + 4];
 		// System.out.println(" chk start " + start +" : "+ chck + "/" + chkSum);
+//		LogsUtils.d(" chk start " + start + " : " + chck + "/" + chkSum);
 		return chck == chkSum;
 	}
 
