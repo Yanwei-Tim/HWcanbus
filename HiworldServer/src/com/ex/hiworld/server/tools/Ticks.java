@@ -23,7 +23,8 @@ public class Ticks implements Runnable {
     }
 
     public static void addTicks100ms(Runnable runnable) {
-        $100msRunList.add(runnable);
+    	if(!$100msRunList.contains(runnable))
+    		$100msRunList.add(runnable);
     }
 
     public static void removeTicks100ms(Runnable runnable) {
@@ -31,6 +32,7 @@ public class Ticks implements Runnable {
     }
 
     public static void addTicks500ms(Runnable runnable) {
+    	if(!$500msRunList.contains(runnable))
         $500msRunList.add(runnable);
     }
 
@@ -39,6 +41,7 @@ public class Ticks implements Runnable {
     }
 
     public static void addTicks1s(Runnable r) {
+    	if(!$1sRunList.contains(r))
         $1sRunList.add(r);
     }
 

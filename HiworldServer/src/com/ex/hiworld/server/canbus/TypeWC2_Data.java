@@ -1,9 +1,14 @@
 package com.ex.hiworld.server.canbus;
 
+
+
+import java.util.Arrays;
+
 import com.ex.hiworld.server.syu.DataHost;
 import com.ex.hiworld.server.syu.FinalMain;
 import com.ex.hiworld.server.syu.FinalRadio;
 import com.ex.hiworld.server.syu.SendFunc;
+import com.ex.hiworld.server.tools.LogsUtils;
 
 import android.util.Log;
 
@@ -381,10 +386,14 @@ public class TypeWC2_Data {
 
 			temp16 = DataHost.sCurPlayIndex % 10000;
 
-			cmds[4] = (temp16 / 1000 == 0 ? temp16 / 1000 + '0' : temp16 / 1000 + '0');
-			cmds[5] = ((temp16 % 100) / 10 == 0 ? (temp16 % 1000) + '0' : (temp16 % 1000) / 10 + '0');
-			cmds[6] = ((temp16 % 100) / 10 == 0 ? (temp16 % 100) / 10 + '0' : (temp16 % 100) / 10 + '0');
+			cmds[4] = temp16 / 1000 + '0';
+			cmds[5] = (temp16 / 100) % 10 + '0';
+			cmds[6] = (temp16 % 100) / 10 + '0';
 			cmds[7] = temp16 % 10 + '0';
+//			cmds[4] = (temp16 / 1000 == 0 ? temp16 / 1000 + '0' : temp16 / 1000 + '0');
+//			cmds[5] = ((temp16 % 100) / 10 == 0 ? (temp16 % 1000) + '0' : (temp16 % 1000) / 10 + '0');
+//			cmds[6] = ((temp16 % 100) / 10 == 0 ? (temp16 % 100) / 10 + '0' : (temp16 % 100) / 10 + '0');
+//			cmds[7] = temp16 % 10 + '0';
 
 			temp16 = DataHost.sCurPlayTime / 60;
 			temp16 %= 60;
@@ -536,7 +545,7 @@ public class TypeWC2_Data {
 		return sourceid;
 	}
 
-	static void CarDisNormalE1() {
+	static void CarDisNormalE1() { 
 		int[] cmds = new int[15];
 		byte i;
 		int charlong;
@@ -696,9 +705,9 @@ public class TypeWC2_Data {
 
 			temp16 = DataHost.sCurPlayIndex % 10000;
 
-			cmds[4] = (temp16 / 1000 == 0 ? temp16 / 1000 + '0' : temp16 / 1000 + '0');
-			cmds[5] = ((temp16 % 100) / 10 == 0 ? (temp16 % 1000) + '0' : (temp16 % 1000) / 10 + '0');
-			cmds[6] = ((temp16 % 100) / 10 == 0 ? (temp16 % 100) / 10 + '0' : (temp16 % 100) / 10 + '0');
+			cmds[4] = temp16 / 1000 + '0';
+			cmds[5] = (temp16 / 100) % 10 + '0';
+			cmds[6] = (temp16 % 100) / 10 + '0';
 			cmds[7] = temp16 % 10 + '0';
 
 			temp16 = DataHost.sCurPlayTime / 60;
@@ -727,8 +736,16 @@ public class TypeWC2_Data {
 
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
+		
+		if(lastDatas != null && Arrays.equals(lastDatas, candata)) {
+			return;
+		} 
+
+		lastDatas = candata;
 		SendFunc.send2Canbus(0xe1, candata);
 	}
+	
+	private static int[] lastDatas;
 
 	public static int CarBackTrackHandle(int data0, int data1) {
 		int t1;
@@ -906,18 +923,23 @@ public class TypeWC2_Data {
 		public void run() {
 			if (Vol_dis_cnt > 0)
 				Vol_dis_cnt--;
-			if (Vol_dis_cnt == 0)
+			if (Vol_dis_cnt == 1 || DataHost.sIsAppidChange) {
+				Vol_dis_cnt = 0;
+				DataHost.sIsAppidChange = false;
 				CarDisNormal();
+			}
 		}
 	};
 
 	public static Runnable mCarDisNormalE1 = new Runnable() {
 		@Override
-		public void run() {
+		public void run() { 
 			if (Vol_dis_cnt > 0)
 				Vol_dis_cnt--;
-			if (Vol_dis_cnt == 0)
+			if (Vol_dis_cnt == 0) {
+				LogsUtils.i("...send .. " + Vol_dis_cnt + ":sAppid " + DataHost.sAppid);
 				CarDisNormalE1();
+			}
 		}
 	};
 
@@ -934,10 +956,7 @@ public class TypeWC2_Data {
 		}
 	};
 
-	public static int CarGetRadarDistance(int data) {
-		/******************************************
-		 * ԭ���״�����0-7��0x00��� (data+1)*10/8-1:��Χת����0-9
-		 ******************************************/
+	public static int CarGetRadarDistance(int data) { 
 		int t1;
 		t1 = data;
 		t1 = (t1 + 1) * 10 / 8 - 1;

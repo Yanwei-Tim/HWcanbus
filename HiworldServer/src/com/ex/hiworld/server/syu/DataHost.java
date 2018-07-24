@@ -5,7 +5,8 @@ package com.ex.hiworld.server.syu;
  */
 
 public class DataHost {
-	public static int sAppid, sAccon;
+	public static int sAppid, sAccon; 
+	public static boolean sIsAppidChange;
 	public static int sPhoneSate;
 	public static String sPhoneNum = "", sPhoneContact = "";
 	public static int sBackCar;

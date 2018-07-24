@@ -1356,14 +1356,14 @@ public class TaskCar_PSA extends BaseCar {
 			CanInfos.radarFr(TypeWC2_Data.CarGetRadarDistance(data[start+9]&0xff)); 
 			break;
 		}
-		case (byte) 0x42:{		// 告警信息
+		case  0x42:{		// 告警信息
 			
 			int value = (data[start+2] << 8) & 0xff00 | data[start+3] & 0xff;
 			HandlerTaskCanbus.update(U_TPMS_STATE, 			value);
 			break;
 		}
 		
-		case (byte) 0x71:{		// 车辆信息使能
+		case   0x71:{		// 车辆信息使能
 			
 			int B71_2 = data[start+2] & 0xff;
 			
@@ -1384,7 +1384,7 @@ public class TaskCar_PSA extends BaseCar {
 			break;
 		}
 		
-		case (byte) 0x72:{		// 车辆信息使能
+		case  0x72:{		// 车辆信息使能
 			
 			int B72_2 = data[start+2] & 0xff;
 			int b1  = data[start+3] & 0xff; 
@@ -1459,7 +1459,7 @@ public class TaskCar_PSA extends BaseCar {
 			break;
 		}
 		
-		case (byte) 0x81:{
+		case  0x81:{
 			int b0 = data[start+2] & 0xff;
 			mSpeedValueEnable = (b0 & 0x80) == 0 ? 0 : 1;
 			mSpeedValue1Enable = (b0 & 0x40) == 0 ? 0 : 1;
@@ -1494,7 +1494,7 @@ public class TaskCar_PSA extends BaseCar {
 			break;
 		}
 		
-		case (byte) 0x82:{
+		case  0x82:{
 			// 巡航速度限值
 			int b0 = data[start+2];
 			mCruiseValueEnable = (b0 & 0x80) == 0 ? 0 : 1;
@@ -1529,7 +1529,7 @@ public class TaskCar_PSA extends BaseCar {
 			break;
 		}
 		
-		case (byte) 0x85:		// 发动机启停停止功能
+		case  0x85:		// 发动机启停停止功能
 		{
 			int D0 = data[start+2] & 0xff;
 			int D1 = data[start+3] & 0xff;
@@ -1539,13 +1539,13 @@ public class TaskCar_PSA extends BaseCar {
 			break;
 		}
 		
-		case (byte) 0x94: // 语言信息设置
+		case  0x94: // 语言信息设置
 		{
 			HandlerTaskCanbus.update(U_CAR_PE_ENABLE, data[start + 2] & 0xff);
 			break;
 		}
 		
-		case (byte)0xc1:{
+		case 0xc1:{
 			int C0 = data[start+2] & 0xff;
 			HandlerTaskCanbus.update(U_LIGHT_LEAVING_HOME,					C0>>5 & 0X01);
 			HandlerTaskCanbus.update(U_LIGHT_COMING_HOME,					C0>>3 & 0X01);
@@ -1566,11 +1566,11 @@ public class TaskCar_PSA extends BaseCar {
 			}
 			break;
 		}
-//		case (byte) 0xF0: {
+//		case  0xF0: {
 //			HandlerTaskCanbus.canbusVer(new String(data, start+2, length-2));
 //			break;
 //		}
-		case (byte) 0x83:{
+		case  0x83:{
 			CarRtProc(data[start+2]&0x01);
 			break;
 		} 
@@ -1690,7 +1690,7 @@ public class TaskCar_PSA extends BaseCar {
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
                 int hour = calendar.get(Calendar.HOUR);
                 int sec = calendar.get(Calendar.SECOND); 
-                SendFunc.sendTime2(year, month, day, hour, min, sec, format);
+                SendFunc.sendTime2(year, month, day, hour, min, sec, format, 0);
             }
         }
     };

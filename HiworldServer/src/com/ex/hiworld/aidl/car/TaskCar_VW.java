@@ -219,7 +219,7 @@ public class TaskCar_VW extends BaseCar {
 
 			HandlerTaskCanbus.update(U_CAR_SPEED, B1 &0xFF);
 			
-			CanInfos.onKeyEvent(KeyCanKeyTable, B2 & 0xFF);
+			CanInfos.onKeyEvent2(KeyCanKeyTable, B2 & 0xFF);
 			
 			HandlerTaskCanbus.update(U_LIGHT_BRIGHTNESS, B3 &0xFF);
 			

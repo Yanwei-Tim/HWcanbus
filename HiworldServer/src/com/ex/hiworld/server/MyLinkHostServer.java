@@ -71,6 +71,15 @@ public class MyLinkHostServer extends Service {
         LogsUtils.i("Srv onCreate");
         refrehLocalLanguage();
         registerLocaleReceiver();
+        
+        
+        //////
+        ///
+        //
+        //
+//        HandlerTaskCanbus.getCarTypeByVersion("........ ");
+        
+        
 
         FormatSerialData.getObj().setOnHandlerListener(new OnHandlerListener() {
 			@Override
@@ -158,7 +167,7 @@ public class MyLinkHostServer extends Service {
                     break;
                 case FinalMain.U_APP_ID:
                     if (DataHost.sAppid != msg.ints[0]) {
-                        DataHost.sAppid = msg.ints[0];
+                        DataHost.sAppid = msg.ints[0]; 
                         EventNotify.NE_APPID.onNotify();
                     }
                     break;

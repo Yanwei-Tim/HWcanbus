@@ -4,6 +4,8 @@ import com.ex.hiworld.server.syu.FinalBt;
 import com.ex.hiworld.server.syu.FinalKeyCode;
 import com.ex.hiworld.server.syu.SendFunc;
 
+import android.R.integer;
+
 public class CanInfos {
 
 	// -540 ~ 540
@@ -125,6 +127,29 @@ public class CanInfos {
 			SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_UP);
 		} 
 	}
+
+	private static int tempKey2;
+    // 没有按键按下和抬起状态 2 keycode  会等于0
+	public static void onKeyEvent2(int[][] KeyCanKeyTable, int keycode) {
+		if (CanKey != keycode) {
+			CanKey = keycode;
+			int i, j = -1;
+			for (i = 0; i < KeyCanKeyTable.length; i++) {
+				if (CanKey == KeyCanKeyTable[i][0]) {
+					j = i;
+					tempKey2 = j;
+					break;
+				}
+			}
+
+			if (keycode != 0) {
+				if (j != -1)
+					SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_DOWN);
+			} else {
+				SendFunc.sendKeyCode2Host(KeyCanKeyTable[tempKey2][1], FinalKeyCode.ACTION_UP);
+			}
+		}
+	}
 	public static void updateTempOut(int val) {
 		int tempature;
 		tempature = 1000 + val * 5 - 400;
@@ -202,5 +227,52 @@ public class CanInfos {
 	// 切换全景状态
 	public static void switchFullViews(int i) { 
 		
+	}
+
+	public static void jumpRadio() { 
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_RADIO, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_RADIO, FinalKeyCode.ACTION_UP);
+		
+	}
+	public static void jumpAux() { 
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_AUX, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_AUX, FinalKeyCode.ACTION_UP);
+	}
+	public static void jumpTv() { 
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_TV, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_TV, FinalKeyCode.ACTION_UP);
+	}
+	public static void jumpBtAv() { 
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_BT_AV, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_BT_AV, FinalKeyCode.ACTION_UP);
+	}
+
+	public static void jumpRadioFM() {
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_FM, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_FM, FinalKeyCode.ACTION_UP);
+	}
+	public static void jumpRadioAM() {
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_AM, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_AM, FinalKeyCode.ACTION_UP);
+	}
+
+	public static void jumpMediaPlayer() {
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_PLAYER, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_PLAYER, FinalKeyCode.ACTION_UP);
+	}
+	
+
+
+	public static void jumpFullView() {
+		
+	}
+
+	public static void exitFullView() {
+		
+	}
+
+	public static void jumpDvd() { 
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_DVD, FinalKeyCode.ACTION_DOWN);
+		SendFunc.sendKeyCode2Host(FinalKeyCode.KEY_CODE_DVD, FinalKeyCode.ACTION_UP);
 	}
 }

@@ -140,12 +140,26 @@ public class SendFunc {
         send2Canbus(0xCB, 0x80, hour, min, 0, 0x08, format, year-2000, month+1, day, 0x02);
     }
     
-// PSA
-	public static void sendTime2(int year, int month, int day, int hour, int min, int sec, int format) {
-		send2Canbus(0xCB, year, month + 1, day, hour, min, format, 0, 0, 0, 0);
+// PSA Nissan
+	public static void sendTime2(int year, int month, int day, int hour, int min, int sec, int format, int am) {
+		send2Canbus(0xCB, year, month + 1, day, hour, min, format, am, 0, 0, 0);
 	}
 
     public static void sendEngineSpeed(int i) {
 
     }
+
+    
+    //  是否存在全景图标
+	public static void setExistFullView(int i) { 
+		
+	}
+
+	public static void jumpFullView() {
+		
+	}
+
+	public static void exitFullView() {
+		
+	}
 }

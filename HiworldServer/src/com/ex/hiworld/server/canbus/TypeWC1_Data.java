@@ -1,5 +1,7 @@
 package com.ex.hiworld.server.canbus;
 
+import java.util.Arrays;
+
 import com.ex.hiworld.server.syu.DataHost;
 import com.ex.hiworld.server.syu.FinalMain;
 import com.ex.hiworld.server.syu.FinalRadio;
@@ -31,7 +33,7 @@ public class TypeWC1_Data {
 			// }
 			// else if(DataDvd.sDeviceType == FinalDvd.DEVICE_TYPE_USB)
 			// {
-			// sourceid=0x0d;
+			 sourceid=0x07;
 			// }
 			break;
 
@@ -293,10 +295,11 @@ public class TypeWC1_Data {
 
 			temp16 = DataHost.sCurPlayIndex % 10000;
 
-			cmds[4] = (temp16 / 1000 == 0 ? temp16 / 1000 + '0' : temp16 / 1000 + '0');
-			cmds[5] = ((temp16 % 100) / 10 == 0 ? (temp16 % 1000) + '0' : (temp16 % 1000) / 10 + '0');
-			cmds[6] = ((temp16 % 100) / 10 == 0 ? (temp16 % 100) / 10 + '0' : (temp16 % 100) / 10 + '0');
+			cmds[4] = temp16 / 1000 + '0';
+			cmds[5] = (temp16 / 100) % 10 + '0';
+			cmds[6] = (temp16 % 100) / 10 + '0';
 			cmds[7] = temp16 % 10 + '0';
+			
 
 			temp16 = DataHost.sCurPlayTime / 60;
 			temp16 %= 60;
@@ -333,10 +336,81 @@ public class TypeWC1_Data {
 		// }
 
 		int[] candata = new int[cmds.length - 2];
-
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
-		SendFunc.send2Canbus(0xD2, candata);
+		if(dataTemp == null || !Arrays.equals(dataTemp, candata)) {
+			dataTemp = candata;
+			SendFunc.send2Canbus(0xD2, candata);
+		}
 	}
+	
+	static void CarDisNormalD2_V2(){ 
+		int[] cmds = new int[15];
+		byte i;
+		int charlong;
+		int temp16;
+
+		for (int a = 0; a < cmds.length; a++)
+			cmds[a] = ' ';
+
+		cmds[0] = 0x0d;// leng
+		cmds[1] = 0xd2;// fid
+		cmds[2] = CarDisSourceIdGet();// Source Id 
+		switch (DataHost.sAppid) {
+		case FinalMain.APP_ID_TV:
+			break;
+		case FinalMain.APP_ID_RADIO:
+			int freq = DataHost.sRadioFreq;
+			if (0 == (DataHost.sRadioBand - FinalRadio.BAND_FM_INDEX_BEGIN)
+					|| 1 == (DataHost.sRadioBand - FinalRadio.BAND_FM_INDEX_BEGIN)
+					|| 2 == (DataHost.sRadioBand - FinalRadio.BAND_FM_INDEX_BEGIN)) {
+				cmds[3] = '0';
+				cmds[4] = ((DataHost.sRadioChannel & 0xff)) % 6 + 1 + '0';
+				if (cmds[4] == 0)
+					cmds[4] = 6 + '0';
+				cmds[6] = freq / 10000 == 0 ? ' ' : freq / 10000 + '0';
+				cmds[7] = (freq % 10000) / 1000 + '0';
+				cmds[8] = (freq % 1000) / 100 + '0';
+				cmds[9] = '.';
+				cmds[10] = (freq % 100) / 10 + '0';
+			} else { 
+				cmds[3] = '0';
+				cmds[4] = ((DataHost.sRadioChannel & 0xff)) % 6 + 1 + '0';
+				if (cmds[4] == 0)
+					cmds[4] = 6 + '0';
+				cmds[6] = (freq / 10000 == 0 ? freq / 10000 + ' ' : freq / 10000 + '0');
+				cmds[7] = ((freq % 10000) / 1000 == 0 ? (freq % 10000) / 1000 + ' ' : (freq % 10000) / 1000 + '0');
+				cmds[8] = (freq % 1000) / 100 + '0';
+				cmds[9] = (freq % 100) / 10 + '0';
+				cmds[10] = (freq % 10) + '0';
+			}
+			break;
+		case FinalMain.APP_ID_VIDEO_PLAYER:
+		case FinalMain.APP_ID_AUDIO_PLAYER:// 15
+			if (DataHost.sPlayTotal == 0)
+				break;// 没曲目信息时，就不要显示曲目了 
+			
+			cmds[3] = DataHost.sCurPlayIndex/100%10+'0';
+			cmds[4] = DataHost.sCurPlayIndex/10%10+'0';
+			cmds[5] =  DataHost.sCurPlayIndex%10+'0';
+			cmds[6] = ' ';
+			cmds[7] = DataHost.sCurPlayTime/60/10+'0';
+			cmds[8] = DataHost.sCurPlayTime/60%10+'0';
+			cmds[9] = DataHost.sCurPlayTime%60/10+'0';
+			cmds[10] = DataHost.sCurPlayTime%60%10+'0';
+			break;
+		}
+ 
+		int[] candata = new int[cmds.length - 2];
+		System.arraycopy(cmds, 2, candata, 0, candata.length);
+		if(dataTemp == null || !Arrays.equals(dataTemp, candata)) {
+			dataTemp = candata;
+			SendFunc.send2Canbus(0xD2, candata);
+		}
+	
+	}
+	
+	
+	private static int[] dataTemp;
 
 	static void CarDis91Normal() {
 		int[] cmds = new int[15];
@@ -545,44 +619,15 @@ public class TypeWC1_Data {
 
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
-		SendFunc.send2Canbus(0x91, candata);
+
+		if(dataTemp == null || !Arrays.equals(dataTemp, candata)) {
+			dataTemp = candata;
+			SendFunc.send2Canbus(0x91, candata);
+		}
 	}
 
 	public static int CarBackTrackHandle(int data0, int data1) {
-		int t1;
-		// if(DataCustomer.sCustomerId == FinalCustomer.CUSTOMER_ID_QLTC){
-		// if(data0!=0x00)// left
-		// {
-		// if(data0>132)
-		// {
-		// t1 = 0;
-		// }
-		// else
-		// {
-		// t1=(byte) (35-data0/4);
-		// }
-		// }
-		// else if(data1!=0x00)// right
-		// {
-		// if(data1 > 132)
-		// {
-		// t1 = 70;
-		// }
-		// else
-		// {
-		// t1=data1/4;
-		// t1 = t1+35;
-		// }
-		// }
-		// else
-		// {
-		// t1=35;
-		// }
-		//
-		// return t1;
-		// }
-		// else{
-		// �����ͻ�ֻ��Ҫת����0-40��
+		int t1; 
 		if (data0 != 0x00)// left
 		{
 			if (data0 >= 134) {
@@ -619,17 +664,6 @@ public class TypeWC1_Data {
 		} else {
 			flag = 0;
 		}
-		// if (DataCanbus.mTrackType == DataCanbus.TRACK_TYPE_70) {
-		// t1 = temp / 14; // 540 35
-		// if (t1 > 35)
-		// t1 = 35;
-		//
-		// if (flag != 0) {
-		// t1 = 35 - t1;
-		// } else {
-		// t1 = 35 + t1;
-		// }
-		// } else {
 		t1 = temp / 25; // 540 20
 
 		if (t1 > 25)
@@ -746,6 +780,15 @@ public class TypeWC1_Data {
 		}
 	};
 
+	public static Runnable mCarDisNormal_V2 = new Runnable() {
+		@Override
+		public void run() { 
+			if (Vol_dis_cnt > 0)
+				Vol_dis_cnt--;
+			if (Vol_dis_cnt == 0)
+				CarDisNormalD2_V2();
+		}
+	};
 	public static Runnable mCarDis91Volume = new Runnable() {
 		@Override
 		public void run() {

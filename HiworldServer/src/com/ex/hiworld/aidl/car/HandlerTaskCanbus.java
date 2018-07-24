@@ -30,7 +30,7 @@ public class HandlerTaskCanbus {
 			LogsUtils.i("/////////////////////////////////////");
 			LogsUtils.i("/////////////////////////////////////");
 			LogsUtils.i("/////////////////////////////////////");
-			int canbusID = FinalCanbus.CAR_PSA_ALL;
+			int canbusID = FinalCanbus.CAR_NISSAN_ALL;
 			carLevel = canbusID >> 16 & 0xFFFF;
 			cartype = canbusID & 0xFFFF;
 		}
@@ -58,6 +58,12 @@ public class HandlerTaskCanbus {
 			break;
 		case FinalCanbus.CAR_TOYOTA_ALL:
 			base = new TaskCar_Toyota();
+			break;
+		case FinalCanbus.CAR_HONDA_ALL:
+			base = new TaskCar_Honda();
+			break;
+		case FinalCanbus.CAR_NISSAN_ALL:
+			base = new TaskCar_Nissan();
 			break;
 		default:
 			base = new TaskCar_Null();
