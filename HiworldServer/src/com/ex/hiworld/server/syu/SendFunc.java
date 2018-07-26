@@ -105,7 +105,11 @@ public class SendFunc {
 	public static void setRadarOnOff(int i) {
 		if (i != 0)
 			i = 1;
-		send(C_CANBUS_HOST_SET, CMD_TYPE_RADAR, 1, FL_RARA_ONOFF, i);
+		
+		if (DataHost.sRadarOnoff != i) {
+			DataHost.sRadarOnoff = i;
+			send(C_CANBUS_HOST_SET, CMD_TYPE_RADAR, 1, FL_RARA_ONOFF, i);
+		}
 	} 
 
     public static void sendOutTemp(int type, int value) {

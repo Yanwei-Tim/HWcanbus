@@ -87,45 +87,50 @@ public class CanInfos {
     
     private static int TemCanKey;
     private static int CanKey;
-    public static void onKeyEvent(int[][] KeyCanKeyTable, int keycode, int action) {
-        CanKey = keycode;
-        int i, j = 0;
-        for (i = 0; i < KeyCanKeyTable.length; i++) {
-            if (CanKey == KeyCanKeyTable[i][0]) {
-                j = i;
-                if (CanKey != 0)
-                    TemCanKey = j;
-                break;
-            }
-        }
 
-        if ((CanKey != 0) && (action != 0)) {
-            if (i < KeyCanKeyTable.length)
-                SendFunc.sendKeyCode2Host(KeyCanKeyTable[i][1], FinalKeyCode.ACTION_DOWN);
-        } else {
-            if (((TemCanKey != 0xff) && (action & 0xff) == 0))
-                SendFunc.sendKeyCode2Host(KeyCanKeyTable[TemCanKey][1], FinalKeyCode.ACTION_UP);
-            TemCanKey = 0xff;
-        }
+	public static void onKeyEvent(int[][] KeyCanKeyTable, int keycode, int action) {
+		if (CanKey != keycode) {
+			CanKey = keycode;
+			int i, j = 0;
+			for (i = 0; i < KeyCanKeyTable.length; i++) {
+				if (CanKey == KeyCanKeyTable[i][0]) {
+					j = i;
+					if (CanKey != 0)
+						TemCanKey = j;
+					break;
+				}
+			}
 
+			if ((CanKey != 0) && (action != 0)) {
+				if (i < KeyCanKeyTable.length)
+					SendFunc.sendKeyCode2Host(KeyCanKeyTable[i][1], FinalKeyCode.ACTION_DOWN);
+			} else {
+				if (((TemCanKey != 0xff) && (action & 0xff) == 0))
+					SendFunc.sendKeyCode2Host(KeyCanKeyTable[TemCanKey][1], FinalKeyCode.ACTION_UP);
+				TemCanKey = 0xff;
+			}
 
-    }
+		}
+
+	}
 
     // 没有按键按下和抬起状态
 	public static void onKeyEvent(int[][] KeyCanKeyTable, int keycode) {
-		CanKey = keycode;
-		int i, j = -1;
-		for (i = 0; i < KeyCanKeyTable.length; i++) {
-			if (CanKey == KeyCanKeyTable[i][0]) { 
-				j = i;
-				break;
+		if (CanKey != keycode) {
+			CanKey = keycode;
+			int i, j = -1;
+			for (i = 0; i < KeyCanKeyTable.length; i++) {
+				if (CanKey == KeyCanKeyTable[i][0]) {
+					j = i;
+					break;
+				}
+			}
+
+			if (j != -1) {
+				SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_DOWN);
+				SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_UP);
 			}
 		}
- 
-		if (j != -1) {
-			SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_DOWN);
-			SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_UP);
-		} 
 	}
 
 	private static int tempKey2;

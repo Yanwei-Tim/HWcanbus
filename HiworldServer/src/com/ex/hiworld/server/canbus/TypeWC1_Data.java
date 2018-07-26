@@ -1,12 +1,16 @@
 package com.ex.hiworld.server.canbus;
 
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
+import com.ex.hiworld.server.MyApp;
 import com.ex.hiworld.server.syu.DataHost;
 import com.ex.hiworld.server.syu.FinalMain;
 import com.ex.hiworld.server.syu.FinalRadio;
 import com.ex.hiworld.server.syu.SendFunc;
 
+import android.text.format.DateFormat;
 import android.util.Log;
 
 public class TypeWC1_Data {
@@ -143,94 +147,18 @@ public class TypeWC1_Data {
 		cmds[0] = 0x0d;// leng
 		cmds[1] = 0xd2;// fid
 		cmds[2] = CarDisSourceIdGet();// Source Id
-		/* 这里只判断倒车不判断雷达，因为在有雷达开关的车上倒车之后雷达标志一直为1，如果判断这个标志小屏显示不对了 */
-		/* <2016.3.2.02 tlm> */
-		// if(bPower_flag && Enter_SystemFlag && !CanBackDetFlag && !CanRadarDetCurFlag)
 		switch (DataHost.sAppid) {
 		case FinalMain.APP_ID_TV:// 1
-			// if(DataTv.sTvType==FinalTv.TV_TYPE_ANALOG)
-			// {
-			// // tv channel
-			// if((DataTv.sChannel/10)>0)
-			// {
-			// cmds[3]= DataTv.sChannel/10+'0';
-			// }
-			// cmds[4]= DataTv.sChannel%10+'0';
-			//
-			// cmds[5]= '-';
-			//
-			// // tv freq
-			// charlong=DataTv.sFreq/100;
-			// if((charlong/10000)>0)
-			// {
-			// cmds[6]= charlong/10000+'0';
-			// }
-			// cmds[7]= (charlong%10000)/1000+'0';
-			// cmds[8]= (charlong%1000)/100+'0';
-			// cmds[9]='.';
-			// cmds[10]= (charlong%100)/10+'0';
-			// cmds[11]= (charlong%10)/1+'0';
-			//
-			// cmds[12]= 'M';
-			// cmds[13]= 'h';
-			// cmds[14]= 'z';
-			// }
 			break;
 
 		case FinalMain.APP_ID_DVD:// 2
-			// if(DataDvd.sTotalTrack==0)break;// 没曲目信息时，就不要显示曲目了
-			// /**********************************************************
-			// 在威驰调试大众协议，因为原车小屏显示只有一行，所以建议将曲目的小屏显示改为以下格式
-			// Txx mm:ss
-			//
-			// Date:2014.5.30
-			// author:tang limin
-			// ***********************************************************/
-			// cmds[3]= 'T';//在当前曲目数之前加个大写的"T"
-			//
-			//
-			// /*********************************************************
-			// 曲目显示 只显示当前曲目4位 由于空间问题总曲目不显示
-			//
-			// Date:2014.5.30
-			// author:tang limin
-			// **********************************************************/
-			// temp16=DataDvd.sPlayTrack%10000;
-			//
-			// cmds[4] = (temp16 / 1000 == 0 ? temp16 / 1000 + '0' : temp16 / 1000 + '0');
-			// cmds[5] = ((temp16 % 100)/10 == 0 ? (temp16 % 1000)+ '0' : (temp16 % 1000)/10
-			// + '0');
-			// cmds[6] = ((temp16 % 100) / 10 == 0 ? (temp16 % 100) / 10 + '0' : (temp16 %
-			// 100) / 10 + '0') ;
-			// cmds[7] = temp16 % 10 + '0';
-			//
-			// temp16=DataDvd.sPlayTime/60;
-			// temp16%=60;
-			// cmds[8] = ' ';
-			// cmds[9] =temp16/10 + '0';//当前曲目
-			// cmds[10] =temp16%10 + '0';//当前曲目
-			// cmds[11] = ' ';
-			// temp16=DataDvd.sPlayTime;
-			// temp16%=60;
-			// cmds[12] =temp16/10 + '0';//当前曲目
-			// cmds[13] =temp16%10 + '0';//当前曲目
-
-			break;
-
-		// case SYS_ID_CDC:// 3
-		// break;
-
+			break; 
 		case FinalMain.APP_ID_IPOD:// 4//IPOD
 			break;
-
 		case FinalMain.APP_ID_AUX:// 5//AUX
 			break;
-
 		case FinalMain.APP_ID_RADIO:
-			// radio freq
-			int freq = DataHost.sRadioFreq;
-			// Log.d("LG", "sBand = "+(DataHost.iRadioBand
-			// -FinalRadio.BAND_FM_INDEX_BEGIN)+" sFreq="+freq);
+			int freq = DataHost.sRadioFreq; 
 			if (0 == (DataHost.sRadioBand - FinalRadio.BAND_FM_INDEX_BEGIN)
 					|| 1 == (DataHost.sRadioBand - FinalRadio.BAND_FM_INDEX_BEGIN)
 					|| 2 == (DataHost.sRadioBand - FinalRadio.BAND_FM_INDEX_BEGIN)) {
@@ -256,51 +184,18 @@ public class TypeWC1_Data {
 				cmds[9] = 'h';
 				cmds[10] = 'z';
 			}
-			break;
-
-		// case SYS_ID_RADAR:// 7
-		// break;
-
-		case FinalMain.APP_ID_BTPHONE:// 8
-			break;
-
-		case FinalMain.APP_ID_BTAV:// 11//��������
-			break;
-
-		// case SYS_ID_GPS:// 12
-		// break;
-
-		// case SYS_ID_AIR:// 13
-		// break;
-
-		case FinalMain.APP_ID_NULL:// 14
-			break;
-		// case SYS_ID_Res_1:
+			break;  
 		case FinalMain.APP_ID_VIDEO_PLAYER:
 		case FinalMain.APP_ID_AUDIO_PLAYER:// 15
 			if (DataHost.sPlayTotal == 0)
-				break;// 没曲目信息时，就不要显示曲目了
-			/**********************************************************
-			 * 在威驰调试大众协议，因为原车小屏显示只有一行，所以建议将曲目的小屏显示改为以下格式 Txx mm:ss
-			 * 
-			 * Date:2014.5.30 author:tang limin
-			 ***********************************************************/
-			cmds[3] = 'T';// 在当前曲目数之前加个大写的"T"
-
-			/*********************************************************
-			 * 曲目显示 只显示当前曲目4位 由于空间问题总曲目不显示
-			 * 
-			 * Date:2014.5.30 author:tang limin
-			 **********************************************************/
-
+				break;// 没曲目信息时，就不要显示曲目了 
+			cmds[3] = 'T';// 在当前曲目数之前加个大写的"T" 
 			temp16 = DataHost.sCurPlayIndex % 10000;
 
 			cmds[4] = temp16 / 1000 + '0';
 			cmds[5] = (temp16 / 100) % 10 + '0';
 			cmds[6] = (temp16 % 100) / 10 + '0';
 			cmds[7] = temp16 % 10 + '0';
-			
-
 			temp16 = DataHost.sCurPlayTime / 60;
 			temp16 %= 60;
 			cmds[8] = ' ';
@@ -312,29 +207,14 @@ public class TypeWC1_Data {
 			cmds[12] = temp16 / 10 + '0';// 当前曲目
 			cmds[13] = temp16 % 10 + '0';// 当前曲目
 
-			break;
-
-		// case SYS_ID_MP5:// 16
-		// break;
-
+			break; 
 		case FinalMain.APP_ID_DVR:// 17
 		case FinalMain.APP_ID_CAR_RADIO://
 		case FinalMain.APP_ID_CAR_BTPHONE://
 		case FinalMain.APP_ID_CAR_USB://
 		default:
 			break;
-		}
-
-		// WeiChi_1_ArmDataToCan(15,cmds);
-		// int [] data = new int[16];
-		// data[0] = 0xE3;
-		//
-		// int len = data.length > 0x0f ? 0x0f : data.length;
-		//
-		// for (int t = 0; t < len; t++) {
-		// data [1 + t] = (byte)cmds[t];
-		// }
-
+		} 
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
 		if(dataTemp == null || !Arrays.equals(dataTemp, candata)) {
@@ -716,6 +596,7 @@ public class TypeWC1_Data {
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
 		SendFunc.send2Canbus(0xd2, candata);
+		dataTemp = null;
 	}
 
 	static void CarDis91Volume() {
@@ -758,6 +639,7 @@ public class TypeWC1_Data {
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
 		SendFunc.send2Canbus(0x91, candata);
+		dataTemp = null;
 	}
 
 	public static Runnable mCarDis91Normal = new Runnable() {
@@ -800,6 +682,31 @@ public class TypeWC1_Data {
 		@Override
 		public void run() {
 			CarDisVolume();
+		}
+	};
+
+	public static Runnable mCarDisTime1 = new Runnable() {
+		int lastMin;
+		int lastFormat;
+
+		@Override
+		public void run() {
+			GregorianCalendar calendar = new GregorianCalendar();
+			int min = calendar.get(Calendar.MINUTE);
+			int format = DateFormat.is24HourFormat(MyApp.getInstance()) ? 0 : 1;
+			if (min != lastMin || lastFormat != format) {
+				lastFormat = format;
+				lastMin = min;
+
+				int year = calendar.get(Calendar.YEAR);
+				int month = calendar.get(Calendar.MONTH);
+				int day = calendar.get(Calendar.DAY_OF_MONTH);
+				int hour = calendar.get(Calendar.HOUR);
+				int sec = calendar.get(Calendar.SECOND);
+				SendFunc.sendTime(year, month, day, hour, min, sec, format);
+				SendFunc.send2Canbus(0xB5, hour, min, sec);
+			}
+
 		}
 	};
 }

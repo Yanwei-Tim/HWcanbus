@@ -71,15 +71,6 @@ public class MyLinkHostServer extends Service {
         LogsUtils.i("Srv onCreate");
         refrehLocalLanguage();
         registerLocaleReceiver();
-        
-        
-        //////
-        ///
-        //
-        //
-//        HandlerTaskCanbus.getCarTypeByVersion("........ ");
-        
-        
 
         FormatSerialData.getObj().setOnHandlerListener(new OnHandlerListener() {
 			@Override
@@ -201,14 +192,14 @@ public class MyLinkHostServer extends Service {
                     }
                     break;
                 }
-                case FinalCanbus.U_CANBUS_VER:{ 
-                	if(msg.strs != null && msg.strs.length > 0) {
-	                	DataCanbus.sVersionCanbox = msg.strs[0] == null ? "" : msg.strs[0];
-	                	PrintScreenView.getMsgView().msg("get canbus ver from hostserver " + DataCanbus.sVersionCanbox);
-	                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
-                	}
-                	break;
-                }
+//                case FinalCanbus.U_CANBUS_VER:{ 
+//                	if(msg.strs != null && msg.strs.length > 0) {
+//	                	DataCanbus.sVersionCanbox = msg.strs[0] == null ? "" : msg.strs[0];
+//	                	PrintScreenView.getMsgView().msg("get canbus ver from hostserver " + DataCanbus.sVersionCanbox);
+//	                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
+//                	}
+//                	break;
+//                }
             }
         }
     }
@@ -217,32 +208,32 @@ public class MyLinkHostServer extends Service {
     boolean isFullData = false;
     int[] tempData = new int[1024];
     int offset = 0; 
-    private void parseData(int[] data) {
-//        if (data.length > 2 && (data[0] == 0x5A && data[1] == 0xA5)) {
-            if (data[3] == 0xF0) {
-                String str = Utils.getStringFromInts(data, 4, data[2]);
-                if (str != null && !DataCanbus.sVersionCanbox.equals(str)) {
-                    LogsUtils.i("canbus ver:" + str);
-                    PrintScreenView.getMsgView().msg(" canbus ver:  " + str);  
-                    DataCanbus.sVersionCanbox = str; 
-                    DataCanbus.canbusId = HandlerTaskCanbus.getCarTypeByVersion(str);
-                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
-                    HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId);
-                    EventNotify.NE_CANBUS_ID.onNotify();
-                }
-            } else {
-                try {
-                    int[] datas = new int[data[2] + 2];
-                    System.arraycopy(data, 2, datas, 0, datas.length);
-                    HandlerTaskCanbus.parseCanbusData(datas);
-                } catch (Exception e) {
-//                    LogsUtils.e("error At : " + e.getLocalizedMessage());
-                	e.printStackTrace();
-                    LogsUtils.e("error ?At : " + LogsUtils.toHexString(data));
-                }
-            }
-//        }
-    }
+
+	private void parseData(int[] data) {
+		if (data[3] == 0xF0) {
+			String str = Utils.getStringFromInts(data, 4, data[2]);
+			if (str != null && !DataCanbus.sVersionCanbox.equals(str)) {
+				LogsUtils.i("canbus ver:" + str);
+				PrintScreenView.getMsgView().msg(" canbus ver:  " + str);
+				DataCanbus.sVersionCanbox = str;
+				DataCanbus.canbusId = HandlerTaskCanbus.getCarTypeByVersion(str);
+				HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_VER, DataCanbus.sVersionCanbox, "");
+				HandlerTaskCanbus.update(FinalCanbus.U_CANBUS_ID, DataCanbus.canbusId);
+				EventNotify.NE_CANBUS_ID.onNotify();
+			}
+		} else {
+			try {
+				int[] datas = new int[data[2] + 2];
+				System.arraycopy(data, 2, datas, 0, datas.length);
+				HandlerTaskCanbus.parseCanbusData(datas);
+			} catch (Exception e) {
+				// LogsUtils.e("error At : " + e.getLocalizedMessage());
+				e.printStackTrace();
+				LogsUtils.e("error ?At : " + LogsUtils.toHexString(data));
+			}
+		}
+		// }
+	}
 
     private void parseBtData(int code, int[] ints, String[] strs) {
         switch (code) {

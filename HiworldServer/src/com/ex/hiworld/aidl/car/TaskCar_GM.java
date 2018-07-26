@@ -245,19 +245,20 @@ public class TaskCar_GM extends BaseCar {
 
 	public static final int U_AIR_FRONT_GL6_DEFROST				= 142;
 	public static final int U_AIR_REAR_DEFROST					= 143;
+
+	private static final int U_COSUME_INSTANT 					= U_AIR_REAR_DEFROST + 1;
+	private static final int U_COSUME_RECHARGE_MILES 			= U_COSUME_INSTANT + 1;
+	private static final int U_COSUME_TOTAL_MILES 				= U_COSUME_INSTANT + 2;
+	private static final int U_COSUME_AVERAGE_COST1 			= U_COSUME_INSTANT + 3;
+	private static final int U_COSUME_TRIP_MILES1 				= U_COSUME_INSTANT + 4;
+	private static final int U_COSUME_AVERAGE_COST2 			= U_COSUME_INSTANT + 5;
+	private static final int U_COSUME_TRIP_MILES2 				= U_COSUME_INSTANT + 6;
+	private static final int U_COSUME_AVERAGE_COST3 			= U_COSUME_INSTANT + 7;
+	private static final int U_COSUME_TRIP_MILES3 				= U_COSUME_INSTANT + 8;
+	private static final int U_COSUME_MILE_UNIT 				= U_COSUME_INSTANT + 9;
+	private static final int U_COSUME_FUEL_UNIT 				= U_COSUME_INSTANT + 10;
 	
-	public static final int U_CNT_MAX							=   144;
-	private static final int U_COSUME_INSTANT = 0;
-	private static final int U_COSUME_RECHARGE_MILES = 0;
-	private static final int U_COSUME_TOTAL_MILES = 0;
-	private static final int U_COSUME_AVERAGE_COST1 = 0;
-	private static final int U_COSUME_TRIP_MILES1 = 0;
-	private static final int U_COSUME_AVERAGE_COST2 = 0;
-	private static final int U_COSUME_TRIP_MILES2 = 0;
-	private static final int U_COSUME_AVERAGE_COST3 = 0;
-	private static final int U_COSUME_TRIP_MILES3 = 0;
-	private static final int U_COSUME_MILE_UNIT = 0;
-	private static final int U_COSUME_FUEL_UNIT = 0;
+	public static final int U_CNT_MAX							= U_COSUME_FUEL_UNIT + 1;
 	
 	final int C_SET_CAR_TYPE = 0; // int[0]
 	final int C_CAR_SYS_SETUP = 2; // int[0] int[1] 系统设置命令
@@ -567,7 +568,7 @@ public class TaskCar_GM extends BaseCar {
 			break;
 		}
 
-		case 0x22:{ 
+		case 0x22:{ //  旋钮
 			int event = data[start + 2]&0xFF;
 			int action = data[start + 3]&0xFF;
 			switch (event) {

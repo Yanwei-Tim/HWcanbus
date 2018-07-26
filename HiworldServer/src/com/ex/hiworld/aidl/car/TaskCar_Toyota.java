@@ -251,6 +251,8 @@ public class TaskCar_Toyota extends BaseCar {
 			CanInfos.radarFml(TypeWC2_Data.CarGetRadarDistancef2(data[start + 7] & 0xff));
 			CanInfos.radarFmr(TypeWC2_Data.CarGetRadarDistancef2(data[start + 7] & 0xff));
 			CanInfos.radarFr(TypeWC2_Data.CarGetRadarDistancef2(data[start + 9] & 0xff));
+			
+			SendFunc.setRadarOnOff(data[start + 12]&0x01);
 			break;
 		}
 
@@ -407,7 +409,7 @@ public class TaskCar_Toyota extends BaseCar {
 			HandlerTaskCanbus.update(U_CAR_PE_STATE,			data[start+3] & 0x3F);
 			break;
 		}
-		case (int)0xe8:{
+		case (int)0xe8:{ 
 //			if((data[start+5]&0xff)!=0){
 //				HandlerTaskCanbus.ArmBackCar(1);
 //			}else{
@@ -459,6 +461,10 @@ public class TaskCar_Toyota extends BaseCar {
         EventNotify.NE_BT_PHONENUM.addNotify(mBtPhoneStateAndNumber, 1); 
         EventNotify.NE_VOL_SRC.addNotify(mCarDisVolume, 1); 
         EventNotify.NE_MUTE_SRC.addNotify(mCarDisVolume, 1);
+        
+        EventNotify.NE_ID3_ALBUM.addNotify(mId3ALBUM, 1);
+        EventNotify.NE_ID3_TITLE.addNotify(mId3Song, 1);
+        EventNotify.NE_ID3_ARTIST.addNotify(mId3Artist, 1);
 	}
 
 	@Override
@@ -470,6 +476,9 @@ public class TaskCar_Toyota extends BaseCar {
         EventNotify.NE_BT_PHONENUM.removeNotify(mBtPhoneStateAndNumber); 
         EventNotify.NE_VOL_SRC.removeNotify(mCarDisVolume); 
         EventNotify.NE_MUTE_SRC.removeNotify(mCarDisVolume); 
+        EventNotify.NE_ID3_ALBUM.removeNotify(mId3ALBUM);
+        EventNotify.NE_ID3_TITLE.removeNotify(mId3Song);
+        EventNotify.NE_ID3_ARTIST.removeNotify(mId3Artist);
 	} 
 
 	private Runnable mCarDisNormal = new Runnable() {

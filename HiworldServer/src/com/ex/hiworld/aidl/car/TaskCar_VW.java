@@ -323,19 +323,11 @@ public class TaskCar_VW extends BaseCar {
  			HandlerTaskCanbus.update(U_DOOR_ENBALE,  B7 & 0x01);
         	break;
 		}
-//		case 0xF0: {
-//			break;
-//		}
 		}
 	}
 
 	@Override
-	public void in() {
-//		0xD2;
-//		0xE2;
-//		0xE3;
-//		0xE4;
-//		0xE5;
+	public void in() { 
 
         EventNotify.NE_APPID.addNotify(N_APPID, 1);
         EventNotify.NE_GPS_ANGLE.addNotify(N_NAVI_INFO, 1);

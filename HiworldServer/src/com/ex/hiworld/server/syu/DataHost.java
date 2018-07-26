@@ -18,6 +18,7 @@ public class DataHost {
 	public static boolean isAM;
 	public static int sLang;
 	public static int sMuteSrc, sVolDst;
+	public static int sRadarOnoff = 0;
 
 	@Override
 	public String toString() {

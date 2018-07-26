@@ -204,7 +204,9 @@ public class FinalCanbus {
 	public static final int CAR_GM_GL6					= 5 << 16 | 7;//GL6
 	
 	public static final int CARTYPE_BMW = 8;//宝马
-	public static final int CARTYPE_HYUNDAI = 9;//现代
+	
+	public static final int CAR_HYUNDAI_ALL = 9;//现代
+	
 	public static final int CARTYPE_MAZDA = 0x0A;//马自达
 	public static final int CARTYPE_BENZ = 0x0B;//奔驰
 	public static final int CARTYPE_BAIC = 0x0C;//北汽

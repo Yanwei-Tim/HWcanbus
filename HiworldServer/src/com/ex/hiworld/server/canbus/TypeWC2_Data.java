@@ -872,6 +872,7 @@ public class TypeWC2_Data {
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
 		SendFunc.send2Canbus(0x91, candata);
+		lastDatas = null;
 	}
 
 	static void CarDisVolumeE1() {
@@ -916,6 +917,7 @@ public class TypeWC2_Data {
 		int[] candata = new int[cmds.length - 2];
 		System.arraycopy(cmds, 2, candata, 0, candata.length);
 		SendFunc.send2Canbus(0xe1, candata);
+		lastDatas = null;
 	}
 
 	public static Runnable mCarDisNormal = new Runnable() {
@@ -937,7 +939,7 @@ public class TypeWC2_Data {
 			if (Vol_dis_cnt > 0)
 				Vol_dis_cnt--;
 			if (Vol_dis_cnt == 0) {
-				LogsUtils.i("...send .. " + Vol_dis_cnt + ":sAppid " + DataHost.sAppid);
+//				LogsUtils.i("...send .. " + Vol_dis_cnt + ":sAppid " + DataHost.sAppid);
 				CarDisNormalE1();
 			}
 		}
@@ -1051,6 +1053,28 @@ public class TypeWC2_Data {
 		return t1;
 	}
 
+	// 障碍物离雷达距离， 0 无障碍， 1~3 由近到远
+	public static int CarGetRadarDistancef5(int data) {
+		int t1;
+		switch (data) {
+		case 0:
+			t1 = 0x0f;
+			break;
+		case 1:
+			t1 = 0x00;
+			break;
+		case 2:
+			t1 = 0x06;
+			break;
+		case 3:
+			t1 = 0x09;
+			break;
+		default:
+			t1 = 0x0f;
+			break;
+		}
+		return t1;
+	}
 	public static void CarTemperature(int data) {
 		int tempature = 0;
 		if (data >= 80) {

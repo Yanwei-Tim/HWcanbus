@@ -1,14 +1,15 @@
 package com.ex.hiworld.aidl.car;
 
+import android.annotation.SuppressLint;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
+import java.util.concurrent.ConcurrentHashMap;
 
 import com.ex.hiworld.aidl.ITaskCallback;
 import com.ex.hiworld.server.canbus.DataCanbus;
 import com.ex.hiworld.server.canbus.FinalCanbus;
 import com.ex.hiworld.server.tools.LogsUtils;
 import com.ex.hiworld.server.tools.PrintScreenView;
-import com.ex.hiworld.server.tools.Utils;
 
 /**
  * Created by APP03 on 2018/6/9.
@@ -16,11 +17,36 @@ import com.ex.hiworld.server.tools.Utils;
 
 public class HandlerTaskCanbus {
 	private static BaseCar mBaseCar = null;
+	private static ConcurrentHashMap<String, Integer> listtest ;
 
+	private static void initTestList() {
+		if (listtest == null) {
+			listtest = new ConcurrentHashMap<>();
+			listtest.put("toyota", FinalCanbus.CAR_TOYOTA_ALL);
+			listtest.put("fengtian", FinalCanbus.CAR_TOYOTA_ALL);
+			listtest.put("honda", FinalCanbus.CAR_HONDA_ALL);
+			listtest.put("xiandai", FinalCanbus.CAR_HONDA_ALL);
+			listtest.put("ford", FinalCanbus.CAR_FORD_ALL);
+			listtest.put("fute", FinalCanbus.CAR_FORD_ALL);
+			listtest.put("nissan", FinalCanbus.CAR_NISSAN_ALL);
+			listtest.put("richan", FinalCanbus.CAR_NISSAN_ALL);
+			listtest.put("psa", FinalCanbus.CAR_PSA_ALL);
+			listtest.put("biaozhi", FinalCanbus.CAR_PSA_ALL);
+			listtest.put("vw", FinalCanbus.CAR_VWF0);
+			listtest.put("dazhong", FinalCanbus.CAR_VWF0);
+			listtest.put("golf", FinalCanbus.CAR_VWFO_GOLF7);
+			listtest.put("gaoerfu", FinalCanbus.CAR_VWFO_GOLF7);
+			listtest.put("gm", FinalCanbus.CAR_GM_ALL);
+			listtest.put("tongyong", FinalCanbus.CAR_GM_ALL);
+			listtest.put("hyundai", FinalCanbus.CAR_HYUNDAI_ALL);
+			listtest.put("xiandai", FinalCanbus.CAR_HYUNDAI_ALL);
+		}
+	}
+	
+	@SuppressLint("DefaultLocale")
 	public static int getCarTypeByVersion(String version) {
 		int cartype = 0;
 		int carLevel = 0;
-
 		{ // for test
 			LogsUtils.i("/////////////////////////////////////");
 			LogsUtils.i("/////////////////////////////////////");
@@ -30,9 +56,26 @@ public class HandlerTaskCanbus {
 			LogsUtils.i("/////////////////////////////////////");
 			LogsUtils.i("/////////////////////////////////////");
 			LogsUtils.i("/////////////////////////////////////");
-			int canbusID = FinalCanbus.CAR_NISSAN_ALL;
-			carLevel = canbusID >> 16 & 0xFFFF;
-			cartype = canbusID & 0xFFFF;
+
+			initTestList();
+
+			if (version != null) {
+				LogsUtils.i(" version :[" + version + "]");
+				int indexOfValue = -1;
+				if (listtest.containsKey(version)) {
+					indexOfValue = listtest.get(version.toLowerCase());
+					LogsUtils.i(" testlist index：[" + indexOfValue + "]");
+				}
+				if (indexOfValue != -1) {
+					LogsUtils.e("从testlist查找到：[" + version + "]" + " :" + indexOfValue);
+					int canbusID = indexOfValue;
+					carLevel = canbusID >> 16 & 0xFFFF;
+					cartype = canbusID & 0xFFFF;
+				} else {
+					LogsUtils.i("无法从testlist查找到：[" + version + "]");
+				}
+			}
+
 		}
 
 		if (mBaseCar != null)
@@ -64,6 +107,9 @@ public class HandlerTaskCanbus {
 			break;
 		case FinalCanbus.CAR_NISSAN_ALL:
 			base = new TaskCar_Nissan();
+			break;
+		case FinalCanbus.CAR_HYUNDAI_ALL:
+			base = new TaskCar_Hyunda();
 			break;
 		default:
 			base = new TaskCar_Null();
