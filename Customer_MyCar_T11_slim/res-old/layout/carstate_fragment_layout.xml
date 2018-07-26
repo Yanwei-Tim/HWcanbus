@@ -1,0 +1,469 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_carpc_bac"
+    android:background="@drawable/main_backgrond"
+    android:orientation="vertical" >
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+    
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" 
+        layout="@layout/carstate_fragment_left" />
+   
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/iv_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/block" />
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:layout_alignLeft="@id/iv_block"
+            android:layout_alignTop="@id/iv_block"
+            android:layout_alignBottom="@id/iv_block"
+            android:layout_alignRight="@id/iv_block"
+            android:clickable="false"
+            android:orientation="vertical">
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+
+                <ImageView 
+		            android:contentDescription="@string/text_coolanttemp"
+				    android:id="@+id/iv_cooltemp"
+				    android:src="@drawable/cooltemp_n"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_cooltemp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_customer_cooltemp"
+		                android:textColor="@android:color/white" 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:textSize="@dimen/carpc_size"
+				        android:text=" - -"/>
+                    
+                    <TextView
+                        android:id="@+id/tv_title_cooltemp"
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_coolanttemp"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+                
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_engineSpeed"
+				    android:id="@+id/iv_enginespeed"
+				    android:src="@drawable/enginespeed"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_enginespeed"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_enginespeed"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:text="- -"/>
+                    
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_engineSpeed"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_safeBand"
+				    android:id="@+id/iv_safebelt"
+				    android:src="@drawable/safebelt_d"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_safebelt"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    <com.hiworld.canbus.view.CustomTextView 
+		                android:id="@+id/tv_safebelt"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:clickable="false"
+				        android:enabled="false"
+				        android:text="- -"/>
+                    
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_safeBand"
+				        android:gravity="center"
+				        android:clickable="false"
+				        android:enabled="false"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                    
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_instantfuel"
+				    android:id="@+id/iv_instantfuel"
+				    android:src="@drawable/currentspeed"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_instantfuel"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_currentspeed"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:text="- -"/>
+                    
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_currentspeed"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                    
+                </LinearLayout>
+                
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_instantspeed"
+				    android:id="@+id/iv_currentspeed"
+				    android:src="@drawable/instantspeed"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_currentspeed"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_instantfuel"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:text="- -"/>
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_averagespeed"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                    
+                </LinearLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_handbrake"
+				    android:id="@+id/iv_handstop"
+				    android:src="@drawable/handbrake_n"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_handstop"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_handstop"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center" 
+				        android:text="- -"/>
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_handbrake"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                    
+                </LinearLayout>
+                
+            </RelativeLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_batteryvoltage"
+				    android:id="@+id/iv_battery"
+				    android:src="@drawable/batteryvoltage_n"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_battery"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_battery"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:layout_height="wrap_content"
+				        android:text="- -"/>
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_batteryvoltage"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                </LinearLayout>
+                
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_mileage"
+				    android:id="@+id/iv_distance"
+				    android:src="@drawable/mileage"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_distance"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_distance"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:text="- -"/>
+                    
+                    <TextView 
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_totalmileage"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                </LinearLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_doorlock"
+				    android:id="@+id/iv_doorlock"
+				    android:src="@drawable/main_dancilicheng"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_doorlock"
+                    android:layout_marginLeft="2dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical" >
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_doorlock"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carpc_size"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:text="- -"/>
+                    
+                    <TextView 
+                        android:id="@+id/tv_title_lock"
+		                android:textSize="@dimen/little_size"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_doorlock"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+                    
+                    
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+            
+        </LinearLayout>
+
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" >
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/img_select"
+            android:layout_alignBottom="@+id/img_select"
+            android:layout_alignEnd="@+id/img_select"
+            android:layout_alignLeft="@+id/img_select"
+            android:layout_alignRight="@+id/img_select"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/skin_default_thumbnail" />
+
+        <ImageView
+            android:id="@+id/img_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/skin_select_press" />
+
+        <RelativeLayout
+            android:id="@+id/lay_current_skin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/img_select_press"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/select_skin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="当前使用"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/tpms_size" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/skin_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/title_size" />
+
+</LinearLayout>

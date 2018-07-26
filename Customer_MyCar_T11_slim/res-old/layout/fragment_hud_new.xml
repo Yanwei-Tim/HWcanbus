@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_hudBac"
+    android:background="@drawable/background" 
+    xmlns:app1="http://schemas.android.com/apk/res/com.hiworld.mycar.t11"
+   	android:keepScreenOn="true">
+    
+    <!-- <RelativeLayout 
+        android:id="@+id/layout_hud_rr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView 
+		    android:id="@+id/head_mirror_port"
+		   	android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/tab_hud"
+		    android:gravity="center"
+		    android:textSize="20sp"
+		    android:textColor="@color/white"
+		    android:background="@drawable/shangbianlan"/>
+	    <ImageView 
+		    android:id="@+id/img_hud_setting"
+		    android:clickable="true"
+		    android:layout_alignParentTop="true"
+		    android:layout_alignBottom="@id/head_mirror_port"
+		    android:scaleType="fitCenter"
+		    android:layout_alignParentRight="true"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:src="@drawable/selector_setting"/>
+	    
+		<ImageView 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:src="@drawable/orange_line"
+		    android:layout_marginBottom="-6dp"
+		    android:layout_alignBottom="@id/head_mirror_port"/>
+    </RelativeLayout> -->
+
+
+	    
+	    <LinearLayout 
+	        android:id="@+id/layout_mirror_port"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="horizontal">
+	        <RelativeLayout 
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="2">
+	        <!-- <LinearLayout 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:layout_marginTop="16dp"
+	            android:layout_centerHorizontal="true"> -->
+            <!-- <com.hiworld.canbus.view.CustomTextView 
+                android:id="@+id/timeText_port"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/normal_icon_time"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:textSize="26sp"
+                android:gravity="center"
+	            android:textColor="@color/blue"
+                android:text="16:40"/> -->
+            
+            <RelativeLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_centerVertical="true">
+	                <com.hiworld.canbus.view.MyNumTextView 
+	                    android:id="@+id/numText_left"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:gravity="center_horizontal"
+		                android:text="14.1"
+		                android:textSize="@dimen/hud_small"
+		                android:textColor="@color/blue"/>
+	                <Button 
+	                    android:visibility="invisible"
+	                    android:layout_centerHorizontal="true"
+	                    android:id="@+id/spinner_left"
+	                    android:layout_below="@id/numText_left"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:background="@drawable/selector_spinner"/>
+		            <TextView  
+		                android:id="@+id/unitText_left"
+		                android:layout_alignLeft="@id/spinner_left"
+		                android:layout_alignRight="@id/spinner_left"
+		                android:layout_alignTop="@id/spinner_left"
+		                android:layout_alignBottom="@id/spinner_left"
+		                android:gravity="center"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="电压 V"
+		                android:textSize="22sp"
+		                android:textColor="@color/blue"/>
+	            </RelativeLayout>
+	           <!--  <com.hiworld.canbus.view.CustomTextView 
+	                android:id="@+id/directionText_port"
+	                android:layout_marginLeft="40dp"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:drawableLeft="@drawable/normal_icon_direction"
+	                android:drawablePadding="8dp"
+	                android:textSize="26sp"
+	                android:gravity="center"
+		            android:textColor="@color/blue"
+	                android:text="正东"/>
+	        </LinearLayout> -->
+	    </RelativeLayout>
+
+	    <RelativeLayout 
+	        android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_weight="3">
+            <com.hiworld.canbus.view.CustomTextView 
+                android:id="@+id/timeText_port"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:textSize="@dimen/time_size"
+                android:gravity="center"
+	            android:textColor="@color/blue"
+                android:text="16:40"/>
+	        <RelativeLayout 
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+				android:layout_centerVertical="true">
+	            <com.hiworld.canbus.view.MyNumTextView
+	                android:id="@+id/numText_bottom_big" 
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:gravity="center_horizontal"
+		            android:textSize="@dimen/hud_big"
+		            android:textColor="@color/blue"
+		            android:text="108"/>
+	            
+	            <Button 
+	                android:visibility="invisible"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/spinner_bottom_big"
+                    android:layout_below="@id/numText_bottom_big"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_spinner"/>
+	            <TextView
+	                android:id="@+id/unitText_bottom"
+	                android:layout_alignLeft="@id/spinner_bottom_big"
+	                android:layout_alignRight="@id/spinner_bottom_big"
+	                android:layout_alignTop="@id/spinner_bottom_big"
+	                android:layout_alignBottom="@id/spinner_bottom_big"
+	                android:gravity="center"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="车速Km/h"
+	                android:textSize="22sp"
+	                android:textColor="@color/blue"/>
+	        </RelativeLayout>
+	    </RelativeLayout>
+	    
+	    
+	    <RelativeLayout 
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="2">
+	            <RelativeLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_centerVertical="true">
+	                <com.hiworld.canbus.view.MyNumTextView 
+	                    android:id="@+id/numText_right"
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+		                android:gravity="center_horizontal"
+		                android:text="110"
+		                android:textSize="@dimen/hud_small"
+		                android:textColor="@color/blue"/>
+		            <Button 
+		                android:visibility="invisible"
+	                    android:layout_centerHorizontal="true"
+	                    android:id="@+id/spinner_right"
+	                    android:layout_below="@id/numText_right"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:background="@drawable/selector_spinner"/>
+		            <TextView  
+		                android:id="@+id/unitText_right"
+		                android:layout_alignLeft="@id/spinner_right"
+		                android:layout_alignRight="@id/spinner_right"
+		                android:layout_alignTop="@id/spinner_right"
+		                android:layout_alignBottom="@id/spinner_right"
+		                android:gravity="center"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="冷却液温度℃"
+		                android:textSize="22sp"
+		                android:textColor="@color/blue"/>
+	            </RelativeLayout>
+	        </RelativeLayout>
+	    
+	    </LinearLayout>
+	    
+	    <!-- <RelativeLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="2">
+	       
+	        <ImageView 
+	            android:id="@+id/img_eee"
+	            android:layout_alignParentBottom="true"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/eee"/>
+	        
+	         <CheckBox 
+	            android:id="@+id/check_mirror_port"
+			    android:button="@null"
+			    android:background="@drawable/selector_mirror"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_marginBottom="20dp"
+			    android:layout_centerHorizontal="true"
+			    android:layout_above="@id/img_eee"/>
+	         
+	    </RelativeLayout> -->
+	
+
+	<RelativeLayout 
+	    android:id="@+id/layout_picker"
+	    android:clickable="true"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:background="@color/black"
+	    android:visibility="gone"
+	    android:alpha="0.8">
+	    <com.hiworld.canbus.view.NumberPickerView
+	        android:id="@+id/number_picker1"
+	        android:layout_centerInParent="true"
+	        android:layout_width="240dp"
+	        android:layout_height="240dp"
+	        android:layout_marginTop="20dp"
+	        android:contentDescription="@string/app_name"
+	        app:npv_ItemPaddingHorizental="5dp"
+	        app:npv_ItemPaddingVertical="5dp"
+	        app:npv_TextColorNormal="#C4C4C7"
+	        app:npv_TextColorSelected="#07FEFE"
+	        app:npv_ShowCount="5"
+	        app1:npv_ShowDivider="false"
+	        app:npv_TextSizeNormal="20sp"
+	        app:npv_TextSizeSelected="24sp"
+	        app:npv_WrapSelectorWheel="false"/>
+	</RelativeLayout>
+		
+</RelativeLayout>

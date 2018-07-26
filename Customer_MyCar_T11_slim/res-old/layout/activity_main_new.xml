@@ -1,0 +1,128 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_home_background"
+    android:background="@drawable/bg_port" >
+
+   <!-- <include
+        android:id="@+id/main_top_iud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        layout="@layout/activity_main_top" /> -->
+
+    <include
+        android:id="@+id/main_bottom_iud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/activity_main_bottom" />
+    
+    <include 
+        android:id="@+id/layout_mileage_port"
+        layout="@layout/activity_port_mileage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_bottom_iud"/>
+    
+    <ImageView 
+        android:id="@+id/img_road"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/road_port"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/layout_mileage_port"/>
+    
+    <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            layout="@layout/activity_main_center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_mileage_port" >
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            layout="@layout/activity_main_speed" />
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            layout="@layout/activity_main_door" />
+        
+    </RelativeLayout>
+
+    <include 
+        layout="@layout/home_main_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layout_mileage_port"/>
+    
+    <include 
+        android:id="@+id/home_icon"
+        layout="@layout/activity_main_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+    
+    <!-- <TextView 
+        android:id="@+id/text_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tankuang"
+        android:layout_marginBottom="2px"
+        android:layout_above="@id/img_road"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="#FFF"
+        android:textSize="@dimen/carpc_size"
+        android:visibility="gone"/> -->
+        
+    <com.hiworld.canbus.view.MyKuangView
+        android:id="@+id/warnKuang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/home_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4px"
+        android:visibility="gone"/>
+    
+    <!-- <RelativeLayout
+        android:id="@+id/rl_first_know"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:visibility="visible" >
+        
+        <ImageView
+            android:id="@+id/iv_first_know"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/main_firstknow" />
+
+        <ImageView
+            android:clickable="true"
+            android:id="@+id/ib_firstknow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_first_know"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/first_know_selector" />
+
+    </RelativeLayout> -->
+    
+</RelativeLayout>

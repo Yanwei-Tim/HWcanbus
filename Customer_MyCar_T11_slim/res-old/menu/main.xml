@@ -1,0 +1,73 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_usercenter"
+        android:icon="@drawable/ico_setting"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_settings">
+         <menu>
+            <item
+                android:id="@+id/menu_cailbration"
+                android:icon="@drawable/ico_cailbration"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_tpms"/>
+            <item
+                android:id="@+id/menu_general"
+                android:icon="@drawable/ico_general"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_general"/>
+            <item
+                android:id="@+id/menu_help"
+                android:icon="@drawable/ico_help"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_help"/>
+            <item
+                android:id="@+id/menu_about"
+                android:icon="@drawable/ico_about"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_about"/>
+        </menu>
+    </item>
+    
+    <item
+        android:id="@+id/menu_setting"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_settings">
+        <menu>
+            <item
+                android:id="@+id/menu_cailbration1"
+                android:icon="@drawable/ico_cailbration"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_tpms"/>
+            <item
+                android:id="@+id/menu_general1"
+                android:icon="@drawable/ico_general"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_general"/>
+            <item
+                android:id="@+id/menu_help1"
+                android:icon="@drawable/ico_help"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_help"/>
+            <item
+                android:id="@+id/menu_about1"
+                android:icon="@drawable/ico_about"
+                android:orderInCategory="100"
+                android:showAsAction="never"
+                android:title="@string/action_about"/>
+        </menu>
+    </item>
+    
+    
+
+
+</menu>

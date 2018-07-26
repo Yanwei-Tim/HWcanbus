@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView 
+        android:id="@+id/img_title_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_header"
+        android:layout_centerHorizontal="true"/>
+    
+    <ImageView
+        android:id="@+id/img_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="invisible"
+        android:src="@drawable/port_hiworld" />
+
+    <ImageView
+        android:id="@+id/iv_main_bluestate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/img_title"
+        android:layout_marginRight="50px"
+        android:clickable="true"
+        android:src="@drawable/bluetooth_disconnect_new" />
+    
+    <ImageView
+        android:id="@+id/iv_main_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50px"
+		android:layout_toRightOf="@id/img_title"
+		android:clickable="true"
+        android:src="@drawable/user_selector" />
+    
+    <TextView 
+        android:id="@+id/text_title_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#FFF"
+        android:textSize="@dimen/title_size"/>
+</RelativeLayout>

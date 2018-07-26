@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <ImageView
+        android:id="@+id/img_help2_hiworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/hiworld_log_parentright"
+        android:layout_marginTop="@dimen/hiworld_mainlog_parenttop"
+        android:src="@drawable/ico_hiworld" 
+        android:contentDescription="@string/app_name"/>
+    
+    <ImageView
+        android:id="@+id/img_help2_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backgrund_help" 
+        android:layout_below="@+id/img_help2_hiworld"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"/>
+
+</RelativeLayout>

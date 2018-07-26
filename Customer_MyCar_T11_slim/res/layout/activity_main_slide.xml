@@ -1,0 +1,267 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/instrument"
+    android:clickable="true" >
+
+    <!-- 速度值 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="140dp"
+        android:gravity="center_horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/iv_slide_hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/speed_num0"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_slide_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/speed_num0"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_slide_digit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/speed_num0" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_slide_farlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="17dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/yuanguang"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_ill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="104dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ill"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_doublelight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="210dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/shuanshandeng"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_hand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="304dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/shousha"
+        android:visibility="gone" />
+	<ImageView 
+        android:id="@+id/img_timeLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_time"/>
+    
+    <com.hiworld.canbus.view.CustomTextView
+        android:id="@+id/tv_slide_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/img_timeLogo"
+        android:layout_alignLeft="@id/img_timeLogo"
+        android:layout_alignRight="@id/img_timeLogo"
+        android:layout_alignTop="@id/img_timeLogo"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/time_size" />
+
+    <com.hiworld.canbus.view.CustomTextView
+        android:id="@+id/tv_slide_dot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/img_timeLogo"
+        android:layout_alignLeft="@id/img_timeLogo"
+        android:layout_alignRight="@id/img_timeLogo"
+        android:layout_alignTop="@id/img_timeLogo"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/time_size" />
+
+    <ImageView
+        android:id="@+id/iv_slide_lowfuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="17dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/youliang"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_tpms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="104dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/taiya"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_safebelt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="210dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/anquandai"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="304dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/dianchi"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_leftlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="97dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/zuozhuanxiang"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_slide_rightlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="97dp"
+        android:layout_marginRight="97dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/youzhuanxiang"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/id_slide_gear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/iv_slide_gearp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/p" />
+
+        <ImageView
+            android:id="@+id/iv_slide_gearr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_toEndOf="@id/iv_slide_gearp"
+            android:layout_toRightOf="@id/iv_slide_gearp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/r" />
+
+        <ImageView
+            android:id="@+id/iv_slide_gearn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_toEndOf="@id/iv_slide_gearr"
+            android:layout_toRightOf="@id/iv_slide_gearr"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/n" />
+
+        <ImageView
+            android:id="@+id/iv_slide_geard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_toEndOf="@id/iv_slide_gearn"
+            android:layout_toRightOf="@id/iv_slide_gearn"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/d" />
+
+        <ImageView
+            android:id="@+id/iv_slide_gears"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_toEndOf="@id/iv_slide_geard"
+            android:layout_toRightOf="@id/iv_slide_geard"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/s" />
+    </RelativeLayout>
+
+</RelativeLayout>

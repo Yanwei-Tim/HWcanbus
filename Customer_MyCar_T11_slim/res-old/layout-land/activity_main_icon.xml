@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+    
+    <LinearLayout 
+        android:id="@+id/icon_ll_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        
+        <ImageView
+            android:id="@+id/iv_main_icoleftlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_leftlight" />
+            
+        <ImageView
+            android:id="@+id/iv_main_icofarlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_farlight"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp" />
+        
+        <ImageView
+            android:id="@+id/iv_main_icoill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_ill" />
+
+        <ImageView
+            android:id="@+id/iv_main_icodoublelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/icon_main_doublelight" />
+
+        <ImageView
+            android:id="@+id/iv_main_icorightlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_rightlight" />
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_below="@id/icon_ll_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:gravity="center_vertical">
+        
+        <ImageView
+            android:id="@+id/iv_main_icosafebelt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_safebelt" />
+        
+        <ImageView
+            android:id="@+id/iv_main_icobattery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_battery"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp" />
+        
+        <ImageView
+            android:id="@+id/iv_main_icoweather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/icon_main_weather" />
+        
+        <ImageView
+            android:id="@+id/iv_main_iconOil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_oil" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView 
+        android:id="@+id/header_bac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/main_bottomtrip"/>
+    
+    <TextView
+        android:id="@+id/iv_top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        android:text="@string/carpc_name" />
+
+    <ImageButton
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="56dp"
+        android:scaleType="fitCenter"
+        android:background="@drawable/back_selector" />
+    
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="36dp"
+        android:src="@drawable/port_hiworld" />
+    
+	<ImageView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/header_bac"
+        android:layout_marginBottom="-4dp"
+        android:src="@drawable/line"/>
+</RelativeLayout>

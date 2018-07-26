@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_about_bac"
+    android:background="@drawable/main_backgrond" >
+    
+    <include 
+        android:id="@+id/header_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_carpc_top"/>
+
+    <ImageView 
+        android:id="@+id/img_erweima"
+        android:layout_below="@id/header_about"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hiworld_qr_code"/>
+    <!-- mine_erweima -->
+    
+    <TextView 
+        android:id="@+id/text_appVersion"
+        android:layout_below="@id/img_erweima"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFF"
+        android:textSize="@dimen/tpms_size"/>
+    
+    <TextView 
+        android:id="@+id/text_serverVersion"
+        android:layout_below="@id/text_appVersion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFF"
+        android:textSize="@dimen/tpms_size"/>
+    
+    <TextView 
+        android:id="@+id/text_vissVersion"
+        android:layout_below="@id/text_serverVersion"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12px"
+        android:textColor="#FFF"
+        android:textSize="@dimen/tpms_size"
+        android:text="@string/device_version"/>
+    
+    <TextView 
+        android:id="@+id/text_banquan"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Copyright ©2018 Hiworld.All Rights Reserved."
+        android:layout_alignParentBottom="true"
+        android:textColor="#FFF"
+        android:textSize="@dimen/tpms_size"
+        android:layout_marginBottom="30px"/>
+    
+    <TextView 
+        android:id="@+id/text_ch_copyRight"
+        android:layout_above="@id/text_banquan"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_banquan"
+        android:textColor="#FFF"
+        android:textSize="@dimen/tpms_size"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="5px"/>
+</RelativeLayout>

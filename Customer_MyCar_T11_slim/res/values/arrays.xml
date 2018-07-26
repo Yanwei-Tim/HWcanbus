@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sensitivity">
+        <item>@string/text_Sensitivity1</item>
+        <item>@string/text_Sensitivity2</item>
+        <item>@string/text_Sensitivity3</item>
+    </string-array>
+    
+    <!-- 换肤选择种类 0:默认皮肤 1： 白天蓝色夜晚红色皮肤 -->
+    <integer-array name="skin_colour_select">
+        <item>@array/skin_colour_default</item>
+        <item>@array/skin_colour_bule_and_red</item>
+    </integer-array>
+    
+    <!-- 皮肤种类缩略图ill -->
+    <integer-array name="skin_thumbnail_ill">
+        <item>@drawable/skin_default_thumbnail_ill</item>
+        <item>@drawable/skin_s1_thumbnail_ill</item>
+    </integer-array>
+    
+   <!-- 皮肤种类缩略图 -->
+    <integer-array name="skin_thumbnail">
+        <item>@drawable/skin_default_thumbnail</item>
+        <item>@drawable/skin_s1_thumbnail</item>
+    </integer-array>
+    
+    <!-- 皮肤种类标题-->
+    <integer-array name="skin_title">
+        <item>@string/skin_default</item>
+        <item>@string/skin_red</item>
+    </integer-array>
+    
+    
+    <!-- 以下是皮肤种类《1》即默认皮肤 -->
+    <!-- 皮肤更换集合    黑夜即车辆亮灯    白天则不亮灯-->
+    <integer-array name="skin_colour_default">
+        <!-- HomeFragment 类 -->
+        	<!-- 黑夜-->
+        <item>@drawable/mileage_port_ill</item><!--0 黑夜-->
+        <item>@drawable/bg_port_ill</item><!--1 竖屏 -->
+        <item>@drawable/port_carpc_ill_selector</item><!--2 竖屏 -->
+        <item>@drawable/port_tpms_ill_selector</item><!--3 竖屏 -->
+        <item>@drawable/main_carpc_ill_selector</item><!--4 横屏 -->
+        <item>@drawable/main_tpms_ill_selector</item><!--5 横屏 -->
+        <item>@drawable/home_background_ill</item><!--6 横屏 -->
+        	<!-- 白天 -->
+        <item>@drawable/mileage_port</item><!--7 白天-->
+        <item>@drawable/bg_port</item><!--8 竖屏 -->
+        <item>@drawable/port_carpc_selector</item><!--9 竖屏 -->
+        <item>@drawable/port_tpms_selector</item><!--10 竖屏 -->
+        <item>@drawable/home_background</item><!--11 横屏 -->
+        <item>@drawable/main_carpc_selector</item><!--12 横屏 -->
+        <item>@drawable/main_tpms_selector</item><!--13 横屏 -->
+        	<!-- 仪表盘  -->
+        <item>@drawable/main_yibiaopan_port</item><!--14 竖屏 -->
+        <item>@drawable/main_rightcircle_port</item><!--15 竖屏 -->
+        <item>@drawable/main_yibiaopan</item><!--16 横屏 -->
+        <item>@drawable/main_rightcircle</item><!--17 横屏 -->
+        <!-- Main 类 -->
+       		<!-- 黑夜-->
+       	<item>@drawable/home_header</item><!--18  横竖屏  -->
+       		<!-- 白天 -->
+       	<item>@drawable/home_header</item><!--19  横竖屏 -->
+       	<!-- CarStateFragment类  行车电脑 -->
+       	<item>@drawable/main_backgrond_ill</item><!--20  横竖屏 -->
+       	<item>@drawable/block_ill</item><!--21  横竖屏 -->
+       	<item>@drawable/main_backgrond</item><!--22  横竖屏 -->
+       	<item>@drawable/block</item><!--23  横竖屏 -->
+       	<item>@drawable/cooltemp_d</item><!--24  横竖屏 -->
+       	<item>@drawable/cooltemp_n</item><!--25  横竖屏 -->
+       	<item>@drawable/icon_oil</item><!--26  横竖屏 -->
+       	<item>@drawable/icon_gear</item><!--27  横竖屏 -->
+       	<item>@drawable/batteryvoltage_d</item><!--28  横竖屏 -->
+       	<item>@drawable/batteryvoltage_n</item><!--29  横竖屏 -->
+       	<item>@drawable/safebelt_d</item><!--30  横竖屏 -->
+       	<item>@drawable/safebelt_n</item><!--31  横竖屏 -->
+       	<item>@drawable/handbrake_d</item><!--32  横竖屏 -->
+       	<item>@drawable/handbrake_n</item><!--33  横竖屏 -->
+       	<item>@drawable/doorlock_d</item><!--34  横竖屏 -->
+       	<item>@drawable/doorlock_n</item><!--35  横竖屏 -->
+       	<item>@drawable/icon_curmileage</item><!--36  横竖屏 -->
+       	<!-- TpmsFragment类  胎压监测 -->
+       	<item>@drawable/img_car_normal1</item><!--37  横竖屏 -->
+       	<item>@drawable/img_car_normal2</item><!--38  横竖屏 -->
+       	<item>@drawable/img_car_normal3</item><!--39  横竖屏 -->
+       	<item>@drawable/tpms_check_selector_port_ill</item><!--40  竖屏 -->
+       	<item>@drawable/tpms_sett_selector_port_ill</item><!--41  竖屏 -->
+       	<item>@drawable/tpms_check_ill_selector</item><!--42  横屏 -->
+       	<item>@drawable/tpms_sett_ill_selector</item><!--43  横屏 -->
+       	<item>@drawable/tpms_check_selector_port</item><!--44  竖屏 -->
+       	<item>@drawable/tpms_sett_selector_port</item><!--45  竖屏 -->
+       	<item>@drawable/tpms_check_selector</item><!--46  横屏 -->
+       	<item>@drawable/tpms_sett_selector</item><!--47  横屏 -->
+       	<item>@drawable/img_level_yellow</item><!--48  横竖屏 -->
+       	<item>@drawable/ico_yellow_lf</item><!--49  横竖屏 -->
+       	<item>@drawable/ico_yellow_rf</item><!--50  横竖屏 -->
+       	<item>@drawable/ico_yellow_lr</item><!--51  横竖屏 -->
+       	<item>@drawable/ico_yellow_rr</item><!--52  横竖屏 -->
+       	<item>@drawable/img_level_red</item><!--53  横竖屏 -->
+       	<item>@drawable/ico_red_lf</item><!--54  横竖屏 -->
+       	<item>@drawable/ico_red_rf</item><!--55  横竖屏 -->
+       	<item>@drawable/ico_red_lr</item><!--56  横竖屏 -->
+       	<item>@drawable/ico_red_rr</item><!--57  横竖屏 -->
+       	<item>@drawable/tpms_warnkuang</item><!--58  横竖屏 -->
+       	<item>@drawable/tpms_warnkuang</item><!--59  横竖屏 -->
+       	<!-- ConnectActivity 连接设备界面 -->
+       	<item>@drawable/mine_obd_ill</item><!--60  横竖屏 -->
+       	<item>@drawable/mine_obd</item><!--61  横竖屏 -->
+       	
+       	<!--HomeFragment 仪表盘  ill -->
+        <item>@drawable/main_yibiaopan_port</item><!--62 竖屏 -->
+        <item>@drawable/main_rightcircle_port</item><!--63 竖屏 -->
+        <item>@drawable/main_yibiaopan</item><!--64 横屏 -->
+        <item>@drawable/main_rightcircle</item><!--65 横屏 -->
+        
+       <!-- 个人中心列表点击效果 -->
+       <item>@drawable/mine_bac_selector</item><!--66 横竖屏-->
+       <item>@drawable/mine_bac_selector</item><!--67 横竖屏-->
+       
+       <!-- 设备设置-->
+       <item>@drawable/selector_item_check</item><!--68 横竖屏-->
+       <item>@drawable/selector_item_check</item><!--69 横竖屏-->
+       <item>@drawable/selector_switch</item><!--70  横竖屏 -->
+       <item>@drawable/selector_switch</item><!--71  横竖屏 -->
+        
+    </integer-array>
+    <!-- 以下是皮肤种类《1》即默认皮肤 end -->
+    
+    
+    <!-- 以下是皮肤种类《2》 白天蓝色夜晚红色  凡是后面加“_s1”的即为新皮肤资源 -->
+    <!-- 肤更换集合 -->
+    <integer-array name="skin_colour_bule_and_red">
+        <!-- HomeFragment 类 -->
+        	<!-- 黑夜-->
+        <item>@drawable/mileage_port_ill_s1</item><!--0 黑夜-->
+        <item>@drawable/bg_port_ill_s1</item><!--1 竖屏 -->
+        <item>@drawable/port_carpc_ill_selector_s1</item><!--2 竖屏 -->
+        <item>@drawable/port_tpms_ill_selector_s1</item><!--3 竖屏 -->
+        <item>@drawable/main_carpc_ill_selector_s1</item><!--4 横屏 -->
+        <item>@drawable/main_tpms_ill_selector_s1</item><!--5 横屏 -->
+        <item>@drawable/home_background_ill_s1</item><!--6 横屏 -->
+        	<!-- 白天 -->
+        <item>@drawable/mileage_port_s1</item><!--7 白天-->
+        <item>@drawable/bg_port_s1</item><!--8 竖屏 -->
+        <item>@drawable/port_carpc_selector_s1</item><!--9 竖屏 -->
+        <item>@drawable/port_tpms_selector_s1</item><!--10 竖屏 -->
+        <item>@drawable/home_background_s1</item><!--11 横屏 -->
+        <item>@drawable/main_carpc_selector_s1</item><!--12 横屏 -->
+        <item>@drawable/main_tpms_selector_s1</item><!--13 横屏 -->
+        	<!-- 仪表盘   -->
+        <item>@drawable/main_yibiaopan_port_s1</item><!--14 竖屏 -->
+        <item>@drawable/main_rightcircle_port_s1</item><!--15 竖屏 -->
+        <item>@drawable/main_yibiaopan_s1</item><!--16 横屏 -->
+        <item>@drawable/main_rightcircle_s1</item><!--17 横屏 -->
+        <!-- Main 类 -->
+       		<!-- 黑夜-->
+       	<item>@drawable/home_header_red_s1</item><!--18  横竖屏  -->
+       		<!-- 白天 -->
+       	<item>@drawable/home_header_blue_s1</item><!--19  横竖屏 -->
+       	<!-- CarStateFragment类  行车电脑 -->
+       	<item>@drawable/main_backgrond_ill_s1</item><!--20  横竖屏 -->
+       	<item>@drawable/block_ill_s1</item><!--21  横竖屏 -->
+       	<item>@drawable/main_backgrond_s1</item><!--22  横竖屏 -->
+       	<item>@drawable/block_s1</item><!--23  横竖屏 -->
+       	<item>@drawable/cooltemp_d</item><!--24  横竖屏 -->
+       	<item>@drawable/cooltemp_n</item><!--25  横竖屏 -->
+       	<item>@drawable/icon_oil</item><!--26  横竖屏 -->
+       	<item>@drawable/icon_gear</item><!--27  横竖屏 -->
+       	<item>@drawable/batteryvoltage_d</item><!--28  横竖屏 -->
+       	<item>@drawable/batteryvoltage_n</item><!--29  横竖屏 -->
+       	<item>@drawable/safebelt_d</item><!--30  横竖屏 -->
+       	<item>@drawable/safebelt_n</item><!--31  横竖屏 -->
+       	<item>@drawable/handbrake_d</item><!--32  横竖屏 -->
+       	<item>@drawable/handbrake_n</item><!--33  横竖屏 -->
+       	<item>@drawable/doorlock_d</item><!--34  横竖屏 -->
+       	<item>@drawable/doorlock_n</item><!--35  横竖屏 -->
+       	<item>@drawable/icon_curmileage</item><!--36  横竖屏 -->
+       	<!-- TpmsFragment类  胎压监测 -->
+       	<item>@drawable/img_car_normal1</item><!--37  横竖屏 -->
+       	<item>@drawable/img_car_normal2</item><!--38  横竖屏 -->
+       	<item>@drawable/img_car_normal3</item><!--39  横竖屏 -->
+       	<item>@drawable/tpms_check_selector_port_ill_s1</item><!--40  竖屏 -->
+       	<item>@drawable/tpms_sett_selector_port_ill_s1</item><!--41  竖屏 -->
+       	<item>@drawable/tpms_check_ill_selector_s1</item><!--42  横屏 -->
+       	<item>@drawable/tpms_sett_ill_selector_s1</item><!--43  横屏 -->
+       	<item>@drawable/tpms_check_selector_port_s1</item><!--44  竖屏 -->
+       	<item>@drawable/tpms_sett_selector_port_s1</item><!--45  竖屏 -->
+       	<item>@drawable/tpms_check_selector_s1</item><!--46  横屏 -->
+       	<item>@drawable/tpms_sett_selector_s1</item><!--47  横屏 -->
+       	<item>@drawable/img_level_yellow</item><!--48  横竖屏 -->
+       	<item>@drawable/ico_yellow_lf</item><!--49  横竖屏 -->
+       	<item>@drawable/ico_yellow_rf</item><!--50  横竖屏 -->
+       	<item>@drawable/ico_yellow_lr</item><!--51  横竖屏 -->
+       	<item>@drawable/ico_yellow_rr</item><!--52  横竖屏 -->
+       	<item>@drawable/img_level_red</item><!--53  横竖屏 -->
+       	<item>@drawable/ico_red_lf</item><!--54  横竖屏 -->
+       	<item>@drawable/ico_red_rf</item><!--55  横竖屏 -->
+       	<item>@drawable/ico_red_lr</item><!--56  横竖屏 -->
+       	<item>@drawable/ico_red_rr</item><!--57  横竖屏 -->
+       	<item>@drawable/tpms_warnkuang_ill_s1</item><!--58  横竖屏 -->
+       	<item>@drawable/tpms_warnkuang_s1</item><!--59  横竖屏 -->
+       	<!-- ConnectActivity 连接设备界面 -->
+       	<item>@drawable/mine_obd_ill_s1</item><!--60  横竖屏 -->
+       	<item>@drawable/mine_obd_s1</item><!--61  横竖屏 -->
+       	
+       	<!--HomeFragment 仪表盘  ill 黑夜 即亮灯 -->
+        <item>@drawable/main_yibiaopan_port_ill_s1</item><!--62 竖屏 -->
+        <item>@drawable/main_rightcircle_port_ill_s1</item><!--63 竖屏 -->
+        <item>@drawable/main_yibiaopan_ill_s1</item><!--64 横屏 -->
+        <item>@drawable/main_rightcircle_ill_s1</item><!--65 横屏 -->
+        
+        <!-- 个人中心列表点击效果 -->
+       <item>@drawable/mine_bac_selector_s1</item><!--66 横竖屏-->
+       <item>@drawable/mine_bac_selector_ill_s1</item><!--67 横竖屏-->
+       
+       <!-- 设备设置-->
+       <item>@drawable/selector_item_check_s1</item><!--68 横竖屏-->
+       <item>@drawable/selector_item_check_ill_s1</item><!--69 横竖屏-->
+       <item>@drawable/selector_switch_s1</item><!--70  横竖屏 -->
+       <item>@drawable/selector_switch_ill_s1</item><!--71  横竖屏 -->
+       
+    </integer-array>
+    <!-- 以下是皮肤种类《2》 白天蓝色夜晚红色 end -->
+
+    
+     
+     
+</resources>

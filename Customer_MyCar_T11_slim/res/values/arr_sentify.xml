@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="plantes">      
+        <item>@string/text_Sensitivity1</item>      
+        <item>@string/text_Sensitivity2</item>      
+        <item>@string/text_Sensitivity3</item>           
+    </string-array>   
+    
+</resources>

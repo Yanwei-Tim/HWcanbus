@@ -1,0 +1,352 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:id="@+id/id_hud_background_ll"
+    android:background="@drawable/background">
+
+
+    <LinearLayout
+        android:id="@+id/id_hud_top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+     <View  
+        android:layout_width="match_parent"  
+        android:layout_height="30dp"  
+        android:layout_weight="1"/>
+     
+     <include
+        android:id="@+id/include_hud_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/fragment_hud_top" />
+
+     
+    </LinearLayout>
+
+     <LinearLayout
+         android:id="@+id/id_hud_meter_ll"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_below="@+id/id_hud_top_ll"
+         android:orientation="vertical" >
+         
+        <View  
+	        android:layout_width="match_parent"  
+	        android:layout_height="0dp"  
+	        android:layout_weight="1"/>
+        
+        
+        <RelativeLayout
+	        android:id="@+id/id_meter_ll"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_horizontal">
+	
+	    <ImageView
+	        android:id="@+id/iv_newhud_meter"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:src="@drawable/background_meter"
+	        android:contentDescription="@string/app_name" />
+	    
+	    <ImageView
+	        android:id="@+id/iv_hud_anima"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:src="@anim/animation"
+	        android:contentDescription="@string/app_name" />
+	    
+	    <ImageView
+	        android:id="@+id/iv_newhud_zhuansu"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:visibility="gone"
+	        android:contentDescription="@string/app_name" />
+	
+	    <RelativeLayout
+	        android:id="@+id/rl_speed_ll"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/iv_newhud_meter"
+	        android:layout_alignTop="@+id/iv_newhud_meter" 
+	        android:layout_alignRight="@+id/iv_newhud_meter"
+	        android:layout_alignBottom="@+id/iv_newhud_meter">
+	        
+	        <ImageView
+		        android:id="@+id/iv_newhud_unit"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:layout_centerHorizontal="true"
+		        android:layout_marginBottom="4dp"
+		        android:src="@drawable/background_uint" 
+		        android:contentDescription="@string/app_name" />
+	        
+	        <ImageView
+	            android:id="@+id/iv_newhud_dangwei"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBottom="@+id/iv_newhud_unit"
+	            android:layout_toRightOf="@+id/iv_newhud_unit"
+	            android:layout_marginLeft="@dimen/hud_dangwei_left"
+	            android:layout_marginBottom="6dp"
+	            android:src="@drawable/dangwei__p" 
+	            android:contentDescription="@string/app_name"/>
+	        
+	        <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 
+		        android:layout_above="@+id/iv_newhud_unit"
+		        android:layout_marginBottom="6dp"
+		        android:gravity="center_horizontal">
+		
+		        <LinearLayout
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content" 
+		            android:orientation="horizontal">
+		             <ImageView
+					     android:id="@+id/iv_newhud_speed_hundred"
+					     android:layout_width="wrap_content"
+					     android:layout_height="wrap_content"
+					     android:src="@drawable/big_num0"
+					     android:contentDescription="@string/app_name"  />
+		             
+		            <ImageView
+				        android:id="@+id/iv_newhud_speed_ten"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/big_num0"
+				        android:contentDescription="@string/app_name"  />
+		                 
+				    <ImageView
+				        android:id="@+id/iv_newhud_speed_float"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/big_num0" 
+				        android:contentDescription="@string/app_name" />
+		        </LinearLayout>
+		   
+		    </RelativeLayout>
+	
+	        
+	    </RelativeLayout>
+	
+	    <RelativeLayout
+	        android:id="@+id/rl_tankun_ll"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/iv_newhud_meter"
+	        android:layout_alignTop="@+id/iv_newhud_meter" 
+	        android:layout_alignRight="@+id/iv_newhud_meter"
+	        android:layout_alignBottom="@+id/iv_newhud_meter" 
+	        android:visibility="gone">
+	
+	        <TextView
+	            android:id="@+id/tv_newhud_warn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentBottom="true"
+	            android:layout_centerHorizontal="true"
+	            android:background="@drawable/tankuang"
+	            android:textColor="@android:color/white"
+	            android:textSize="26sp"
+	            android:textStyle="bold"
+	            android:gravity="center"/>
+	
+	        <ImageView
+	            android:id="@+id/iv_small_unit"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_above="@+id/tv_newhud_warn"
+	            android:layout_centerHorizontal="true"
+	            android:src="@drawable/background_uint" 
+	            android:contentDescription="@string/app_name"/>
+	        
+	        <ImageView
+	            android:id="@+id/iv_small_dangwei"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignBottom="@+id/iv_small_unit"
+	            android:layout_toRightOf="@+id/iv_small_unit"
+	            android:layout_marginLeft="30dp"
+	            android:layout_marginBottom="6dp"
+	            android:src="@drawable/dangwei__p" 
+	            android:contentDescription="@string/app_name"/>
+	        
+	        <RelativeLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 
+		        android:layout_above="@+id/iv_small_unit"
+		        android:layout_marginBottom="6dp"
+		        android:gravity="center_horizontal">
+		
+		        <LinearLayout
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content" 
+		            android:orientation="horizontal">
+		             <ImageView
+					     android:id="@+id/iv_small_speed_hundred"
+					     android:layout_width="wrap_content"
+					     android:layout_height="wrap_content"
+					     android:src="@drawable/small_num0"
+					     android:contentDescription="@string/app_name"  />
+		             
+		            <ImageView
+				        android:id="@+id/iv_small_speed_ten"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/small_num0"
+				        android:contentDescription="@string/app_name"  />
+		                 
+				    <ImageView
+				        android:id="@+id/iv_nsmall_speed_float"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:src="@drawable/small_num0" 
+				        android:contentDescription="@string/app_name" />
+		        </LinearLayout>
+		   
+		    </RelativeLayout>
+	        
+	    </RelativeLayout>
+	    
+	    <!-- 左侧图标 -->
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="@dimen/hud_warn_left"
+	        android:layout_alignBottom="@+id/iv_newhud_meter"
+	        android:layout_marginBottom="20dp">
+	
+	        <ImageView
+		        android:id="@+id/iv_newhud_hand"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:src="@drawable/hud_transparent"
+		        android:layout_alignParentBottom="true"
+		        android:contentDescription="@string/app_name" />
+	        
+	        <ImageView
+		        android:id="@+id/iv_newhud_battery"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+	            android:layout_above="@+id/iv_newhud_hand"
+		        android:layout_marginBottom="@dimen/hud_warn_top"
+		        android:src="@drawable/hud_transparent"
+		        android:contentDescription="@string/app_name" />
+	        
+		     <ImageView
+		        android:id="@+id/iv_newhud_safebelt"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@+id/iv_newhud_battery"
+		        android:layout_marginBottom="@dimen/hud_warn_top"
+		        android:src="@drawable/hud_transparent" 
+		        android:contentDescription="@string/app_name"/>
+		     
+		     
+	    </RelativeLayout>
+	    
+	    <!-- 右侧图标 -->
+	     <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="@dimen/hud_warn_left"
+	        android:layout_alignBottom="@+id/iv_newhud_meter"
+	        android:layout_marginBottom="20dp">
+	
+	        <ImageView
+		        android:id="@+id/iv_newhud_htpms"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentBottom="true"
+		        android:src="@drawable/hud_transparent"
+		        android:contentDescription="@string/app_name" />
+	        
+	        <ImageView
+		        android:id="@+id/iv_newhud_water"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@+id/iv_newhud_htpms"
+		        android:layout_marginBottom="@dimen/hud_warn_top"
+		        android:src="@drawable/hud_transparent"
+		        android:contentDescription="@string/app_name" />
+	        
+	        <ImageView
+		        android:id="@+id/iv_newhud_door_close"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_above="@+id/iv_newhud_water"
+		        android:layout_marginBottom="@dimen/hud_warn_top"
+		        android:src="@drawable/hud_transparent" 
+		        android:contentDescription="@string/app_name"/>
+	        
+	        <ImageView
+		        android:id="@+id/iv_newhud_door_warn"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignTop="@+id/iv_newhud_door_close"
+		        android:layout_alignLeft="@+id/iv_newhud_door_close"
+		        android:src="@drawable/hud_door_warn" 
+		        android:visibility="gone"
+		        android:contentDescription="@string/app_name"/>
+	        
+	     <ImageView
+	        android:id="@+id/iv_newhud_door_lfwarn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/iv_newhud_door_close"
+	        android:layout_alignLeft="@+id/iv_newhud_door_close"
+	        android:src="@drawable/hud_door_lfwarn" 
+	        android:visibility="gone"
+	        android:contentDescription="@string/app_name"/>
+	    
+	    <ImageView
+	        android:id="@+id/iv_newhud_door_rfwarn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/iv_newhud_door_close"
+	        android:layout_alignLeft="@+id/iv_newhud_door_close"
+	        android:src="@drawable/hud_door_rfwarn" 
+	        android:visibility="gone"
+	        android:contentDescription="@string/app_name"/>
+	    
+	    <ImageView
+	        android:id="@+id/iv_newhud_door_lrwarn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/iv_newhud_door_close"
+	        android:layout_alignLeft="@+id/iv_newhud_door_close"
+	        android:src="@drawable/hud_door_lrwarn" 
+	        android:visibility="gone"
+	        android:contentDescription="@string/app_name"/>
+	    
+	    <ImageView
+	        android:id="@+id/iv_newhud_door_rrwarn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignTop="@+id/iv_newhud_door_close"
+	        android:layout_alignLeft="@+id/iv_newhud_door_close"
+	        android:src="@drawable/hud_door_rrwarn" 
+	        android:visibility="gone"
+	        android:contentDescription="@string/app_name"/>
+	        
+	    </RelativeLayout>
+	    
+	 
+	    </RelativeLayout>
+        
+        <View  
+	        android:layout_width="match_parent"  
+	        android:layout_height="0dp"  
+	        android:layout_weight="1"/>
+              
+     </LinearLayout>
+
+</RelativeLayout>

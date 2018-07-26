@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/iv_farlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/yuanguang"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_ill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="138dp"
+        android:layout_marginStart="138dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ill"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_tpms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="214dp"
+        android:layout_marginStart="214dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/taiya"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_safebelt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="282dp"
+        android:layout_marginStart="282dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/anquandai"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_leftlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="344dp"
+        android:layout_marginStart="344dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/zuozhuanxiang"
+        android:visibility="gone" />
+
+    <ImageView 
+        android:id="@+id/img_timeLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_time"/>
+    
+    <com.hiworld.canbus.view.CustomTextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/img_timeLogo"
+        android:layout_alignLeft="@id/img_timeLogo"
+        android:layout_alignRight="@id/img_timeLogo"
+        android:layout_alignTop="@id/img_timeLogo"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/time_size" />
+
+    <com.hiworld.canbus.view.CustomTextView
+        android:id="@+id/tv_time_dot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@id/img_timeLogo"
+        android:layout_alignLeft="@id/img_timeLogo"
+        android:layout_alignRight="@id/img_timeLogo"
+        android:layout_alignTop="@id/img_timeLogo"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/time_size" />
+
+    <ImageView
+        android:id="@+id/iv_rightlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="344dp"
+        android:layout_marginRight="344dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/youzhuanxiang"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_coolwater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="282dp"
+        android:layout_marginRight="282dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/shuiwen_red"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_lowfuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="214dp"
+        android:layout_marginRight="214dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/youliang"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="138dp"
+        android:layout_marginRight="138dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/dianchi"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_doublelight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/shuanshandeng"
+        android:visibility="gone" />
+
+</RelativeLayout>

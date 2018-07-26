@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<com.hiworld.canbus.view.CustomTextView 
+            android:id="@+id/vertical_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:visibility="visible"
+            android:textSize="@dimen/speed_size_port"/>
+	
+	<TextView 
+            android:id="@+id/vertical_battery_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/vertical_battery"
+            android:layout_marginBottom="8px"
+            android:textColor="#fff"
+            android:visibility="visible"
+            android:textSize="@dimen/trip_size"/>
+	
+	<TextView 
+            android:id="@+id/vertical_battery_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="电池电压"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/vertical_battery"
+            android:layout_marginTop="8px"
+            android:textColor="#fff"
+            android:visibility="visible"
+            android:textSize="@dimen/trip_size"/>
+</RelativeLayout>

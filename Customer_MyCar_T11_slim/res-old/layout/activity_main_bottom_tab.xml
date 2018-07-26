@@ -1,0 +1,170 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View  
+        android:layout_width="match_parent"  
+        android:layout_height="1dp"  
+        android:background="#004098" />
+        
+   <LinearLayout
+        android:id="@+id/id_switch_tab_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false" >
+        
+       
+       <!--  
+       <LinearLayout  
+            android:id="@+id/id_tab_hud_ll"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:background="@drawable/btn_radio_on"  
+            android:gravity="center"  
+            android:orientation="horizontal"  
+            android:padding="1dip" 
+            android:clickable="true">  
+  
+            <TextView  
+                android:id="@+id/id_hud_tv"  
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"  
+                android:gravity="center"  
+                android:text="@string/hud"  
+                android:drawableLeft="@drawable/ico_hud"
+                android:textColor="#64F80E"  
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textSize="@dimen/content_size" />  
+        </LinearLayout>  
+        
+       <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+            
+            -->
+ 
+       <LinearLayout  
+            android:id="@+id/id_tab_htpms_ll"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:background="@drawable/btn_radio_on"  
+            android:gravity="center"  
+            android:orientation="horizontal"  
+            android:padding="1dip" 
+            android:clickable="true">  
+  
+            <TextView  
+                android:id="@+id/id_htpms_tv"  
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"  
+                android:gravity="center"  
+                android:text="@string/title_htpms"  
+                android:drawableLeft="@drawable/ico_tpms"
+                android:textColor="#64F80E"  
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textSize="@dimen/content_size" />  
+        </LinearLayout>  
+        
+       <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+       
+        <LinearLayout  
+            android:id="@+id/id_tab_chat_ll"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:background="@drawable/btn_radio_off"  
+            android:gravity="center"  
+            android:orientation="horizontal"  
+            android:padding="1dip" 
+            android:clickable="true">  
+  
+            <TextView  
+                android:id="@+id/id_chat_tv"  
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"  
+                android:gravity="center"  
+                android:text="@string/title_carpc_carstate"  
+                android:textColor="@android:color/white"  
+                android:drawableLeft="@drawable/ico_catstate"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textSize="@dimen/content_size" />  
+        </LinearLayout>  
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+        
+        <LinearLayout  
+            android:id="@+id/id_tab_friend_ll"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:background="@drawable/btn_radio_off"  
+            android:clickable="true"  
+            android:gravity="center"  
+            android:orientation="horizontal"  
+            android:padding="1dip"  
+            android:saveEnabled="false">  
+  
+            <TextView  
+                android:id="@+id/id_friend_tv"  
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"  
+                android:gravity="center"  
+                android:text="@string/title_carpc_mileage"  
+                android:textColor="@android:color/white" 
+                android:drawableLeft="@drawable/ico_trip" 
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:textSize="@dimen/content_size" />  
+        </LinearLayout>  
+
+
+        
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"/>
+        
+      <!--   <LinearLayout  
+            android:id="@+id/id_tab_control_ll"  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:layout_weight="1"  
+            android:background="@drawable/btn_radio_off"  
+            android:focusable="false"  
+            android:gravity="center"  
+            android:orientation="horizontal"  
+            android:padding="1dip" 
+            android:clickable="true">  
+  
+            <TextView  
+                android:id="@+id/id_control_tv"  
+                android:layout_width="wrap_content"  
+                android:layout_height="wrap_content"  
+                android:gravity="center"  
+                android:text="@string/body_control"  
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:singleLine="true"
+                android:drawableLeft="@drawable/ico_carcontrol"  
+                android:textSize="@dimen/content_size" />  
+        </LinearLayout> -->
+
+    </LinearLayout>
+    
+
+
+</LinearLayout>

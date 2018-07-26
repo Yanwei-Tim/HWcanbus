@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <include 
+        android:id="@+id/include_htpms_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_htpms_header"/>
+    
+    <ImageView
+        android:id="@+id/img_cailbration_hiworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/include_htpms_top"
+        android:layout_marginRight="@dimen/hiworld_log_parentright"
+        android:layout_marginTop="@dimen/hiworld_mainlog_parenttop"
+        android:src="@drawable/ico_hiworld" 
+        android:contentDescription="@string/app_name"/>
+    
+    <TextView
+        android:id="@+id/cailbration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/cailbration_parenttop"
+        android:layout_centerHorizontal="true"
+        android:text="@string/cailbration_title" 
+        android:gravity="center"
+         android:textColor="@android:color/white"
+        android:textSize="@dimen/content_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cailbration"
+        android:layout_marginTop="@dimen/cailbration_agree_below" >
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"/>
+        
+        <Button
+        android:id="@+id/btn_cailbration_agree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/content_size" 
+        android:background="@drawable/cailbration_selector"
+        android:text="@string/cailbration_yes" 
+         android:textColor="@android:color/white"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent" 
+            android:layout_weight="1"/>
+        
+        <Button
+        android:id="@+id/btn_cailbration_unagree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/content_size" 
+        android:background="@drawable/cailbration_selector"
+        android:text="@string/cailbration_no"
+         android:textColor="@android:color/white"/>
+        
+        <Space
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" 
+        android:layout_weight="1"/>
+        
+    </LinearLayout>
+
+    
+    
+</RelativeLayout>

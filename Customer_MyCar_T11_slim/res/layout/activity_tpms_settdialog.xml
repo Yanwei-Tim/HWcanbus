@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+    
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/bac_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bac_dialog"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        android:id="@+id/ll_devicesett"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/bac_dialog"
+        android:layout_alignRight="@id/bac_dialog" 
+        android:layout_alignBottom="@id/bac_dialog"
+        android:layout_marginBottom="50dp">
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/ib_dilag_settconfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_dialog_button"
+            android:text="@string/text_ensure"
+            android:textColor="#FFF"
+            android:textSize="@dimen/main_size" />
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        
+        <Button
+            android:id="@+id/ib_dilag_settcancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_dialog_button"
+            android:text="@string/text_cancle"
+            android:textColor="#FFF"
+            android:textSize="@dimen/main_size" />
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_alignTop="@id/bac_dialog"
+        android:layout_marginTop="20dp"
+        android:layout_alignLeft="@id/bac_dialog"
+        android:layout_alignRight="@id/bac_dialog" 
+        android:layout_above="@id/ll_devicesett"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_spinner_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dialog_size"
+            android:text="@string/title_Traffic" />
+        
+        <View 
+            android:layout_width="10dp"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/sp_device_sett"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textSize="@dimen/dialog_size"
+            android:textColor="@android:color/white"
+            android:text="@string/text_Sensitivity2"
+            android:gravity="center"
+            android:background="@drawable/tpms_spinner"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

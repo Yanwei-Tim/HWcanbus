@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_htpms_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+         <RelativeLayout
+                android:id="@+id/id_farlight_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_centerInParent="true"
+                android:background="@drawable/background_window">
+
+                 <TextView
+                    android:id="@+id/tv_light_farlight"
+		            android:layout_width="wrap_content"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/white"
+		            android:text="@string/farlight" />
+                 
+                 <Button
+                     android:id="@+id/btn_farlight_open"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_light_farlight"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:background="@drawable/farlight_open_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_farlight_close"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_farlight_open"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:background="@drawable/farlight_close_xml"/>
+            </RelativeLayout>
+            
+         <RelativeLayout
+                android:layout_toLeftOf="@+id/id_farlight_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+
+                 <TextView
+                    android:id="@+id/tv_light_nearlylight"
+		            android:layout_width="wrap_content"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/white"
+		            android:text="@string/nearlylight" />
+                 
+                 <Button
+                     android:id="@+id/btn_nearlylight_open"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_light_nearlylight"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:background="@drawable/nearlylight_open_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_nearlylight_close"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_nearlylight_open"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:background="@drawable/nearlylight_close_xml"/>
+            </RelativeLayout>
+            
+         <RelativeLayout
+                android:layout_toRightOf="@+id/id_farlight_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+
+                 <TextView
+                    android:id="@+id/tv_light_doublelight"
+		            android:layout_width="wrap_content"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		            android:textColor="@android:color/white"
+		            android:text="@string/doublelight" />
+                 
+                 <Button
+                     android:id="@+id/btn_doublelight_open"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_light_doublelight"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:background="@drawable/doublelight_open_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_doublelight_close"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_doublelight_open"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:background="@drawable/doublelight_close_xml"/>
+            </RelativeLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>

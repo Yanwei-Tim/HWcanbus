@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="title_size">20sp</dimen>
+    <dimen name="main_size">16sp</dimen>
+    <dimen name="carpc_size">16sp</dimen>
+    <dimen name="trip_size">14sp</dimen>
+    <dimen name="dialog_size">15sp</dimen>
+    <dimen name="tpms_size">12sp</dimen>
+    <dimen name="little_size">7sp</dimen>
+    <dimen name="popspiner_width">229px</dimen>
+    <dimen name="speed_size">60sp</dimen>
+    <dimen name="engine_speed">60sp</dimen>
+    <dimen name="rpm_size">14sp</dimen>
+    
+	
+		
+	
+	<dimen name="warnSize">12sp</dimen>
+	<dimen name="tpms_car_left">20dp</dimen>
+</resources>

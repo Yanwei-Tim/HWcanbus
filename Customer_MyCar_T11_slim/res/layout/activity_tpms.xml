@@ -1,0 +1,236 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_tpms_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_backgrond" >
+
+    <!-- <include
+        android:id="@+id/rl_tpms_top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        layout="@layout/activity_carpc_top" /> -->
+
+    <LinearLayout
+        android:id="@+id/ll_tpms_warntip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="90dp"
+        android:layout_centerVertical="true" >
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+             <ImageView
+	            android:id="@+id/iv_tpme_kuang"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            android:src="@drawable/tpms_warnkuang" />
+	        
+	        <TextView
+		         android:id="@+id/text_connect"
+		         android:layout_width="wrap_content"
+		         android:layout_height="wrap_content"
+		         android:layout_centerInParent="true"
+		         android:layout_alignLeft="@id/iv_tpme_kuang"
+	             android:layout_alignRight="@id/iv_tpme_kuang"
+	             android:paddingLeft="24px"
+	             android:paddingRight="24px"
+	             android:textSize="@dimen/main_size"
+	             android:gravity="center_horizontal"
+		         android:textColor="@android:color/white"
+		         android:text="@string/WarnSwitch_start"/>
+
+	        <ImageView
+	            android:id="@+id/iv_tpms_warn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignTop="@+id/iv_tpme_kuang"
+	            android:layout_centerHorizontal="true"
+	            android:layout_marginTop="25dp"
+	            android:visibility="invisible"
+	            android:src="@drawable/img_level_red" />
+
+	        <TextView
+	            android:id="@+id/text_warninfo"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/iv_tpms_warn"
+	            android:layout_centerHorizontal="true"
+	            android:layout_marginTop="25px"
+	            android:layout_alignLeft="@id/iv_tpme_kuang"
+	            android:layout_alignRight="@id/iv_tpme_kuang"
+	            android:paddingLeft="10dp"
+	            android:paddingRight="10dp"
+	            android:gravity="center_horizontal"
+	            android:textColor="#ff0000"
+	            android:textSize="@dimen/trip_size"
+	            android:textStyle="bold"
+	            android:visibility="invisible"
+	            android:text="@string/right_rear_tpms" />
+
+	        <TextView
+	            android:id="@+id/text_warntip"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true"
+	            android:layout_below="@+id/text_warninfo"
+	            android:layout_marginTop="20px"
+	            android:layout_alignLeft="@id/iv_tpme_kuang"
+	            android:layout_alignRight="@id/iv_tpme_kuang"
+	            android:paddingLeft="24px"
+	            android:paddingRight="24px"
+	            android:gravity="center_horizontal"
+	            android:textColor="@android:color/white"
+	            android:textSize="@dimen/tpms_size"
+	            android:visibility="invisible"
+	            android:text="@string/warn_tip" />
+        </RelativeLayout>
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+	        
+            <ImageView
+	        android:id="@+id/img_carinfo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:src="@drawable/img_car_normal1" 
+	        android:contentDescription="@string/app_name"/>
+    
+	    <ImageView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:src="@drawable/img_car_notype" 
+	        android:contentDescription="@string/app_name"/>
+	    
+	    <ImageView
+	        android:id="@+id/img_car_warn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:src="@drawable/ico_red_lf" 
+	        android:contentDescription="@string/app_name"
+	        android:visibility="invisible"/>
+            
+        </RelativeLayout>
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+        <ImageButton
+		        android:id="@+id/ib_tpms_check"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/tpms_check_selector_port" />
+        
+        <View 
+            android:layout_width="1px"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/ib_tpms_check"
+            android:layout_alignBottom="@id/ib_tpms_check"
+            android:layout_centerHorizontal="true"
+            android:background="#D4D0C8"/>
+         <ImageButton
+		        android:id="@+id/ib_tpms_sett"
+		        android:layout_toRightOf="@id/ib_tpms_check"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/tpms_sett_selector_port" />
+    </RelativeLayout>
+    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent" 
+	        android:layout_marginRight="8dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@id/ll_tpms_warntip">
+	        
+	        <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent">
+
+	            <LinearLayout
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content" 
+	                android:orientation="horizontal">
+	                <TextView
+				        android:id="@+id/text_rr_wheel"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:drawableTop="@drawable/wheel_schedule17"
+				        android:text="@string/rr_wheel" 
+				        android:textSize="@dimen/trip_size"
+				        android:textColor="@android:color/white"
+				        android:textStyle="bold"/>
+				    
+				    <TextView
+				        android:id="@+id/text_lr_wheel"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:drawableTop="@drawable/wheel_schedule17"
+				        android:text="@string/lr_wheel" 
+				        android:textSize="@dimen/trip_size"
+				        android:textColor="@android:color/white"
+				        android:textStyle="bold"/>
+				    
+				    <TextView
+				        android:id="@+id/text_rf_wheel"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:drawableTop="@drawable/wheel_schedule17"
+				        android:text="@string/rf_wheel" 
+				        android:textSize="@dimen/trip_size"
+				        android:textColor="@android:color/white"
+				        android:textStyle="bold"/>
+				    
+				    <TextView
+				        android:id="@+id/text_lf_wheel"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:drawableTop="@drawable/wheel_schedule17"
+				        android:text="@string/lf_wheel" 
+				        android:textSize="@dimen/trip_size"
+				        android:textColor="@android:color/white"
+				        android:textStyle="bold"/>
+	            </LinearLayout>
+
+	        </RelativeLayout>
+	        
+	     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_tpms_sava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" 
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        android:src="@drawable/save" />
+
+</RelativeLayout>

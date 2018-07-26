@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="toptitle_hight">54dp</dimen>
+    <dimen name="title_paddingleft">30dp</dimen>
+    <dimen name="content_size">22sp</dimen>
+    <dimen name="server_copyright_size">18sp</dimen>
+    
+    <!-- Hiworld图标位置 -->
+    <dimen name="hiworld_log_parentright">10dp</dimen>
+    <dimen name="hiworld_mainlog_parenttop">30dp</dimen>
+    <!-- 报警等级图标位置 -->
+    <dimen name="level_left">20dp</dimen>
+    <dimen name="level_top">20dp</dimen>
+    <!-- IAP升级进度条位置 -->
+    <dimen name="main_update_left">100dp</dimen>
+    <dimen name="main_update_up">80dp</dimen>
+    <dimen name="main_layout_left">8dp</dimen>
+    <!-- 校准 -->
+    <dimen name="cailbration_parenttop">180dp</dimen>
+    <dimen name="cailbration_agree_below">60dp</dimen>
+    <dimen name="wheel_right">20dp</dimen>
+    
+    <!-- 服务 -->
+    <dimen name="help1_parentleft">104dp</dimen>
+    <dimen name="guid_dot_parentbottom">4dp</dimen>
+    <dimen name="server_copyright_dot">15dp</dimen>
+
+
+    <!-- 通用设置 -->
+    <dimen name="btn_back_width">70dp</dimen>
+    
+    <!-- Popwindow -->
+    <dimen name="popmenu_width">200.0dp</dimen>
+    <dimen name="popmenu_yoff">5.0dip</dimen>
+    <dimen name="btn_agree_width">80dp</dimen>
+
+     <!-- HUD -->
+    <dimen name="hud_center_left">80dp</dimen>
+    <dimen name="hud_width_padding">10dp</dimen>
+    <dimen name="htpms_speed_right">40dp</dimen>
+    <dimen name="window_left">0dp</dimen>
+    <dimen name="hud_meter_top">30dp</dimen>
+    <dimen name="hud_warn_left">64dp</dimen>
+    <dimen name="hud_warn_top">42dp</dimen>
+    <dimen name="hud_dangwei_left">70dp</dimen>
+    
+    <!-- 车辆状态 -->
+    <dimen name="carstete_tvsize">18sp</dimen>
+    <dimen name="framelayout_left">-30dp</dimen>
+    <dimen name="block_right">-80dp</dimen>
+    <dimen name="block_top">14dp</dimen>
+    <dimen name="cooltemp_left">36dp</dimen>
+    <dimen name="cooltemp_top">18dp</dimen>
+    <dimen name="enginespeed_left">255dp</dimen>
+    <dimen name="enginespeed_top">27dp</dimen>
+    <dimen name="safeband_left">490dp</dimen>
+    <dimen name="safeband_top">27dp</dimen>
+    <dimen name="instantfeul_left">36dp</dimen>
+    <dimen name="instantfeul_top">100dp</dimen>
+    <dimen name="instantspeed_left">234dp</dimen>
+    <dimen name="instantspeed_top">110dp</dimen>
+    <dimen name="handbrake_left">488dp</dimen>
+    <dimen name="handbrake_top">114dp</dimen>
+    <dimen name="battery_left">36dp</dimen>
+    <dimen name="battery_top">200dp</dimen>
+    <dimen name="mileage_left">242dp</dimen>
+    <dimen name="mileage_top">204dp</dimen>
+    <dimen name="doorlock_left">488dp</dimen>
+    <dimen name="doorlock_top">204dp</dimen>
+    <!-- 行程 -->
+    <dimen name="mileage_auto_left">74dp</dimen>
+    <dimen name="mileage_autosdu_right">76dp</dimen>
+    <dimen name="trip1_top">32dp</dimen>
+    <dimen name="avgfuel_left">90dp</dimen>
+    <dimen name="avgfuel_top">30dp</dimen>
+    <dimen name="drivertime_left">86dp</dimen>
+    <dimen name="clear_right">20dp</dimen>
+    
+    <dimen name="time_size">44sp</dimen>
+    <dimen name="shake_top">0dp</dimen>
+    <dimen name="yibiao_mileage">20sp</dimen>
+    <dimen name="time_left">0dp</dimen>
+    <dimen name="hud_small">100sp</dimen>
+    <dimen name="hud_big">140sp</dimen>
+    
+    <dimen name="title_size">30sp</dimen>
+    <dimen name="main_size">26sp</dimen>
+    <dimen name="carpc_size">28sp</dimen>
+    <dimen name="trip_size">24sp</dimen>
+    <dimen name="dialog_size">22sp</dimen>
+    <dimen name="tpms_size">20sp</dimen>
+    <dimen name="little_size">16sp</dimen>
+    <dimen name="popspiner_width">294px</dimen>
+    <dimen name="speed_size">110sp</dimen>
+    <dimen name="engine_speed">110sp</dimen>
+    <dimen name="rpm_size">24sp</dimen>
+    <dimen name="weather_size">28sp</dimen>
+    <dimen name="next_dis">32sp</dimen>
+    <dimen name="daohang_size">22sp</dimen>
+    
+    <dimen name="speed_size_port">90sp</dimen>
+    <dimen name="engine_speed_port">90sp</dimen>
+    <dimen name="mileage_size_port">24sp</dimen>
+    <dimen name="unit_size_port">14sp</dimen>
+    <dimen name="warnSize">18sp</dimen>
+    </resources>

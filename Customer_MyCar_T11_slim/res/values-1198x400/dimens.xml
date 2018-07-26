@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    
+    
+    <dimen name="time_size">36sp</dimen>
+    <dimen name="time_left">50dp</dimen>
+    <dimen name="shake_top">10dp</dimen>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dimen name="yibiao_mileage">20sp</dimen>
+    <dimen name="hud_small">100sp</dimen>
+    <dimen name="hud_big">140sp</dimen>
+</resources>

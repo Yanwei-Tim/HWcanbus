@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/main_carpc_press_ill_port"
+        android:state_pressed="true"/>
+    <item android:drawable="@drawable/main_carpc_normal_port"/>
+</selector>

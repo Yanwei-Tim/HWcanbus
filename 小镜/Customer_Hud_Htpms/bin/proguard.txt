@@ -1,0 +1,65 @@
+# view res/layout/activity_htpms_copyright.xml #generated:11
+# view res/layout/activity_htpms_guide.xml #generated:11
+# view res/layout/activity_viss.xml #generated:17
+# view res/layout/fragment_cartrip.xml #generated:7
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:96
+-keep class com.hiworld.canbus.activity.CailbrationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:101
+-keep class com.hiworld.canbus.activity.CopyrightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:109
+-keep class com.hiworld.canbus.activity.DoorlockActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:94
+-keep class com.hiworld.canbus.activity.GuideActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:107
+-keep class com.hiworld.canbus.activity.LightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:79
+-keep class com.hiworld.canbus.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:103
+-keep class com.hiworld.canbus.activity.PrintActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:99
+-keep class com.hiworld.canbus.activity.SensiActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:92
+-keep class com.hiworld.canbus.activity.ServerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:111
+-keep class com.hiworld.canbus.activity.SuonaActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:105
+-keep class com.hiworld.canbus.activity.WindowActivity { <init>(...); }
+
+# view land\res/layout-land/activity_instrument.xml #generated:146
+# view res/layout/activity_instrument.xml #generated:140
+# view res/layout/activity_main_slide.xml #generated:105
+# view res/layout/activity_main_slide.xml #generated:118
+# view res/layout/activity_main_top.xml #generated:72
+# view res/layout/activity_main_top.xml #generated:85
+# view res/layout/fragment_hud_new.xml #generated:136
+-keep class com.hiworld.canbus.view.CustomTextView { <init>(...); }
+
+# view res/layout/fragment_hud_new.xml #generated:153
+# view res/layout/fragment_hud_new.xml #generated:196
+# view res/layout/fragment_hud_new.xml #generated:84
+-keep class com.hiworld.canbus.view.MyNumTextView { <init>(...); }
+
+# view res/layout/activity_main_navi.xml #generated:14
+-keep class com.hiworld.canbus.view.NaviFontTextView { <init>(...); }
+
+# view res/layout/fragment_hud_new.xml #generated:265
+-keep class com.hiworld.canbus.view.NumberPickerView { <init>(...); }
+
+# view res/layout/activity_main_weather.xml #generated:24
+-keep class com.hiworld.canbus.view.WeatherFontTextView { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.youzi.customer.connect.TheApp { <init>(...); }
+

@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+    
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/bac_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bac_dialog"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        android:id="@+id/ll_checkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/bac_dialog"
+        android:layout_alignRight="@id/bac_dialog" 
+        android:layout_alignBottom="@id/bac_dialog"
+        android:layout_marginBottom="50dp">
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/ib_dilag_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_dialog_button"
+            android:text="@string/text_ensure"
+            android:textColor="#FFF"
+            android:textSize="@dimen/main_size" />
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        
+        <Button
+            android:id="@+id/ib_dilag_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_dialog_button"
+            android:text="@string/text_cancle"
+            android:textColor="#FFF"
+            android:textSize="@dimen/main_size" />
+        
+        <View 
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/bac_dialog"
+        android:layout_alignRight="@id/bac_dialog" 
+        android:layout_above="@id/ll_checkout"
+        android:layout_alignTop="@id/bac_dialog"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="@dimen/dialog_size"
+        android:gravity="center"
+        android:text="@string/dialog_jiaoyan" />
+
+</RelativeLayout>

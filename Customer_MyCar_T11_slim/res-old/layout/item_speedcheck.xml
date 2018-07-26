@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+	<CheckBox 
+	    android:id="@+id/text_speedCheck"
+	    android:drawableLeft="@drawable/mine_speedcheck"
+	    android:drawableRight="@drawable/selector_jiantou"
+	    android:background="@drawable/selector_item_check"
+	    android:button="@null"
+	    android:text="@string/pc_ui_set"
+	    android:gravity="center_vertical"
+	    android:textColor="#FFF"
+	    android:drawablePadding="10dp"
+	    android:paddingLeft="12dp"
+	    android:paddingRight="12dp"
+	    android:textSize="@dimen/carpc_size"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"/>
+	
+	<RelativeLayout
+	    android:id="@+id/rl_speedCheck"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/mine_bac_normal"
+	    android:visibility="gone" >
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:gravity="center"
+	        android:paddingLeft="28dp"
+	        android:text="@string/pc_speed_check"
+	        android:textColor="#FFF"
+	        android:textSize="@dimen/trip_size" />
+
+	    <Button
+	        android:id="@+id/btn_minus"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginRight="10dp"
+	        android:background="@drawable/selector_minus" />
+
+	    <TextView
+	        android:id="@+id/text_speed_check"
+	        android:layout_width="100px"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginRight="16dp"
+	        android:layout_toLeftOf="@id/btn_minus"
+	        android:background="@drawable/speedcheck_bac"
+	        android:gravity="center"
+	        android:textColor="#FFFFFF"
+	        android:textSize="@dimen/carpc_size" />
+
+	    <Button
+	        android:id="@+id/btn_plus"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_toLeftOf="@id/text_speed_check"
+	        android:background="@drawable/selector_plus" />
+	</RelativeLayout>
+	
+</LinearLayout>

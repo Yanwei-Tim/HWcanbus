@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/iv_main_meter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/main_yibiaopan" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/iv_main_meter"
+        android:layout_alignTop="@id/iv_main_meter" 
+        android:layout_alignRight="@id/iv_main_meter"
+        android:layout_alignBottom="@id/iv_main_meter" >
+
+        <com.hiworld.canbus.view.CustomTextView
+            android:id="@+id/text_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/speed_size"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="km/h"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/text_speed"
+            android:layout_marginBottom="8px"
+            android:textColor="#fff"
+            android:visibility="visible"
+            android:textSize="@dimen/trip_size"/>
+        <!-- <LinearLayout
+            android:id="@+id/ll_main_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/iv_main_speed_hundred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@drawable/main_meter_speed1" />
+
+            <ImageView
+                android:id="@+id/iv_main_speed_ten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:src="@drawable/main_meter_speed8" />
+
+            <ImageView
+                android:id="@+id/iv_main_speed_digit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_meter_speed0" />
+
+        </LinearLayout> -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_below="@id/text_speed"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/iv_main_gear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                android:src="@drawable/main_gearp_port" />
+
+            <!-- <ImageView
+                android:id="@+id/iv_main_shake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/iv_main_gear"
+                android:visibility="invisible"
+                android:src="@drawable/main_shousha" /> -->
+            
+            <!-- <ImageView
+                android:id="@+id/iv_main_icotpms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_main_gear"
+                android:visibility="invisible"
+                android:src="@drawable/icon_main_taiya" /> -->
+
+        </RelativeLayout>
+
+        <!-- <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_above="@id/text_speed"
+            android:layout_marginBottom="4px">
+
+            <ImageView
+                android:id="@+id/iv_main_icounit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/main_unit_port" />
+
+            <ImageView
+                android:id="@+id/iv_main_icorightlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv_main_icounit"
+                android:visibility="invisible"
+                android:src="@drawable/icon_main_rightlight" />
+            
+            <ImageView
+                android:id="@+id/iv_main_icoleftlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/iv_main_icounit"
+                android:visibility="invisible"
+                android:src="@drawable/icon_leftlight" />
+
+        </RelativeLayout> -->
+
+    </RelativeLayout>
+
+</RelativeLayout>

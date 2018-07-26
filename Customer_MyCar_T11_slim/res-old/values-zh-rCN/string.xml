@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_app">汽车信息安全系统</string>
+    <string name="action_settings">设置</string>
+    <string name="title_server">服务条款</string>
+    <string name="app_name">麦卡魔盒</string>
+    <string name="title_htpms">胎压监测</string>
+    <string name="Server_copyright">\t\t本服务协议（以下简称“本协议”）由您与深圳市海沃德科技有限公司（以下简称“海沃德公司）共同签署。\n
+\t\t在使用“H-TPMS轮胎失压监测”装置之前，请仔细阅读本协议。一旦您选择使用此装置，即表示您同意接受本协议所有条款的约束。如您不同意本协议条款和条件，请勿使用本装置。海沃德科技有权随时修改本协议，并在公司网站\n（http://www.hiworldtech.com/）公示的方式通知您，无需单独通知您。修改后的协议于公示时生效。协议条款修改后，您继续使用本装置，即视为您已阅读并接受修改后的协议。
+\n如果您通过合法渠道从海沃德公司取得本装置的任何拷贝以及由海沃德科技生产的与此您当前安装车辆相配套的硬件设备，则您拥有如下权利：\n
+1．使用权\n\t\t
+您有权在后视镜或导航主机上安装本装置，并在业务范围内使用本装置，利用本装置具有的全部功能。\n
+2．技术支持\n\t\t
+您有权获得海沃德公司的全面的技术支持。对于本装置在安装使用过程中产生的任何疑问、问题，您均有权向海沃德公司提出并要求海沃德公司给予解答。\n
+3．版本升级\n\t\t
+根据实际需要，您有权获得本装置的各个升级版本的使用权。但如果海沃德公司另有要求，您须支付适当的版本升级费用。\n
+4．一般限制\n\t\t
+您对本装置的使用权仅限于再现本装置本身具有的功能，您无权擅自修改本装置，也无权对本装置进行反向工程、反编译或反汇编，也无权在本软件的基础上迚行二次开发，以及衍生新的装置。如果出于适用性或其它原因需要修改本装置，应书面向海沃德公司提出，由海沃德公司自行修改。您自行修改本装置软件，即意味着全面放弃海沃德公司对本装置的所有责任和义务。\n
+5.免责声明\n\t\t
+    本产品只对能提供。\n\t\t
+您所使用的H-TPMS轮胎失压监测装置，只能监测单个轮胎出现欠压时的异常情况，且必须在4个轮胎气压都正确时进行校准，否则不能保证轮胎失压时报告的可靠性。在每次轮胎气压校正和更换轮胎或车轮后都要重新进行胎压校准。\n\t\t
+您所使用的H-TPMS轮胎失压监测装置，其原始数据来源于车辆本身的实时参数。H-TPMS轮胎失压监测装置在运行中，可能因车辆本身的实时参数偏差、信号传输滞后或者其他不可预见的问题，导致显示的胎压数值存在误差。本H-TPMS轮胎失压监测装置的使用，不能完全替代原有的直接测量胎压的方式。建议您在使用本H-TPMS轮胎失压监测装置的过程中，配合其他有效的胎压监测手段，确保掌握准确无误的胎压数值。\n\t\t
+另外，为确保安全，严禁驾驶员在驾车的同时打开本H-TPMS轮胎失压监测装置APP查看胎压。\n\t\t
+如因驾车时使用本H-TPMS轮胎失压监测装置导致的任何人身或者财产损害，与本H-TPMS轮胎失压监测装置的制造者、销售者以及安装者等第三方无关。\n\t\t
+对于本软件，海沃德公司保证不含有任何恶意破坏您的后视镜或导航主机的资源（包括文档、程序和其他数据）的功能设置。对于您在使用此软件过程中而产生的利润损失、可用性消失、商业中断，或任何形式的间接、特别、意外或必然的损害，或任何其他方的索赔，海沃德公司及其代理、销售人概不负责，即使海沃德公司已事先被告知此类事有可能发生。\n
+6．知识产权和保密\n\t\t
+本软件的版权和可能涉及的海沃德公司的商标权、专利权、专有技术和其他权利，其所有权归海沃德公司。您拥有授权范围内的使用权，但没有转让或许可他人使用的权利。\n\t\t
+软件中所有的文字、图案及其组成的界面，属法律保护的文学艺术作品，本公司对其享有完全的著作权。任何以侵权为目的对本H-TPMS轮胎欠压监测装置软件中的文字、图案及其组成画面的使用，均为法律所禁止的行为。\n\t\t
+本H-TPMS轮胎欠压监测装置所涉技术，本公司已申请专利。任何未经本公司许可对专利技术在本H-TPMS轮胎欠压监测装置之外的使用，均属对本公司专利权的侵犯。\n
+11．其它\n\t\t
+本协议适用中华人民共和国有关法律法规。</string>
+    <string name="server_check_text">下次启动不再显示</string>
+    <string name="server_agree">同意</string>
+    <string name="server_unagree">不同意</string>
+    <string name="help1_title">胎压校准说明</string>
+    <string name="help1_text">校准时设置的轮胎气压会作为识别轮胎气压异常的参考值，必须要在保证4个轮胎压力值都正确的情况下才可以进行校准。\n校准步骤：\n1.确认4个轮胎压力正确\n2.启动发动机。不要起步行车\n2.进入H-TPMS胎压监测系统界面\n3.点击“设置”\n4.选择“胎压校准”\n5.点击“确定”\n6 .起步行车。\n校准程序会于车辆行驶期间完成；此过程可以随时中断。继续行驶时，校准会自动继续进行。\n注意：带雪地防滑链行驶时，不要对胎压进行校准。</string>
+    <string name="help3_title">功能前提</string>
+    <string name="help3_text">必须在4个轮胎气压都正确时进行校准，否则不能保证轮胎失压时报告的可靠性。\n\n在每次轮胎气压校正和更换轮胎或车轮后都要重新进行胎压校准。</string>
+    <string name="help4_title">系统的极限性</string>
+    <string name="help4_text">本系统只可以监测单个轮胎出现欠压时的异常情况，不可以识别四个轮胎同时随时间产生的自然、均匀的压力损失。因此要定期检查轮胎气压。\n在下列情况下系统可能会延迟或错误工作：\n未正确进行胎压校准。\n行驶在积雪或打滑的路面上。\n运动型驾驶方式：驱动轮打滑，横向加速度较高。\n带雪地防滑链行驶。 </string>
+    <string name="help4_btn_home">进入主页</string>
+    <string name="action_tpms">胎压校准</string>
+    <string name="action_general">通用</string>
+    <string name="action_help">帮助</string>
+    <string name="action_about">关于VISS</string> 
+    <string name="right_rear_tpms">请检查右后轮胎！</string>
+    <string name="left_rear_tpms">请检查左后轮胎！</string>
+    <string name="right_front_tpms">请检查右前轮胎！</string>
+    <string name="left_front_tpms">请检查左前轮胎！</string>
+    <string name="cailbration_title">请确认已经检查并修正了四个轮胎的气压!</string>
+    <string name="title_Sensitivity">灵敏度选择:</string>
+    <string name="title_Traffic">路况选择:</string>
+    <string name="text_Sensitivity1">乡村路况</string>
+    <string name="text_Sensitivity2">城镇路况</string>
+    <string name="text_Sensitivity3">城市路况</string>
+    <string name="text_CityRoad">城市路况</string>
+    <string name="tetx_Suburbanroad">城镇路况</string>
+    <string name="tetx_Complexroad">乡村路况</string>
+    <string name="cailbration_yes">确定</string>
+    <string name="cailbration_no">取消</string>
+    <string name="help_tipnext">下次启动不再显示，您可以进入设置-帮助获取更多信息</string>
+    <string name="WarnSwitch_connecting">与H-TPMS设备尝试连接中......</string>
+    <string name="WarnSwitch_unconnect">与H-TPMS设备通讯中断，请检查接线!</string> 
+    <string name="WarnSwitch_start">H-TPMS胎压监测系统已启动</string>
+    <string name="WarnSwitch_close">H-TPMS胎压监测系统已关闭</string>
+    <string name="WarnSwitch_unpose">当前车型不支持H-TPMS</string>
+    <string name="WarnSwitch_linkwrong">H-TPMS设备与车辆连接出现错误，请检查接线</string>
+    <string name="softver_text">软件版本: </string>
+    <string name="seviceVer_text">服务版本: </string>
+    <string name="hwver_text">设备版本: </string>
+    <string name="compiny_text">海沃德科技 版权所有</string>
+    <string name="compiny2_text">Copyright © 2016 Hiworld All Rights Reserved</string>
+    <string name="hwupdate_text">固件升级</string>
+    <string name="print_clear">清空列表</string>
+    <string name="update_tip">iap升级过程中请勿离开此界面！\n</string> 
+    <string name="update_isupdate">是否进行iap程序升级？</string>
+    <string name="update_updateing">升级中,请等待！</string>
+    <string name="update_success">升级完成，请拔卡！</string>
+    <string name="update_wrong">升级出错！</string>
+    <string name="update_wrongtip">升级出错,请重新上电升级！</string>
+    <string name="back">返回</string>
+    <string name="gohome">退出</string>
+    <string name="rr_wheel">右后</string>
+    <string name="lr_wheel">左后</string>
+    <string name="rf_wheel">右前</string>
+    <string name="lf_wheel">左前</string>
+    <string name="title_carpc_carstate">车辆状态</string>
+    <string name="title_carpc_mileage">行程</string>
+    <string name="title_carpc_carinfo">车辆信息</string>
+    <string name="text_coolanttemp">冷却液温度</string>
+    <string name="text_engineSpeed">发动机转速</string>
+    <string name="text_safeBand">安全带</string>
+    <string name="text_safeBandOff">未系</string>
+    <string name="text_safeBandOn">已系</string>
+    <string name="text_instantfuel">瞬时油耗</string>
+    <string name="text_instantspeed">瞬时速度</string>
+    <string name="text_handbrake">手刹</string>
+    <string name="text_handbrake_off">放下</string>
+    <string name="text_handbrake_on">拉起</string>
+    <string name="text_batteryvoltage">电池电压</string>
+    <string name="text_mileage">续航里程</string>
+    <string name="text_doorlock">门锁状态</string>
+    <string name="text_doorlock_close">关闭</string>
+    <string name="text_doorlock_open">打开</string>
+    <string name="title_trip1">小计里程</string>
+    <string name="title_trip2">自启动后里程</string>
+    <string name="text_mileage_auto">续航里程:</string>
+    <string name="text_trip1_avgfuel">平均油耗:</string>
+    <string name="text_trip1_avgspeed">平均车速:</string>
+    <string name="tetx_trip1_drivertime">行驶时长:</string>
+    <string name="tetx_trip1_count">累计里程:</string>
+    <string name="text_clear">清零</string>
+    <string name="text_currentspeed">当前车速</string>
+    <string name="text_averagespeed">平均车速</string>
+
+    <!-- 车辆状态 -->
+    <string name="text_VIN">车辆识别码:</string>
+    <string name="text_Brand">品牌:</string> 
+    <string name="text_Model">车系</string>
+    <string name="text_Madetime">制造日期</string>
+    <string name="text_totalmileage">总里程</string>
+    <string name="currentTime">当前时间</string>
+    <string name="autoTime">本次时间</string>
+    <string name="autoMileage">本次里程</string>
+    <string name="hud">HUD</string>
+    <string name="body_control">车辆控制</string>
+    <string name="auto_mileage"></string>
+    <string name="total_mileage"></string>
+    <string name="time_maohao"> : </string>
+    <string name="invalue">--</string> 
+    <!-- ****************************以下为麦卡1.0界面字符串***************************************** -->
+    <string name="contain_door">门</string>
+    <string name="contain_handBrake">手刹</string>
+    <string name="contain_bonnet">引擎盖</string>
+    <string name="contain_trunk">后备箱</string>
+    <string name="contain_tire">轮胎</string>
+    <string name="warn_noTiredDriving">请勿疲劳驾驶</string>
+    <string name="application">应用</string>
+    <string name="skin_default">默认皮肤</string>
+    <string name="skin_red">炫酷红</string>
+    <string name="application_suc">应用成功</string>
+    <string name="main_trip">单次里程:  </string>
+    <string name="main_mieage">总里程:  </string>
+    <string name="text_restoil">剩余油量</string>
+    <string name="text_thisAverageSpeed">本次平均车速</string>
+    <string name="text_thisDrivingTime">本次行驶时间</string>
+    <string name="text_thisDrivingMileage">本次行驶里程</string>
+    <string name="gaode_meter">米</string>
+    <string name="gaode_km">公里</string>
+    <string name="gaode_into">进入</string>
+    <string name="gaode_along">沿</string>
+    <string name="week_one">星期一</string>
+    <string name="week_two">星期二</string>
+    <string name="week_three">星期三</string>
+    <string name="week_four">星期四</string>
+    <string name="week_five">星期五</string>
+    <string name="week_six">星期六</string>
+    <string name="week_seven">星期日</string>
+    <string name="warn_lfDoor_open">左前门已打开</string>
+    <string name="warn_lrDoor_open">左后门已打开</string>
+    <string name="warn_rfDoor_open">右前门已打开</string>
+    <string name="warn_rrDoor_open">右后门已打开</string>
+    <string name="warn_looseHandBrake">请松开手刹</string>
+    <string name="warn_fastenSafeBelt">请系好安全带</string>
+    <string name="warn_trunk_open">后备箱已打开</string>
+    <string name="warn_bonnet_open">引擎盖已打开</string>
+    <string name="warn_lfTpms">左前轮胎异常</string>
+    <string name="warn_rfTpms">右前轮胎异常</string>
+    <string name="warn_lrTpms">左后轮胎异常</string>
+    <string name="warn_rrTpms">右后轮胎异常</string>
+    <string name="warn_lowOil">油量不足</string>
+    <string name="warn_turnLeft">左转向灯已打开</string>
+    <string name="warn_turnRight">右转向灯已打开</string>
+    <string name="tips_noNet">请检查当前网络状态</string>
+    <string name="tips_noLocate">定位不到当前城市，无法查询天气</string>
+    <string name="tips_noWeather">暂无天气信息</string>
+    <string name="tips_carMachine">车机</string>
+    <string name="carpc_name">行车电脑</string>
+    <string name="tpms_name">胎压监测</string>
+    <string name="welcome_start">开启HiMycar之旅</string>
+    <string name="warn_tip">请在检查并修正胎压之后，点击校准项进行胎压校准</string>
+    <string name="WarnSwitch_linkerror">与TPMS设备通讯中断，请检查接线！</string>
+    <string name="WarnSwitch_learn">H-TPMS胎压监测系统已启动!\n\n请行驶几公里，以完成整个学习过程！</string>
+    <string name="WarnSwitch_learn_end">H-TPMS胎压监测系统已启动\n\n已学习完成！</string>
+    <string name="text_ensure">确定</string>
+    <string name="text_cancle">取消</string>
+    <string name="dialog_jiaoyan">请确认已经检查并修正了四个轮胎的气压！</string>
+    <string name="mine_name">设备中心</string>
+    <string name="mine_connect">连接设备</string>
+    <string name="mine_mydevice">我的设备</string>
+    <string name="mine_deviceset">设备设置</string>
+    <string name="mine_carinfo">车辆信息</string>
+    <string name="mine_about">关于</string>
+    <string name="server_coycopy">服务条款</string>
+    <string name="text_skinSet">皮肤设置</string>
+    <string name="text_pcWarn">主机报警</string>
+    <string name="pc_ui_set">界面设置</string>
+    <string name="pc_warn_turn">转向灯报警</string>
+    <string name="pc_warn_oil">燃油报警</string>
+    <string name="pc_warn_tiredDrive">疲劳驾驶报警</string>
+    <string name="pc_warn_door">车门报警</string>
+    <string name="text_handBrakeWarn">手刹报警</string>
+    <string name="text_safeBeltWarn">安全带报警</string>
+    <string name="pc_speed_check">车速校准</string>
+    <string name="device_version">设备版本:</string>
+    <string name="text_banquan">海沃德科技 版权所有</string>
+    <string name="text_softVersion">软件版本</string>
+    <string name="text_serverVersion">服务版本</string>
+    <string name="text_deviceVersion">设备版本</string>
+    <string name="window_control">车窗控制</string>
+    <string name="light_control">灯光控制</string>
+    <string name="doorlock_control">车锁控制</string>
+    <string name="suona_control">鸣笛控制</string>
+    <string name="lf_window">左前窗</string>
+    <string name="rf_window">右前窗</string>
+    <string name="lr_window">左后窗</string>
+    <string name="rr_window">右后窗</string>
+    <string name="sky_window">天窗</string>
+    <string name="all_window">全部车窗</string>
+    <string name="doorlock">门锁</string>
+    <string name="nearlylight">近光灯</string>
+    <string name="farlight">远光灯</string>
+    <string name="doublelight">双闪灯</string>
+    <string name="lockautowindow">锁车自动升窗 </string>
+    <string name="doorautodouble">开门自动闪双闪 </string>
+
+</resources>

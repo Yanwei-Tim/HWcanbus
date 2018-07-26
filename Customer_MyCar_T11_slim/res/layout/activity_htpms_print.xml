@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include 
+        android:id="@+id/include_htpms_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_htpms_header"/>
+    
+    <ImageView
+        android:id="@+id/img_guid_hiworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/include_htpms_top"
+        android:layout_marginRight="@dimen/hiworld_log_parentright"
+        android:layout_marginTop="@dimen/hiworld_mainlog_parenttop"
+        android:src="@drawable/ico_hiworld" 
+        android:contentDescription="@string/app_name"/>
+    
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_guid_hiworld"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/hiworld_log_parentright"
+        android:text="@string/print_clear" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:padding="8dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll">
+    </ListView>
+
+</RelativeLayout>

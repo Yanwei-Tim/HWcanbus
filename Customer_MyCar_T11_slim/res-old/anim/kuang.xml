@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:oneshot="true">
+    
+    <item android:drawable="@drawable/a1_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a2_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a3_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a4_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a5_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a6_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a7_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a8_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a9_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a10_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a11_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a12_blue" android:duration="40"></item> 
+    <item android:drawable="@drawable/a13_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a14_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a15_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a16_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a17_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a18_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a19_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a20_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a21_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a22_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a23_blue" android:duration="40"></item>  
+    <item android:drawable="@drawable/a24_blue" android:duration="40"></item>   
+	<item android:drawable="@drawable/a25_blue" android:duration="40"></item>
+</animation-list>

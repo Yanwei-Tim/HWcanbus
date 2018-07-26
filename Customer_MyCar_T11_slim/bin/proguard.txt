@@ -1,0 +1,121 @@
+# view res/layout/activity_htpms_copyright.xml #generated:11
+# view res/layout/activity_htpms_guide.xml #generated:11
+# view res/layout/activity_welcome.xml #generated:7
+# view res/layout/fragment_cartrip.xml #generated:8
+-keep class android.support.v4.view.ViewPager { <init>(...); }
+
+# view AndroidManifest.xml #generated:71
+-keep class com.amap.api.location.APSService { <init>(...); }
+
+# view AndroidManifest.xml #generated:156
+-keep class com.hiworld.canbus.activity.AboutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:116
+-keep class com.hiworld.canbus.activity.CailbrationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:124
+-keep class com.hiworld.canbus.activity.CopyrightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:152
+-keep class com.hiworld.canbus.activity.DeviceSetActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:140
+-keep class com.hiworld.canbus.activity.DoorlockActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:112
+-keep class com.hiworld.canbus.activity.GuideActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:136
+-keep class com.hiworld.canbus.activity.LightActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:104
+-keep class com.hiworld.canbus.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:148
+-keep class com.hiworld.canbus.activity.MineActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:128
+-keep class com.hiworld.canbus.activity.PrintActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.hiworld.canbus.activity.SensiActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:108
+-keep class com.hiworld.canbus.activity.ServerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:160
+-keep class com.hiworld.canbus.activity.ServerActivitynew { <init>(...); }
+
+# view AndroidManifest.xml #generated:164
+-keep class com.hiworld.canbus.activity.SkinSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:144
+-keep class com.hiworld.canbus.activity.SuonaActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:90
+-keep class com.hiworld.canbus.activity.WelcomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:132
+-keep class com.hiworld.canbus.activity.WindowActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class com.hiworld.canbus.app.MyApp { <init>(...); }
+
+# view land\res/layout-land/activity_main_speed.xml #generated:21
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:109
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:152
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:207
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:251
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:293
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:345
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:388
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:428
+# view land\res/layout-land/carstate_fragment_layout.xml #generated:65
+# view land\res/layout-land/item_vertical_battery.xml #generated:6
+# view res/layout/activity_main_slide.xml #generated:105
+# view res/layout/activity_main_slide.xml #generated:118
+# view res/layout/activity_main_speed.xml #generated:21
+# view res/layout/activity_main_top.xml #generated:72
+# view res/layout/activity_main_top.xml #generated:85
+# view res/layout/activity_port_mileage.xml #generated:133
+# view res/layout/activity_port_mileage.xml #generated:174
+# view res/layout/activity_port_mileage.xml #generated:45
+# view res/layout/activity_port_mileage.xml #generated:86
+# view res/layout/carstate_fragment_layout.xml #generated:118
+# view res/layout/carstate_fragment_layout.xml #generated:161
+# view res/layout/carstate_fragment_layout.xml #generated:216
+# view res/layout/carstate_fragment_layout.xml #generated:260
+# view res/layout/carstate_fragment_layout.xml #generated:302
+# view res/layout/carstate_fragment_layout.xml #generated:354
+# view res/layout/carstate_fragment_layout.xml #generated:397
+# view res/layout/carstate_fragment_layout.xml #generated:437
+# view res/layout/carstate_fragment_layout.xml #generated:74
+# view res/layout/fragment_hud_new.xml #generated:124
+# view res/layout/item_vertical_battery.xml #generated:6
+-keep class com.hiworld.canbus.view.CustomTextView { <init>(...); }
+
+# view res/layout/activity_viss.xml #generated:46
+-keep class com.hiworld.canbus.view.MainViewPager { <init>(...); }
+
+# view land\res/layout-land/activity_main_new.xml #generated:90
+# view res/layout/activity_main_new.xml #generated:92
+-keep class com.hiworld.canbus.view.MyKuangView { <init>(...); }
+
+# view res/layout/fragment_hud_new.xml #generated:139
+# view res/layout/fragment_hud_new.xml #generated:180
+# view res/layout/fragment_hud_new.xml #generated:77
+-keep class com.hiworld.canbus.view.MyNumTextView { <init>(...); }
+
+# view res/layout/activity_main_navi.xml #generated:14
+-keep class com.hiworld.canbus.view.NaviFontTextView { <init>(...); }
+
+# view res/layout/fragment_hud_new.xml #generated:246
+-keep class com.hiworld.canbus.view.NumberPickerView { <init>(...); }
+
+# view land\res/layout-land/activity_main_door.xml #generated:15
+# view res/layout/activity_main_door.xml #generated:15
+-keep class com.hiworld.canbus.view.VerticalViewPager { <init>(...); }
+
+# view res/layout/activity_main_weather.xml #generated:24
+-keep class com.hiworld.canbus.view.WeatherFontTextView { <init>(...); }
+

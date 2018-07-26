@@ -1,0 +1,64 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    	
+    	
+    	<ImageView 
+    	    android:id="@+id/img_hud_double_close"
+    	    android:layout_centerInParent="true"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/hud_transparent"
+    	    android:contentDescription="@string/app_name" />
+    	
+    	<ImageView 
+    	    android:id="@+id/img_hud_double"
+            android:layout_centerInParent="true"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/hud_double_press"
+    	    android:visibility="gone"
+    	    android:contentDescription="@string/app_name"/>
+    	
+      <ImageView 
+    	    android:id="@+id/img_hud_light"
+    	    android:layout_marginLeft="60dp"
+    	    android:layout_toRightOf="@id/img_hud_double_close"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/hud_transparent"
+    	    android:contentDescription="@string/app_name" />
+    	
+    	
+    	
+    	<ImageView 
+    	    android:layout_marginRight="60dp"
+    	    android:id="@+id/img_hud_farlight"
+    	    android:layout_toLeftOf="@id/img_hud_double_close"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/hud_transparent"
+    	    android:contentDescription="@string/app_name"/>
+    	
+    	<ImageView 
+    	    android:layout_marginLeft="60dp"
+    	    android:id="@+id/img_hud_rightlight"
+    	    android:layout_toRightOf="@id/img_hud_light"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/hud_rightlight"
+    	    android:visibility="gone"
+    	     android:contentDescription="@string/app_name"/>
+    	
+    	<ImageView 
+    	    android:layout_marginRight="60dp"
+    	    android:id="@+id/img_hud_leftlight"
+    	    android:layout_toLeftOf="@id/img_hud_farlight"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/hud_leftlight"
+    	    android:visibility="gone"
+    	     android:contentDescription="@string/app_name"/>
+    	
+</RelativeLayout>

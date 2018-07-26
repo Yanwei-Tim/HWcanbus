@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpage_first"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+	
+    <RadioGroup 
+	    android:id="@+id/rg_first"
+	    android:layout_centerHorizontal="true"
+	    android:layout_alignParentBottom="true"
+	    android:layout_marginBottom="10dp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    <RadioButton 
+	        android:button="@drawable/selector_circle_checked"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="4dp"/>
+	    <RadioButton 
+	        android:button="@drawable/selector_circle_checked"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="4dp"/>
+	    <RadioButton 
+	        android:button="@drawable/selector_circle_checked"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="4dp"/>
+	    <RadioButton 
+	        android:button="@drawable/selector_circle_checked"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="4dp"/>
+	</RadioGroup>
+	
+    <TextView 
+	    android:id="@+id/text_exp"
+	    android:visibility="gone"
+	    android:layout_above="@id/rg_first"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginBottom="20dp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/welcome_start"
+	    android:textSize="20sp"
+	    android:paddingLeft="26dp"
+	    android:paddingRight="26dp"
+	    android:paddingTop="6dp"
+	    android:paddingBottom="6dp"
+	    android:background="@drawable/shape_experience"
+	    android:textColor="#FFFFFF"/>
+    
+</RelativeLayout>

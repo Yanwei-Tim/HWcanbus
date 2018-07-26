@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/header" >
+
+    <TextView
+        android:id="@+id/tv_headerTitle"
+        style="@style/text_title"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/btn_back_width"
+        android:layout_weight="1.0"
+        android:textStyle="bold"
+        android:text="@string/title_app" />
+
+</LinearLayout>

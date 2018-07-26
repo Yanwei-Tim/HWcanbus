@@ -1,0 +1,284 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_htpms_header" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" 
+            android:paddingLeft="@dimen/window_left"
+            android:paddingRight="0dp">
+            
+             <RelativeLayout
+                android:id="@+id/id_lfwindow_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+
+                 <TextView
+                    android:id="@+id/tv_lf_window"
+		            android:layout_width="match_parent"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		             android:textColor="@android:color/white"
+		            android:text="@string/lf_window" />
+                 
+                 <Button
+                     android:id="@+id/btn_lf_window_up"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_lf_window"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/lf_window_up_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_lf_window_down"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_lf_window_up"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/lf_window_down_xml"/>
+
+            </RelativeLayout>
+            
+             <RelativeLayout
+                android:id="@+id/id_rfwindow_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_toRightOf="@+id/id_lfwindow_ll"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+                 
+                 <TextView
+                    android:id="@+id/tv_rf_window"
+		            android:layout_width="match_parent"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		             android:textColor="@android:color/white"
+		            android:text="@string/rf_window" />
+                 
+                 <Button
+                     android:id="@+id/btn_rf_window_up"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_rf_window"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/rf_window_up_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_rf_window_down"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_rf_window_up"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/rf_window_down_xml"/>
+            </RelativeLayout>
+            
+             <RelativeLayout
+                android:id="@+id/id_lrwindow_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_toRightOf="@+id/id_rfwindow_ll"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+                 
+                 <TextView
+                    android:id="@+id/tv_lr_window"
+		            android:layout_width="match_parent"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		             android:textColor="@android:color/white"
+		            android:text="@string/lr_window" />
+                 
+                 <Button
+                     android:id="@+id/btn_lr_window_up"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_lr_window"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/lr_window_up_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_lr_window_down"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_lr_window_up"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/lr_window_down_xml"/>
+            </RelativeLayout>
+            
+             <RelativeLayout
+                android:id="@+id/id_rrwindow_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_toRightOf="@+id/id_lrwindow_ll"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+                 
+                 <TextView
+                    android:id="@+id/tv_rr_window"
+		            android:layout_width="match_parent"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		             android:textColor="@android:color/white"
+		            android:text="@string/rr_window" />
+                 
+                 <Button
+                     android:id="@+id/btn_rr_window_up"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_rr_window"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/rr_window_up_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_rr_window_down"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_rr_window_up"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/rr_window_down_xml"/>
+            </RelativeLayout>
+            
+             <RelativeLayout
+                android:id="@+id/id_skywindow_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_toRightOf="@+id/id_rrwindow_ll"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:background="@drawable/background_window">
+                 
+                 <TextView
+                    android:id="@+id/tv_sky_window"
+		            android:layout_width="match_parent"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		             android:textColor="@android:color/white"
+		            android:text="@string/sky_window" />
+                 
+                 <Button
+                     android:id="@+id/btn_sky_window_up"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_sky_window"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/sky_window_up_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_sky_window_down"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_sky_window_up"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/sky_window_down_xml"/>
+            </RelativeLayout>
+            
+             <RelativeLayout
+                android:id="@+id/id_allwindow_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:layout_toRightOf="@+id/id_skywindow_ll"
+                android:layout_marginLeft="8dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/background_window">
+                 
+                 <TextView
+                    android:id="@+id/tv_all_window"
+		            android:layout_width="match_parent"
+		            android:layout_height="40dp"
+		            android:layout_alignParentTop="true"
+		            android:layout_marginTop="4dp"
+		            android:layout_centerHorizontal="true"
+		            android:textSize="20sp"
+		            android:gravity="center"
+		            android:textStyle="bold"
+		             android:textColor="@android:color/white"
+		            android:text="@string/all_window" />
+                 
+                 <Button
+                     android:id="@+id/btn_all_window_up"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tv_all_window"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/all_window_up_xml"/>
+                 
+                 <Button
+                     android:id="@+id/btn_all_window_down"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/btn_all_window_up"
+                     android:layout_marginTop="20dp"
+                     android:layout_centerHorizontal="true"
+                     android:enabled="false"
+                     android:background="@drawable/all_window_down_xml"/>
+            </RelativeLayout>
+            
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

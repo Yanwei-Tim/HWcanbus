@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/background_title">
+
+
+    <TextView
+        android:id="@+id/tv_headerTitle"
+        style="@style/text_title"
+        android:layout_width="0.0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:layout_marginLeft="@dimen/btn_back_width"
+        android:text="@string/title_app"
+        android:textStyle="bold"
+        android:textSize="@dimen/title_size" />
+
+    <TextView
+        android:id="@+id/text_sett"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:drawableLeft="@drawable/ico_setting"
+        android:drawablePadding="@dimen/hiworld_log_parentright"
+        android:paddingRight="20dp"
+        android:gravity="center_vertical"
+        android:text="@string/action_settings" 
+        android:textSize="@dimen/title_size"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:textColor="@color/chat_title_name"/>
+
+</LinearLayout>

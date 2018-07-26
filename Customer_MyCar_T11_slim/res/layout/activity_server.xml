@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_backgrond"
+    android:id="@+id/ll_server_bac"
+    android:orientation="vertical" >
+    
+    <include 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/activity_carpc_top"/>
+    
+    <ScrollView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
+            android:textSize="@dimen/carpc_size"
+            android:textColor="#FFF"
+            android:text="@string/Server_copyright"/>
+        
+    </ScrollView>
+    
+
+</LinearLayout>

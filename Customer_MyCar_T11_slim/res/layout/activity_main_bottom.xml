@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rl_main_bottom"
+    android:background="@drawable/main_bottomtrip" >
+
+    <TextView
+        android:id="@+id/tv_main_trip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/main_dancilicheng"
+        android:drawablePadding="10dp"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dialog_size"
+        android:text="@string/main_trip" />
+
+    <TextView
+        android:id="@+id/tv_main_mileage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/main_mileage"
+        android:drawablePadding="10dp"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dialog_size"
+        android:text="@string/main_mieage" />
+
+</RelativeLayout>

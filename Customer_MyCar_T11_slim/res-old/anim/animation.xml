@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!--   
+    根标签为animation-list，其中oneshot代表着是否只展示一遍，设置为false会不停的循环播放动画  
+    根标签下，通过item标签对动画中的每一个图片进行声明  
+    android:duration 表示展示所用的该图片的时间长度  
+ -->  
+<animation-list  
+  xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:oneshot="true"   >  
+    <item android:drawable="@drawable/yibiao_num_01" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_02" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_03" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_04" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_05" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_06" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_07" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_08" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_09" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_10" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_11" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_12" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_13" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_14" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_15" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_16" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_17" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_18" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_19" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_20" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_21" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_22" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_23" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_24" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_25" android:duration="60"></item>  
+    <item android:drawable="@drawable/yibiao_num_26" android:duration="60"></item>  
+</animation-list>  

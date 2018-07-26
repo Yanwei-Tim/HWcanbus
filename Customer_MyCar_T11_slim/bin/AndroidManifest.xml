@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hiworld.mycar.t11"
+    android:versionCode="1"
+    android:versionName="Hiworld.MyCar.T11.V1.0.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
+    <!-- 向SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <!-- 网络访问授权 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- 百度语言所需权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+
+    <!-- 开启闪光灯权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于提高GPS定位速度 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
+    <application
+        android:name="com.hiworld.canbus.app.MyApp"
+        android:allowBackup="true"
+        android:icon="@drawable/himycar"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+
+        <!-- 设置key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="b186ff833122b31b0da6977cf0ebedf3" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
+
+        <!--
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+             <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+         </service>
+         
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="DaKjWjjsGtGYM99oT6T42zXzDcReEROn" />
+        -->
+
+        <activity
+            android:name="com.hiworld.canbus.activity.WelcomeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.hiworld.canbus.activity.MainActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.ServerActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.GuideActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.CailbrationActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.SensiActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.CopyrightActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.PrintActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.WindowActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.LightActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.DoorlockActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.SuonaActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.MineActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.DeviceSetActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.AboutActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.ServerActivitynew"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="com.hiworld.canbus.activity.SkinSettingActivity"
+            android:label="@string/title_app"
+            android:launchMode="singleTop" />
+    </application>
+
+</manifest>

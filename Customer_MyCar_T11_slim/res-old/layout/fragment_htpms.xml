@@ -1,0 +1,243 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:id="@+id/main_bg">
+
+    <ImageView
+        android:id="@+id/img_main_hiworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/hiworld_log_parentright"
+        android:layout_marginTop="@dimen/hiworld_log_parentright"
+        android:contentDescription="@string/app_name"
+         /><!-- android:src="@drawable/ico_hiworld" -->
+
+    <ImageView
+        android:id="@+id/img_carinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img_car_normal1" />
+
+    <ImageView
+        android:id="@+id/iv_main_carmoduel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img_car_notype" />
+
+    <ImageView
+        android:id="@+id/img_car_warn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ico_red_lf"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/main_layout_left"
+        android:layout_toLeftOf="@+id/img_carinfo" >
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <!--  -->
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+            <RelativeLayout
+                android:id="@+id/layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/img_warn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/background_warntip" />
+
+                <ImageView
+                    android:id="@+id/img_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/img_warn"
+                    android:layout_alignTop="@+id/img_warn"
+                    android:layout_marginLeft="@dimen/level_left"
+                    android:layout_marginTop="@dimen/level_top"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/img_level_red" />
+
+                <TextView
+                    android:id="@+id/text_warninfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/img_warn"
+                    android:layout_alignRight="@+id/img_warn"
+                    android:layout_below="@+id/img_level"
+                    android:layout_marginTop="@dimen/main_layout_left"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:text="@string/left_front_tpms"
+                    android:textColor="@color/warn_clor"
+                    android:textSize="@dimen/content_size" 
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/text_warninfo2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/text_warninfo"
+                    android:layout_alignRight="@+id/text_warninfo"
+                    android:layout_below="@+id/text_warninfo"
+                    android:layout_marginTop="@dimen/main_layout_left"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp"
+                    android:textColor="@color/warn_clor"
+                    android:textSize="@dimen/content_size" 
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/main_layout_left"
+        android:layout_marginRight="@dimen/main_layout_left"
+        android:layout_toLeftOf="@+id/img_carinfo"
+        android:gravity="center"
+        android:text="@string/WarnSwitch_connecting"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/content_size"
+        android:textStyle="bold" />
+
+    <!-- 四个轮胎新柱状图 Begin -->
+
+    <TextView
+        android:id="@+id/text_rr_wheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/wheel_right"
+        android:drawableTop="@drawable/wheel_schedule17"
+        android:text="@string/rr_wheel"
+        android:textSize="@dimen/content_size"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_lr_wheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_rr_wheel"
+        android:layout_toLeftOf="@+id/text_rr_wheel"
+        android:drawableTop="@drawable/wheel_schedule17"
+        android:layout_marginRight="2dp"
+        android:text="@string/lr_wheel"
+        android:textSize="@dimen/content_size"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_rf_wheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_lr_wheel"
+        android:layout_toLeftOf="@+id/text_lr_wheel"
+        android:drawableTop="@drawable/wheel_schedule17"
+        android:layout_marginRight="2dp"
+        android:text="@string/rf_wheel"
+        android:textSize="@dimen/content_size"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_lf_wheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_rf_wheel"
+        android:layout_toLeftOf="@+id/text_rf_wheel"
+        android:drawableTop="@drawable/wheel_schedule17"
+        android:layout_marginRight="2dp"
+        android:text="@string/lf_wheel"
+        android:textSize="@dimen/content_size"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <!-- 四个轮胎新柱状图 end -->
+
+    <ImageView
+        android:id="@+id/iv_main_speed_float"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/img_main_hiworld"
+        android:layout_alignTop="@+id/iv_main_carmoduel"
+        android:layout_marginRight="@dimen/htpms_speed_right"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/big_num0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/iv_main_speed_float"
+        android:layout_below="@id/iv_main_speed_float"
+        android:background="@drawable/background_uint"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/iv_main_speed_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_main_speed_float"
+        android:layout_alignTop="@+id/iv_main_speed_float"
+        android:src="@drawable/big_num0" 
+        android:contentDescription="@string/app_name"/>
+    
+    <ImageView
+        android:id="@+id/iv_main_speed_hundred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_main_speed_float"
+        android:layout_toLeftOf="@+id/iv_main_speed_ten"
+        android:src="@drawable/big_num0"
+        android:contentDescription="@string/app_name"  />
+
+</RelativeLayout>

@@ -1,0 +1,197 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent" 
+        android:layout_weight="5">
+
+        <ImageView
+            android:id="@+id/id_meter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/meter" 
+            android:contentDescription="@string/app_name"/>
+
+        <ImageView
+            android:id="@+id/id_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/id_meter"
+            android:layout_alignTop="@+id/id_meter"
+            android:src="@drawable/panel"
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/id_speed_ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_meter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/small_num0"
+            android:contentDescription="@string/app_name"  />
+
+        <ImageView
+            android:id="@+id/id_speed_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/id_speed_ten"
+            android:layout_toRightOf="@+id/id_speed_ten"
+            android:src="@drawable/small_num0" 
+            android:contentDescription="@string/app_name" />
+
+        <ImageView
+            android:id="@+id/id_speed_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/id_speed_ten"
+            android:layout_alignTop="@+id/id_speed_ten"
+            android:src="@drawable/small_num0" 
+            android:contentDescription="@string/app_name" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6" >
+
+        <LinearLayout
+            android:id="@+id/id_autoTime_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_time"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/autoTime"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_autoTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_currenttime_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/id_autoTime_ll"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_time"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/currentTime"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_currentTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/id_autoMileage_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_autoTime_ll"
+            android:layout_centerVertical="true"
+            android:background="@drawable/background_time"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/autoMileage"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_autoMileage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/id_currenttime_ll"
+            android:layout_alignTop="@+id/id_currenttime_ll"
+            android:layout_toRightOf="@+id/id_currenttime_ll" >
+
+            <ImageView
+                android:id="@+id/iv_htpms_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/htpms_tip" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/id_autoTime_ll"
+            android:layout_alignTop="@+id/id_autoTime_ll" 
+            android:layout_toRightOf="@+id/id_autoTime_ll" >
+            
+            <ImageView
+                android:id="@+id/iv_safebelt_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/safebelt_tip" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/id_autoMileage_ll"
+            android:layout_alignTop="@+id/id_autoMileage_ll" 
+            android:layout_toRightOf="@+id/id_autoMileage_ll" >
+            
+            <ImageView
+                android:id="@+id/iv_handbreak_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/handbreak_tip" />
+        </RelativeLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>

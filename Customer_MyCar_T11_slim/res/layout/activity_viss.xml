@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--
+    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/layout_main_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_main_header" 
+            android:visibility="gone"/>
+        
+        <android.support.v4.view.ViewPager  
+	        android:id="@+id/id_page_vp"  
+	        android:layout_width="match_parent"  
+	        android:layout_height="0dp"  
+	        android:layout_weight="1" >  
+	    </android.support.v4.view.ViewPager>
+
+        <include
+            android:id="@+id/layout_main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_main_bottom_tab" 
+            android:visibility="gone"/>
+
+    </LinearLayout>
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/header_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_main_top_new" />
+
+        <com.hiworld.canbus.view.MainViewPager
+            android:id="@+id/viewPager_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_first_know"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gray_bg"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/iv_first_know"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/main_firstknow" />
+
+        <ImageButton
+            android:id="@+id/ib_firstknow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_first_know"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/first_know_selector" />
+    </RelativeLayout>
+    
+    <!--<RelativeLayout
+        android:id="@+id/update_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/update_progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp" 
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/main_update_left"
+            android:layout_marginRight="@dimen/main_update_left"
+            android:layout_centerInParent="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/background_progressbar"  
+            style="@style/my_mProgress_horizontal" />
+
+     <TextView
+         android:id="@+id/update_tip"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/update_progressBar1"
+         android:layout_marginTop="@dimen/main_update_up"
+         android:layout_centerHorizontal="true"
+         android:gravity="center"
+         android:textSize="@dimen/content_size"
+         android:text="@string/update_tip" />
+
+     <TextView
+         android:id="@+id/update_title"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/update_progressBar1"
+         android:layout_marginBottom="@dimen/main_update_up"
+         android:layout_centerHorizontal="true"
+         android:gravity="center"
+         android:textSize="@dimen/content_size"
+         android:text="@string/update_isupdate" />
+
+     <TextView
+         android:id="@+id/update_textpro"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+         android:layout_alignTop="@+id/update_progressBar1"
+         android:layout_marginRight="8dp"
+         android:textSize="@dimen/content_size"
+         android:layout_centerVertical="true"/>
+        
+    </RelativeLayout>-->
+
+</RelativeLayout>

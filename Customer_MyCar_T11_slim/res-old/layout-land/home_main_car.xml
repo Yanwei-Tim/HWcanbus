@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!-- <ImageView
+            android:id="@+id/iv_main_tire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/main_red_lftire" /> -->
+
+        <ImageView
+            android:id="@+id/iv_main_basecar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            android:src="@drawable/new_basecar"/>
+
+        <ImageView
+            android:id="@+id/iv_main_lfdoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_lfdoor_close" />
+        
+        <ImageView
+            android:id="@+id/iv_main_lfdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_lfdoor_open" />
+        
+        <ImageView
+            android:id="@+id/iv_main_lrdoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_lrdoor_close" />
+        
+        <ImageView
+            android:id="@+id/iv_main_lrdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_lrdoor_open" />
+        
+        <ImageView
+            android:id="@+id/iv_main_rfdoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_rfdoor_close" />
+        
+        <ImageView
+            android:id="@+id/iv_main_rfdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_rfdoor_open" />
+        
+        <ImageView
+            android:id="@+id/iv_main_rrdoor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_rrdoor_close" />
+        
+        <ImageView
+            android:id="@+id/iv_main_rrdoor_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:src="@drawable/new_rrdoor_open" />
+        
+        <ImageView
+            android:id="@+id/iv_main_lfwindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_lfwindow"
+            android:visibility="invisible" />
+        
+        <ImageView
+            android:id="@+id/iv_main_lrwindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_lrwindow" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_rfwindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_rfwindow" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_rrwindow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_rrwindow" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_hood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_bonnet" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_taxibox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_trunk" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_nearlylight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_nearlylight" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_farlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_farlight" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_leftlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_leftlight" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_rightlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_rightlight" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_widelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_widelight" 
+            android:visibility="invisible"/>
+        
+        <ImageView
+            android:id="@+id/iv_main_stoplight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/new_stoplight" 
+            android:visibility="invisible"/>
+
+        <ImageView
+                android:id="@+id/iv_main_shake"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_main_basecar"
+                android:layout_alignBottom="@id/iv_main_basecar"
+                android:layout_marginRight="-10px"
+                android:visibility="visible"
+                android:src="@drawable/main_shousha" />
+            
+            <ImageView
+                android:id="@+id/iv_main_icotpms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_main_basecar"
+                android:layout_marginLeft="-10px"
+                android:layout_alignBottom="@id/iv_main_basecar"
+                android:visibility="visible"
+                android:src="@drawable/icon_main_taiya" />
+        
+        <!-- <ImageView
+            android:id="@+id/iv_main_icoill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/iv_main_basecar"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_ill" />
+
+        <ImageView
+            android:id="@+id/iv_main_icodoublelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_main_icoill"
+            android:layout_marginTop="20dp"
+            android:layout_toLeftOf="@id/iv_main_basecar"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_doublelight" />
+
+        <ImageView
+            android:id="@+id/iv_main_icofarlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/iv_main_icoill"
+            android:layout_marginBottom="20dp"
+            android:layout_toLeftOf="@id/iv_main_basecar"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_farlight" /> -->
+        
+        
+        <!-- <ImageView
+            android:id="@+id/iv_main_icobattery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_main_basecar"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_battery" />
+        
+        <ImageView
+            android:id="@+id/iv_main_icosafebelt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_main_icobattery"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/iv_main_basecar"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_safebelt" />
+        
+        <ImageView
+            android:id="@+id/iv_main_icoweather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/iv_main_icobattery"
+            android:layout_marginBottom="20dp"
+            android:layout_toRightOf="@id/iv_main_basecar"
+            android:visibility="invisible"
+            android:src="@drawable/icon_main_weather" /> -->
+	
+</RelativeLayout>

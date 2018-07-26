@@ -1,0 +1,128 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+        
+        <ImageView
+        android:id="@+id/iv_mileage_meter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/mileage_auto" 
+        android:contentDescription="@string/title_carpc_mileage"/>
+    
+    <ImageView
+        android:id="@+id/iv_mileage_metersdu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_mileage_meter"
+        android:layout_alignRight="@+id/iv_mileage_meter"
+        android:layout_marginRight="@dimen/mileage_autosdu_right"
+        android:src="@drawable/mileage_sdu"
+        android:contentDescription="@string/title_carpc_mileage" />
+    
+    
+    <TextView
+        android:id="@+id/iv_mileage_metertrip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_mileage_meter"
+        android:layout_toRightOf="@+id/iv_mileage_meter"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        android:text="@string/text_mileage_auto" 
+        android:textColor="@android:color/white"/>
+    
+    <Button
+        android:id="@+id/btn_trip_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_mileage_meter"
+        android:layout_toRightOf="@+id/iv_mileage_metertrip1"
+        android:layout_marginLeft="@dimen/clear_right"
+        android:background="@drawable/btn_clearzero_selector"
+        android:text="@string/text_clear"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/title_size"/>
+
+    <TextView
+        android:id="@+id/iv_trip1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/trip1_top"
+        android:textSize="@dimen/trip_size"
+        android:text="@string/title_trip1" 
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/iv_tripmeter_avgfuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/iv_mileage_meter"
+        android:layout_below="@+id/iv_trip1"
+        android:layout_marginLeft="@dimen/avgfuel_left"
+        android:layout_marginTop="@dimen/avgfuel_top"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        android:text="@string/text_trip1_avgfuel" 
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/iv_tripmeter_avgspeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/iv_tripmeter_avgfuel"
+        android:layout_below="@+id/iv_tripmeter_avgfuel"
+        android:layout_marginTop="@dimen/avgfuel_top"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        android:text="@string/text_trip1_avgspeed" 
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/iv_tripmeter_drivertime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_mileage_meter"
+        android:layout_alignTop="@+id/iv_tripmeter_avgfuel"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/drivertime_left"
+        android:text="@string/tetx_trip1_drivertime" 
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/iv_tripmeter_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/iv_tripmeter_drivertime"
+        android:layout_alignTop="@+id/iv_tripmeter_avgspeed"
+        android:textSize="@dimen/title_size"
+        android:textStyle="bold"
+        android:text="@string/tetx_trip1_count" 
+        android:textColor="@android:color/white"/>
+
+    </RelativeLayout>
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>

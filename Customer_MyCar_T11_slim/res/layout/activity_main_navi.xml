@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="336dp"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/iv_navi_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="82dp"
+        android:src="@drawable/dm_sou2" />
+    
+    <com.hiworld.canbus.view.NaviFontTextView
+        android:id="@+id/tv_next_dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_navi_icon"
+        android:layout_alignBottom="@id/iv_navi_icon"
+        android:layout_toRightOf="@id/iv_navi_icon"
+        android:layout_marginLeft="4dp"
+        android:textColor="@android:color/white"
+        android:textSize="44sp"
+        android:gravity="center_vertical"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv_navi_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_navi_icon"
+        android:layout_alignBottom="@id/iv_navi_icon"
+        android:layout_toRightOf="@id/tv_next_dis"
+        android:layout_marginLeft="4dp"
+        android:textColor="#7d7d7d"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:text="" />
+    
+    <TextView
+        android:id="@+id/tv_remain_dis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_navi_icon"
+        android:layout_marginTop="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="58dp"
+        android:drawableLeft="@drawable/juli"
+        android:textSize="22sp"
+        android:drawablePadding="4dp"
+        android:textColor="#7D7D7D"
+        android:gravity="center_vertical"
+        android:text="" />
+    
+    <TextView
+        android:id="@+id/tv_remain_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_navi_icon"
+        android:layout_marginLeft="30dp"
+        android:drawableLeft="@drawable/time"
+        android:layout_alignTop="@+id/tv_remain_dis"
+        android:textSize="22sp"
+        android:drawablePadding="4dp"
+        android:textColor="#7D7D7D"
+        android:gravity="center_vertical"
+        android:text="" />
+    
+    <TextView
+        android:id="@+id/tv_navi_nextroad"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_above="@+id/iv_navi_icon"
+        android:layout_marginBottom="30dp"
+        android:layout_toRightOf="@+id/iv_navi_icon"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:gravity="center_vertical"
+        android:text="" />
+    
+    <TextView
+        android:id="@+id/tv_navi_tytle"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignTop="@+id/tv_navi_nextroad"
+        android:layout_toLeftOf="@+id/tv_navi_nextroad"
+        android:layout_marginRight="10dp"
+        android:textColor="#7d7d7d"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:text="" />
+    
+    
+    <ImageView
+        android:id="@+id/iv_navi_limit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/iv_navi_icon"
+        android:src="@drawable/navi_limit_120" 
+        android:visibility="gone"/>
+
+</RelativeLayout>

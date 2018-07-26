@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/img_copyright2_hiworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/hiworld_log_parentright"
+        android:layout_marginTop="@dimen/hiworld_mainlog_parenttop"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ico_hiworld" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/img_copyright2_erweima"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ico_erweima" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_softver"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/softver_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/server_copyright_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_severVer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/seviceVer_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/server_copyright_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_hwver"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/hwver_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/server_copyright_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_VIN"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/text_VIN"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/server_copyright_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_CarModuel"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/text_Brand"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/server_copyright_size"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_compeny2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/compiny2_text"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/server_copyright_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_compeny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_compeny2"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/compiny_text"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/server_copyright_size"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_hwupdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_compeny"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/cailbration_selector"
+        android:text="@string/hwupdate_text"
+        android:textColor="@color/chat_title_name"
+        android:textSize="@dimen/server_copyright_size"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+</RelativeLayout>

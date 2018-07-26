@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:id="@+id/text_mine_item"
+    android:background="@drawable/mine_bac_selector"
+    android:gravity="center_vertical"
+    android:textSize="@dimen/carpc_size"
+    android:textColor="#FFF"
+    android:paddingRight="20dp"
+    android:paddingLeft="26dp"
+    android:drawablePadding="12dp">
+
+</TextView>

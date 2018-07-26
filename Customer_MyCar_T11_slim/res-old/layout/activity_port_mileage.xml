@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <ImageView
+            android:id="@+id/iv_port_mileage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mileage_port" />
+	
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_alignTop="@id/iv_port_mileage"
+            android:layout_alignBottom="@id/iv_port_mileage"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_coolanttemp"
+				    android:id="@+id/iv_averageSpeed"
+				    android:src="@drawable/icon_averagespeed_port"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_averageSpeed"
+                    android:layout_marginLeft="2dp"
+                    android:layout_alignTop="@+id/iv_averageSpeed"
+                    android:layout_alignBottom="@+id/iv_averageSpeed"
+                    android:orientation="vertical" >
+
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_prot_averageSpeed"
+		                android:textColor="@android:color/white" 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:textSize="@dimen/mileage_size_port"
+				        android:text=" - -"/>
+                    
+                    <TextView
+		                android:textSize="@dimen/unit_size_port"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_averagespeed"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_coolanttemp"
+				    android:id="@+id/iv_drivingTime"
+				    android:src="@drawable/icon_drivingtime_port"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_drivingTime"
+                    android:layout_marginLeft="2dp"
+                    android:layout_alignTop="@+id/iv_drivingTime"
+                    android:layout_alignBottom="@+id/iv_drivingTime"
+                    android:orientation="vertical" >
+
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_port_drivingTime"
+		                android:textColor="@android:color/white" 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:textSize="@dimen/mileage_size_port"
+				        android:text=" - -"/>
+                    
+                    <TextView
+		                android:textSize="@dimen/unit_size_port"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/tetx_trip1_drivertime"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_coolanttemp"
+				    android:id="@+id/iv_restOil"
+				    android:src="@drawable/icon_restoil_port"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_restOil"
+                    android:layout_marginLeft="2dp"
+                    android:layout_alignTop="@+id/iv_restOil"
+                    android:layout_alignBottom="@+id/iv_restOil"
+                    android:orientation="vertical" >
+
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_port_restOil"
+		                android:textColor="@android:color/white" 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:textSize="@dimen/mileage_size_port"
+				        android:text=" - -"/>
+                    
+                    <TextView
+		                android:textSize="@dimen/unit_size_port"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_restoil"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+                <ImageView 
+		            android:contentDescription="@string/text_coolanttemp"
+				    android:id="@+id/iv_battery"
+				    android:src="@drawable/icon_battery_port"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/iv_battery"
+                    android:layout_marginLeft="2dp"
+                    android:layout_alignTop="@+id/iv_battery"
+                    android:layout_alignBottom="@+id/iv_battery"
+                    android:orientation="vertical" >
+                    
+                    <com.hiworld.canbus.view.CustomTextView
+		                android:id="@+id/tv_port_battery"
+		                android:textColor="@android:color/white" 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+				        android:textSize="@dimen/mileage_size_port"
+				        android:text=" - -"/>
+                    
+                    <TextView
+		                android:textSize="@dimen/unit_size_port"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_batteryvoltage"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

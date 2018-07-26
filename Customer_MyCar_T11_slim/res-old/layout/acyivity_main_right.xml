@@ -1,0 +1,29 @@
+ <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+        <!--  
+        <ImageView
+            android:id="@+id/iv_zhibeizhen_dipan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zhinanzhen_blue" 
+            android:contentDescription="@string/app_name"/>
+        
+        <ImageView
+            android:id="@+id/iv_zhibeizhen_fx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/zhizhen" 
+            android:contentDescription="@string/app_name"/>
+-->
+        <ImageView
+	        android:id="@+id/iv_limit_speed"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/limit_120" 
+	        android:visibility="gone"
+	        android:contentDescription="@string/app_name"/>
+
+</FrameLayout>

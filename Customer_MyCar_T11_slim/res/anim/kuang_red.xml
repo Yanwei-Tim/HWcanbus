@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:oneshot="true">
+    
+    <item android:drawable="@drawable/a1_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a2_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a3_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a4_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a5_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a6_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a7_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a8_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a9_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a10_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a11_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a12_red" android:duration="40"></item> 
+    <item android:drawable="@drawable/a13_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a14_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a15_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a16_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a17_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a18_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a19_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a20_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a21_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a22_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a23_red" android:duration="40"></item>  
+    <item android:drawable="@drawable/a24_red" android:duration="40"></item>   
+	<item android:drawable="@drawable/a25_red" android:duration="40"></item>
+</animation-list>

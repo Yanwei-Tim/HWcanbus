@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="toptitle_hight">80dp</dimen>
+    <dimen name="title_paddingleft">40dp</dimen>
+    <dimen name="title_size">16sp</dimen>
+    <dimen name="server_copyright_size">14sp</dimen>
+    
+    <!-- 主页 -->
+    <dimen name="hiworld_log_parentright">13dp</dimen>
+    <dimen name="hiworld_mainlog_parenttop">93dp</dimen>
+    <dimen name="main_car_right">120dp</dimen>
+    <dimen name="layout_maintop">133dp</dimen>
+    <dimen name="level_left">26dp</dimen>
+    <dimen name="level_top">26dp</dimen>
+    <dimen name="main_warn_paddingleft">5dp</dimen>
+    <dimen name="main_update_left">133dp</dimen>
+    <dimen name="main_update_up">106dp</dimen>
+    <dimen name="main_cattop">0dp</dimen>
+    <dimen name="main_layout_left">10dp</dimen>
+    <dimen name="main_ProgressBar_high">32dp</dimen>
+    
+    <!-- 校准 -->
+    <dimen name="cailbration_parenttop">240dp</dimen>
+    <dimen name="cailbration_agree_below">80dp</dimen>
+    <dimen name="cailbration_parentleft">200dp</dimen>
+    
+    <!-- 服务 -->
+    <dimen name="hiworld_serverlog_parenttop">53dp</dimen>
+    <dimen name="help4_home">26dp</dimen>
+    <dimen name="server_checktext_left">26dp</dimen>
+    <dimen name="help1_parentleft">192dp</dimen>
+    <dimen name="copyright_compiny_bottom">80dp</dimen>
+    <dimen name="copyright_compiny2_bottom">40dp</dimen>
+    <dimen name="guid_dot_parentbottom">5dp</dimen>
+    <dimen name="help1_parentbottom">72dp</dimen>
+    <dimen name="server_copyright_high">352dp</dimen>
+    <dimen name="server_copyright_dot">20dp</dimen>
+    <dimen name="server_copyright_ViewPager">4dp</dimen>
+    
+    <!-- 通用设置 -->
+    <dimen name="Sensitivity_below">34dp</dimen>
+    <dimen name="popmenu_yoff">6.0dip</dimen>
+    <dimen name="popspiner_width">370.0dp</dimen>
+    <dimen name="btn_back_width">93dp</dimen>
+    
+    <!-- Popwindow -->
+    <dimen name="popmenu_width">266.0dp</dimen>
+    
+</resources>

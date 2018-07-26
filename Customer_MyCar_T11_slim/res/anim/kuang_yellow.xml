@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:oneshot="true">
+    
+    <item android:drawable="@drawable/a1_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a2_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a3_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a4_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a5_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a6_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a7_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a8_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a9_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a10_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a11_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a12_yellow" android:duration="40"></item> 
+    <item android:drawable="@drawable/a13_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a14_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a15_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a16_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a17_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a18_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a19_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a20_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a21_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a22_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a23_yellow" android:duration="40"></item>  
+    <item android:drawable="@drawable/a24_yellow" android:duration="40"></item>   
+	<item android:drawable="@drawable/a25_yellow" android:duration="40"></item>
+</animation-list>

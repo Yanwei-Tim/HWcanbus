@@ -1,0 +1,446 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_bg"
+    android:orientation="horizontal" >
+    
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/fragment_carstate_left" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center" 
+        android:background="@drawable/block"
+        android:layout_marginStart="@dimen/block_right">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="4">
+
+                <ImageView 
+		            android:contentDescription="@string/text_coolanttemp"
+				    android:id="@+id/iv_cooltemp"
+				    android:src="@drawable/cooltemp_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="@dimen/trip1_top"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="@dimen/clear_right"
+                    android:layout_toRightOf="@+id/iv_cooltemp"
+                    android:layout_alignTop="@+id/iv_cooltemp"
+                    android:layout_alignBottom="@+id/iv_cooltemp"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_coolanttemp"
+				        android:gravity="center"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:textStyle="bold"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_cooltemp"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="4">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_engineSpeed"
+				    android:id="@+id/iv_enginespeed"
+				    android:src="@drawable/enginespeed_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/iv_enginespeed"
+                    android:layout_alignTop="@+id/iv_enginespeed"
+                    android:layout_alignBottom="@+id/iv_enginespeed"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_engineSpeed"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_enginespeed"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="3">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_safeBand"
+				    android:id="@+id/iv_safebelt"
+				    android:src="@drawable/safebelt_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/iv_safebelt"
+                    android:layout_alignTop="@+id/iv_safebelt"
+                    android:layout_alignBottom="@+id/iv_safebelt"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_safeBand"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_safebelt"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+                
+                
+            </RelativeLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="4">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_instantfuel"
+				    android:id="@+id/iv_instantfuel"
+				    android:src="@drawable/currentspeed_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="@dimen/trip1_top"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="@dimen/clear_right"
+                    android:layout_toRightOf="@+id/iv_instantfuel"
+                    android:layout_alignTop="@+id/iv_instantfuel"
+                    android:layout_alignBottom="@+id/iv_instantfuel"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_currentspeed"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_currentspeed"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="4">
+                <ImageView 
+		            android:contentDescription="@string/text_instantspeed"
+				    android:id="@+id/iv_currentspeed"
+				    android:src="@drawable/instantspeed_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/iv_currentspeed"
+                    android:layout_alignTop="@+id/iv_currentspeed"
+                    android:layout_alignBottom="@+id/iv_currentspeed"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_averagespeed"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_instantfuel"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="3">
+                <ImageView 
+		            android:contentDescription="@string/text_handbrake"
+				    android:id="@+id/iv_handstop"
+				    android:src="@drawable/handbrake_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/iv_handstop"
+                    android:layout_alignTop="@+id/iv_handstop"
+                    android:layout_alignBottom="@+id/iv_handstop"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_handbrake"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_handstop"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp" 
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="4">
+                
+                <ImageView 
+		            android:contentDescription="@string/text_batteryvoltage"
+				    android:id="@+id/iv_battery"
+				    android:src="@drawable/batteryvoltage_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="@dimen/trip1_top"/>
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="@dimen/clear_right"
+                    android:layout_toRightOf="@+id/iv_battery"
+                    android:layout_alignTop="@+id/iv_battery"
+                    android:layout_alignBottom="@+id/iv_battery"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_batteryvoltage"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_battery"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="4">
+                <ImageView 
+		            android:contentDescription="@string/text_mileage"
+				    android:id="@+id/iv_distance"
+				    android:src="@drawable/mileage_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/iv_distance"
+                    android:layout_alignTop="@+id/iv_distance"
+                    android:layout_alignBottom="@+id/iv_distance"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_totalmileage"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_distance"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent" 
+                android:layout_weight="3">
+                <ImageView 
+		            android:contentDescription="@string/text_doorlock"
+				    android:id="@+id/iv_doorlock"
+				    android:src="@drawable/doorlock_enable"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerVertical="true"
+				    android:layout_marginLeft="3dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_toRightOf="@+id/iv_doorlock"
+                    android:layout_alignTop="@+id/iv_doorlock"
+                    android:layout_alignBottom="@+id/iv_doorlock"
+                    android:orientation="vertical" >
+                    <TextView 
+		                android:textSize="@dimen/carstete_tvsize"
+		                android:textColor="@android:color/white" 
+				        android:text="@string/text_doorlock"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_width="match_parent"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                    
+                    <TextView 
+		                android:id="@+id/tv_doorlock"
+		                android:textColor="@android:color/white" 
+		                android:textSize="@dimen/carstete_tvsize"
+				        android:layout_width="match_parent"
+				        android:gravity="center"
+				        android:textStyle="bold"
+				        android:layout_height="0dp"
+				        android:layout_weight="1"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    
+
+</LinearLayout>

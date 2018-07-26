@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+        <ImageView
+	        android:id="@+id/img_hiworld"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="@dimen/hiworld_log_parentright"
+	        android:layout_marginTop="@dimen/hiworld_mainlog_parenttop"
+	        android:src="@drawable/ico_hiworld" 
+	        android:contentDescription="@string/app_name"/>
+    
+       <ScrollView
+            android:id="@+id/scroll_server"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:scrollbars="none"
+	        android:layout_alignTop="@+id/img_hiworld"
+	        android:layout_above="@+id/check_agree"
+	        android:layout_marginLeft="@dimen/help1_parentleft"
+	        android:layout_marginRight="@dimen/help1_parentleft" >
+	
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+	
+	            <TextView
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:textSize="@dimen/content_size"
+	                android:text="@string/title_server"
+	                android:textColor="@android:color/white"
+	                android:textStyle="bold"
+	                android:gravity="center_horizontal"/>
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:textSize="@dimen/server_copyright_size" 
+	                android:isScrollContainer="true"
+	                android:textColor="@android:color/white"
+	                android:textStyle="bold"
+	                android:text="@string/Server_copyright"/>
+	
+	        </LinearLayout>
+    </ScrollView>
+
+
+        <CheckBox
+	        android:id="@+id/check_agree"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/scroll_server"
+	        android:layout_above="@+id/btn_agree"
+	        android:layout_marginBottom="8dp"
+	        android:textSize="@dimen/server_copyright_size" 
+	        android:button="@drawable/check_selector"
+	        android:text="@string/server_check_text" />
+
+        <Button
+	        android:id="@+id/btn_unagree"
+	        android:layout_width="@dimen/btn_agree_width"
+	        android:layout_height="wrap_content"
+	        android:layout_alignRight="@+id/scroll_server"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginBottom="8dp"
+	        android:textSize="@dimen/server_copyright_size" 
+	        android:text="@string/server_unagree" 
+	        android:textColor="@color/chat_title_name"
+	        android:background="@drawable/agree_selector"/>
+        
+        
+        <Button
+	        android:id="@+id/btn_agree"
+	        android:layout_width="@dimen/btn_agree_width"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/scroll_server"
+	        android:layout_alignTop="@+id/btn_unagree"
+	        android:textSize="@dimen/server_copyright_size" 
+	        android:text="@string/server_agree" 
+	        android:textColor="@color/chat_title_name"
+	        android:background="@drawable/agree_selector"/>
+    
+    
+</RelativeLayout>
