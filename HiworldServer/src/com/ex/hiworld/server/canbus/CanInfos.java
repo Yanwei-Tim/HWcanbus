@@ -89,7 +89,7 @@ public class CanInfos {
     private static int CanKey;
 
 	public static void onKeyEvent(int[][] KeyCanKeyTable, int keycode, int action) {
-		if (CanKey != keycode) {
+//		if (CanKey != keycode) {
 			CanKey = keycode;
 			int i, j = 0;
 			for (i = 0; i < KeyCanKeyTable.length; i++) {
@@ -110,13 +110,13 @@ public class CanInfos {
 				TemCanKey = 0xff;
 			}
 
-		}
+//		}
 
 	}
 
     // 没有按键按下和抬起状态
 	public static void onKeyEvent(int[][] KeyCanKeyTable, int keycode) {
-		if (CanKey != keycode) {
+//		if (CanKey != keycode) {
 			CanKey = keycode;
 			int i, j = -1;
 			for (i = 0; i < KeyCanKeyTable.length; i++) {
@@ -130,7 +130,7 @@ public class CanInfos {
 				SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_DOWN);
 				SendFunc.sendKeyCode2Host(KeyCanKeyTable[j][1], FinalKeyCode.ACTION_UP);
 			}
-		}
+//		}
 	}
 
 	private static int tempKey2;

@@ -140,8 +140,9 @@ public class TaskCar_Hyunda extends BaseCar {
 		case 0x21: {
 			int Cank = data[start + 2] | 0x80;
 			CanInfos.onKeyEvent(KeyCanKeyTable, Cank, data[start + 3]);
-			break;
+		break;
 		}
+	
 		case 0x22:{ //  旋钮
 			int event = data[start + 2]&0xFF;
 			int action = data[start + 3]&0xFF;
@@ -174,9 +175,7 @@ public class TaskCar_Hyunda extends BaseCar {
 					CanInfos.canbusKeyLeft();
 				}
 				break;
-			}
-			default:
-				break;
+			} 
 			}
 			break;
 		}
