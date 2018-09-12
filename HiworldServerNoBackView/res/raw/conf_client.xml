@@ -1,0 +1,5 @@
+<project name="client">
+	<property name="ver-name" value="1.0"/>
+	<property name="client-folder" value="公版"/>		
+	<property name="platform-name" value="6025"/>						
+</project>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_road_bk" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_basecar" />
+
+        <ImageView
+            android:id="@+id/iv_fl_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/d_door_fl" />
+
+        <ImageView
+            android:id="@+id/iv_fl_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_lfwindow" />
+
+        <ImageView
+            android:id="@+id/iv_fr_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/d_door_fr" />
+
+        <ImageView
+            android:id="@+id/iv_fr_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_rfwindow" />
+
+        <ImageView
+            android:id="@+id/iv_rl_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/d_door_rl" />
+
+        <ImageView
+            android:id="@+id/iv_rl_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_lrwindow" />
+
+        <ImageView
+            android:id="@+id/iv_rr_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/d_door_rr" />
+
+        <ImageView
+            android:id="@+id/iv_rr_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_rrwindow" />
+
+        <ImageView
+            android:id="@+id/iv_door_back"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:src="@drawable/new_trunk" />
+
+        <ImageView
+            android:id="@+id/iv_door_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_bonnet" />
+
+        <ImageView
+            android:id="@+id/iv_car_farlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_farlight" />
+
+        <ImageView
+            android:id="@+id/iv_car_doublelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_doublelight" />
+
+        <ImageView
+            android:id="@+id/iv_car_leftlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_leftlight" />
+
+        <ImageView
+            android:id="@+id/iv_car_rightlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_rightlight" />
+
+        <ImageView
+            android:id="@+id/iv_car_nearlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_nearlylight" />
+
+        <ImageView
+            android:id="@+id/iv_car_stoplight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_stoplight" />
+
+        <ImageView
+            android:id="@+id/iv_car_widelight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/new_widelight" />
+    </FrameLayout>
+
+</FrameLayout>

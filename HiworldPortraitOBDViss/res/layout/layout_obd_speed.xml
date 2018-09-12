@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/iv_speed_bk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_yibiaopan_bg" />
+
+    <TextView
+        android:id="@+id/tv_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/iv_speed_bk"
+        android:layout_alignRight="@+id/iv_speed_bk"
+        android:layout_alignTop="@+id/iv_speed_bk"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/iv_speed_bk"
+        android:layout_alignLeft="@+id/iv_speed_bk"
+        android:layout_alignRight="@+id/iv_speed_bk"
+        android:layout_marginBottom="20dp" 
+        android:visibility="invisible" />
+
+    <ex.hiworld.view.CustomTextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_speed_bk"
+        android:layout_alignLeft="@+id/iv_speed_bk"
+        android:layout_alignRight="@+id/iv_speed_bk"
+        android:layout_alignTop="@+id/iv_speed_bk"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="60sp" />
+
+</RelativeLayout>

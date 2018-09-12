@@ -1,0 +1,5 @@
+<project name="platform">
+	<property name="platform" value="Sophia"/>	
+	<property name="apkid" value="HiworldServer"/>
+	<property name="sharedUserId" value="android.uid.system"/>
+</project>

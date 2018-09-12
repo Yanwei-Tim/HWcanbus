@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="5" >
+
+    <ImageView
+        android:id="@+id/iv_light_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/icon_leftlight" />
+
+    <ImageView
+        android:id="@+id/iv_light_far_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/icon_main_farlight" />
+
+    <ImageView
+        android:id="@+id/iv_light_ill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/icon_main_ill" />
+
+    <ImageView
+        android:id="@+id/iv_light_double_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/icon_main_doublelight" />
+
+    <ImageView
+        android:id="@+id/iv_light_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_main_rightlight" />
+
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <ImageView
+        android:id="@+id/iv_light_safebelt_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_main_safebelt" />
+
+    <ImageView
+        android:id="@+id/iv_light_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_main_battery" />
+
+    <ImageView
+        android:id="@+id/iv_light_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_main_weather" />
+
+</GridLayout>

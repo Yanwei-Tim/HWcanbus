@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/lay_main"
+        android:layout_width="768dp"
+        android:layout_height="230dp"
+        android:background="@drawable/ic_bk_blue" >
+
+        <include
+            android:id="@+id/lay_curspeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            layout="@layout/layout_obd_speed" />
+
+        <include
+            android:id="@+id/lay_car_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            layout="@layout/layout_obd_car_state" />
+
+        <include
+            android:id="@+id/lay_car_door"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            layout="@layout/layout_obd_door" />
+
+        <include
+            android:id="@+id/lay_enginespeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            layout="@layout/layout_obd_speed" />
+
+        <ImageView
+            android:id="@+id/iv_handbrake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/lay_car_door"
+            android:src="@drawable/ic_hand_brake" />
+
+        <ImageView
+            android:id="@+id/iv_limit_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@+id/lay_curspeed"
+            android:src="@drawable/ic_limit_30" />
+
+        <TextView
+            android:id="@+id/tv_limit_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/iv_speed_bk"
+            android:layout_alignRight="@+id/iv_speed_bk"
+            android:layout_alignTop="@+id/iv_speed_bk"
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+</FrameLayout>
